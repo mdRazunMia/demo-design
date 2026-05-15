@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Locations — HAVEN Luxury Real Estate</title>
+  <meta name="description" content="Explore luxury properties in Australia's most prestigious neighbourhoods." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { serif: ['"Cormorant Garamond"', 'Georgia', 'serif'], sans: ['"DM Sans"', 'sans-serif'] },
+          colors: { stone: { 50: '#FAF9F7', 100: '#F2F0EB', 200: '#E3DFD6', 300: '#C9C3B5', 400: '#ADA492', 500: '#8C8070', 600: '#6E6358', 700: '#534A41', 800: '#3A332C', 900: '#231E19' }, gold: { 300: '#E8C97E', 400: '#D4A843', 500: '#B8891F', 600: '#9A700E' } },
+          letterSpacing: { widest2: '0.25em' },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background-color: #FAF9F7; color: #231E19; }
+    .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+    .futuristic-nav { background: rgba(20, 18, 15, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(212, 168, 67, 0.15); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); }
+    .futuristic-nav.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(35, 30, 25, 0.08); box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12); }
+
+    .nav-item { position: relative; padding: 8px 16px; cursor: pointer; }
+
+    .futuristic-link { position: relative; display: flex; align-items: center; gap: 6px; padding: 8px 0; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: all 0.3s ease; }
+    .futuristic-link::before { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: #D4A843; transform: translateX(-50%); transition: width 0.3s ease; border-radius: 1px; }
+    .futuristic-link:hover::before { width: 100%; }
+    .futuristic-link:hover { color: #D4A843; }
+
+    .dropdown-arrow { width: 16px; height: 16px; transition: transform 0.3s ease; }
+    .nav-item:hover .dropdown-arrow { transform: rotate(180deg); }
+
+    .mega-dropdown { position: static; }
+    .mega-dropdown-content { position: absolute; top: 100%; left: 0; right: 0; background: rgba(20, 18, 15, 0.98); backdrop-filter: blur(24px); border-top: 1px solid rgba(212, 168, 67, 0.2); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 100; }
+    .mega-dropdown:hover .mega-dropdown-content { opacity: 1; visibility: visible; transform: translateY(0); }
+
+    .dropdown-panel { max-width: 1400px; margin: 0 auto; padding: 40px 60px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 40px; }
+    .dropdown-column { position: relative; }
+    .dropdown-title { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #D4A843; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+    .dropdown-link { display: block; padding: 8px 0; font-size: 13px; color: rgba(255, 255, 255, 0.65); text-decoration: none; transition: all 0.25s ease; }
+    .dropdown-link:hover { color: #fff; }
+    .dropdown-highlight { background: rgba(212, 168, 67, 0.08); border-radius: 8px; padding: 24px; border: 1px solid rgba(212, 168, 67, 0.15); }
+
+    .mini-dropdown-content { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px); background: rgba(20, 18, 15, 0.98); backdrop-filter: blur(24px); border: 1px solid rgba(212, 168, 67, 0.15); border-radius: 8px; padding: 16px 0; min-width: 220px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4); opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+    .mini-dropdown:hover .mini-dropdown-content { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .mini-dropdown-link { display: block; padding: 10px 24px; font-size: 13px; color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: all 0.2s ease; }
+    .mini-dropdown-link:hover { background: rgba(212, 168, 67, 0.1); color: #D4A843; padding-left: 32px; }
+
+    .nav-cta { padding: 10px 24px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, rgba(212, 168, 67, 0.9), rgba(184, 137, 31, 0.9)); border-radius: 4px; text-decoration: none; transition: all 0.3s ease; }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212, 168, 67, 0.4); }
+
+    .futuristic-nav.scrolled .futuristic-link { color: rgba(35, 30, 25, 0.75); }
+    .futuristic-nav.scrolled .futuristic-link::before { background: #D4A843; }
+    .futuristic-nav.scrolled .futuristic-link:hover { color: #D4A843; }
+    .futuristic-nav.scrolled .mega-dropdown-content, .futuristic-nav.scrolled .mini-dropdown-content { background: rgba(255, 255, 255, 0.98); }
+    .futuristic-nav.scrolled .dropdown-link { color: rgba(35, 30, 25, 0.65); }
+    .futuristic-nav.scrolled .dropdown-link:hover { color: #231E19; }
+    .futuristic-nav.scrolled .dropdown-arrow { color: rgba(35, 30, 25, 0.5); }
+
+    .nbhd-card { position: relative; overflow: hidden; border-radius: 4px; }
+    .nbhd-card img { transition: transform 0.5s ease; }
+    .nbhd-card:hover img { transform: scale(1.06); }
+    .nbhd-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(35,30,25,0.85) 0%, rgba(35,30,25,0.1) 60%); }
+    .skip-link { position: absolute; top: -40px; left: 0; background: #D4A843; color: #231E19; padding: 8px 16px; font-size: 14px; font-weight: 600; z-index: 999; }
+  </style>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50">
+    <nav class="futuristic-nav mx-auto px-4 lg:px-8 py-3">
+      <div class="mx-auto max-w-screen-2xl flex items-center justify-between">
+
+        <a href="index.html" class="flex items-center gap-3 group">
+          <span class="font-serif text-2xl font-light text-white tracking-widest group-hover:text-gold-400">HAVEN</span>
+          <span class="w-px h-5 bg-gold-400/50"></span>
+          <span class="text-xs text-white/60 tracking-widest2 uppercase hidden sm:inline">Real Estate</span>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-1">
+          <div class="nav-item mega-dropdown">
+            <a href="properties.html" class="futuristic-link">Properties<svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <div class="mega-dropdown-content"><div class="dropdown-panel"><div class="dropdown-column"><h4 class="dropdown-title">Buy</h4><a href="properties.html" class="dropdown-link">All Properties</a><a href="properties.html" class="dropdown-link">Houses</a><a href="properties.html" class="dropdown-link">Apartments</a><a href="properties.html" class="dropdown-link">Townhouses</a><a href="properties.html" class="dropdown-link">Penthouses</a></div><div class="dropdown-column"><h4 class="dropdown-title">Rent</h4><a href="properties.html" class="dropdown-link">Rental Properties</a><a href="properties.html" class="dropdown-link">Luxury Rentals</a></div><div class="dropdown-column"><h4 class="dropdown-title">Status</h4><a href="properties.html" class="dropdown-link">New Listings</a><a href="properties.html" class="dropdown-link">Sold</a></div><div class="dropdown-column dropdown-highlight"><h4 class="dropdown-title">Featured</h4><a href="properties.html" class="dropdown-link">Off-Market</a><a href="properties.html" class="dropdown-link">Premium</a></div><div class="dropdown-column"><h4 class="dropdown-title">Price</h4><a href="properties.html" class="dropdown-link">Up to $1M</a><a href="properties.html" class="dropdown-link">$1M - $5M</a><a href="properties.html" class="dropdown-link">$5M+</a></div></div></div>
+          </div>
+          <div class="nav-item mini-dropdown">
+            <a href="locations.html" class="futuristic-link">Locations<svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <div class="mini-dropdown-content"><a href="locations.html" class="mini-dropdown-link">Sydney Region</a><a href="locations.html" class="mini-dropdown-link">Melbourne Region</a><a href="locations.html" class="mini-dropdown-link">Brisbane Region</a><a href="locations.html" class="mini-dropdown-link">Gold Coast</a><a href="locations.html" class="mini-dropdown-link">Perth</a></div>
+          </div>
+          <div class="nav-item mini-dropdown">
+            <a href="projects.html" class="futuristic-link">Projects<svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <div class="mini-dropdown-content"><a href="projects.html" class="mini-dropdown-link">All Developments</a><a href="projects.html" class="mini-dropdown-link">Off-the-Plan</a><a href="projects.html" class="mini-dropdown-link">New Construction</a><a href="projects.html" class="mini-dropdown-link">House & Land</a></div>
+          </div>
+          <div class="nav-item mega-dropdown">
+            <a href="services.html" class="futuristic-link">Services<svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <div class="mega-dropdown-content"><div class="dropdown-panel"><div class="dropdown-column"><h4 class="dropdown-title">Buying</h4><a href="services.html" class="dropdown-link">Buyer's Advisory</a><a href="services.html" class="dropdown-link">Property Search</a></div><div class="dropdown-column"><h4 class="dropdown-title">Selling</h4><a href="services.html" class="dropdown-link">Appraisal</a><a href="services.html" class="dropdown-link">Marketing</a></div><div class="dropdown-column"><h4 class="dropdown-title">Management</h4><a href="services.html" class="dropdown-link">Property Management</a><a href="services.html" class="dropdown-link">Leasing</a></div><div class="dropdown-column dropdown-highlight"><h4 class="dropdown-title">Specialist</h4><a href="services.html" class="dropdown-link">International</a></div><div class="dropdown-column"><h4 class="dropdown-title">Resources</h4><a href="services.html" class="dropdown-link">Market Insights</a></div></div></div>
+          </div>
+          <div class="nav-item mini-dropdown">
+            <a href="team.html" class="futuristic-link">Team<svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <div class="mini-dropdown-content"><a href="team.html" class="mini-dropdown-link">Our Agents</a><a href="team.html" class="mini-dropdown-link">Careers</a></div>
+          </div>
+          <div class="nav-item"><a href="about.html" class="futuristic-link">About</a></div>
+          <div class="nav-item mini-dropdown">
+            <a href="journal.html" class="futuristic-link">Journal<svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <div class="mini-dropdown-content"><a href="journal.html" class="mini-dropdown-link">Market Updates</a><a href="journal.html" class="mini-dropdown-link">Property News</a></div>
+          </div>
+        </div>
+
+        <div class="hidden lg:flex"><a href="contact.html" class="nav-cta">List With Us</a></div>
+        <a href="contact.html" class="lg:hidden text-white">☰</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="pt-20">
+    <section class="bg-stone-900 py-16 lg:py-24">
+      <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+        <p class="text-gold-400 text-xs tracking-widest2 uppercase mb-4">Prime Locations</p>
+        <h1 class="font-serif text-4xl lg:text-6xl font-light text-white leading-tight mb-6">Explore Prestigious<br/><em class="italic font-light">Neighbourhoods</em></h1>
+        <p class="text-stone-300 font-light text-lg max-w-2xl">Discover Australia's most sought-after addresses.</p>
+      </div>
+    </section>
+
+    <section class="py-16 lg:py-20">
+      <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <a href="#" class="nbhd-card h-80 block"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=75" alt="Sydney" class="w-full h-full object-cover" /><div class="nbhd-overlay"></div><div class="absolute bottom-0 left-0 p-5"><h3 class="font-serif text-2xl font-light text-white mb-1">Sydney</h3><p class="text-xs text-stone-300 tracking-widest2">48 Listings</p></div></a>
+          <a href="#" class="nbhd-card h-80 block"><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=75" alt="Melbourne" class="w-full h-full object-cover" /><div class="nbhd-overlay"></div><div class="absolute bottom-0 left-0 p-5"><h3 class="font-serif text-2xl font-light text-white mb-1">Melbourne</h3><p class="text-xs text-stone-300 tracking-widest2">32 Listings</p></div></a>
+          <a href="#" class="nbhd-card sm:row-span-2 h-80 sm:h-auto block"><img src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?w=600&q=75" alt="Brisbane" class="w-full h-full object-cover" /><div class="nbhd-overlay"></div><div class="absolute bottom-0 left-0 p-5"><h3 class="font-serif text-2xl font-light text-white mb-1">Brisbane</h3><p class="text-xs text-stone-300 tracking-widest2">21 Listings</p></div></a>
+          <a href="#" class="nbhd-card h-80 block"><img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=75" alt="Gold Coast" class="w-full h-full object-cover" /><div class="nbhd-overlay"></div><div class="absolute bottom-0 left-0 p-5"><h3 class="font-serif text-2xl font-light text-white mb-1">Gold Coast</h3><p class="text-xs text-stone-300 tracking-widest2">27 Listings</p></div></a>
+          <a href="#" class="nbhd-card h-80 block"><img src="https://images.unsplash.com/photo-1602941525421-8f8b81d3edbb?w=600&q=75" alt="Perth" class="w-full h-full object-cover" /><div class="nbhd-overlay"></div><div class="absolute bottom-0 left-0 p-5"><h3 class="font-serif text-2xl font-light text-white mb-1">Perth</h3><p class="text-xs text-stone-300 tracking-widest2">19 Listings</p></div></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-stone-900 py-16">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+      <div class="flex items-center gap-3 mb-5"><span class="font-serif text-2xl font-light text-white tracking-widest">HAVEN</span><span class="w-px h-5 bg-gold-400 opacity-70"></span><span class="text-xs text-stone-400 tracking-widest2">Real Estate</span></div>
+      <p class="text-stone-400 text-sm">© 2025 HAVEN Real Estate. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector('.futuristic-nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+  </script>
+</body>
+</html>
