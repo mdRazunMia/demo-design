@@ -27,7 +27,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background-color: #FAF9F7; color: #231E19; }
+    body { font-family: 'DM Sans', sans-serif; background-color: #FAF9F7; color: #231E19; overflow-x: hidden; }
     .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
 
     .futuristic-nav { background: rgba(20, 18, 15, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(212, 168, 67, 0.15); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); }
@@ -69,6 +69,11 @@
     .futuristic-nav.scrolled .dropdown-link { color: rgba(35, 30, 25, 0.65); }
     .futuristic-nav.scrolled .dropdown-link:hover { color: #231E19; }
     .futuristic-nav.scrolled .dropdown-arrow { color: rgba(35, 30, 25, 0.5); }
+    .futuristic-nav.scrolled .logo-group .font-serif { color: #231E19; }
+    .futuristic-nav.scrolled .logo-group:hover .font-serif { color: #D4A843; }
+    .futuristic-nav.scrolled .logo-sub { color: rgba(35, 30, 25, 0.55); }
+    .futuristic-nav.scrolled .mobile-menu-link { color: #231E19; }
+    .futuristic-nav.scrolled .mobile-menu-link:hover { color: #D4A843; }
 
     .nbhd-card { position: relative; overflow: hidden; border-radius: 4px; }
     .nbhd-card img { transition: transform 0.5s ease; }
@@ -85,10 +90,10 @@
     <nav class="futuristic-nav mx-auto px-4 lg:px-8 py-3">
       <div class="mx-auto max-w-screen-2xl flex items-center justify-between">
 
-        <a href="index.html" class="flex items-center gap-3 group">
+        <a href="index.html" class="flex items-center gap-3 group logo-group">
           <span class="font-serif text-2xl font-light text-white tracking-widest group-hover:text-gold-400">HAVEN</span>
           <span class="w-px h-5 bg-gold-400/50"></span>
-          <span class="text-xs text-white/60 tracking-widest2 uppercase hidden sm:inline">Real Estate</span>
+          <span class="text-xs text-white/60 tracking-widest2 uppercase hidden sm:inline logo-sub">Real Estate</span>
         </a>
 
         <div class="hidden lg:flex items-center gap-1">
@@ -120,7 +125,7 @@
         </div>
 
         <div class="hidden lg:flex"><a href="contact.html" class="nav-cta">List With Us</a></div>
-        <a href="contact.html" class="lg:hidden text-white">☰</a>
+        <a href="contact.html" class="lg:hidden text-white mobile-menu-link">☰</a>
       </div>
     </nav>
   </header>
