@@ -7,6 +7,7 @@
   <meta name="description" content="Explore luxury properties in Australia's most prestigious neighbourhoods." />
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -125,35 +126,143 @@
   </header>
 
   <main id="main-content" class="pt-20">
-    <section class="bg-stone-900 py-16 lg:py-24">
-      <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+    <section class="relative overflow-hidden bg-stone-900 py-24 lg:py-32">
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80&auto=format&fit=crop" alt="Australian skyline and waterfront" class="absolute inset-0 h-full w-full object-cover opacity-30" />
+      <div class="absolute inset-0 bg-stone-900/70"></div>
+      <div class="relative mx-auto max-w-screen-xl px-6 lg:px-10">
         <p class="text-gold-400 text-xs tracking-widest2 uppercase mb-4">Prime Locations</p>
-        <h1 class="font-serif text-4xl lg:text-6xl font-light text-white leading-tight mb-6">Explore Prestigious<br/><em class="italic font-light">Neighbourhoods</em></h1>
-        <p class="text-stone-300 font-light text-lg max-w-2xl">Discover Australia's most sought-after addresses.</p>
+        <h1 class="font-serif text-5xl lg:text-7xl font-light text-white leading-tight mb-6">Explore Prestigious <em class="italic font-light">Neighbourhoods</em></h1>
+        <p class="text-stone-200 font-light text-lg lg:text-xl max-w-3xl leading-relaxed">Discover Australia's most sought-after addresses, curated by our local experts.</p>
       </div>
     </section>
 
-    <section class="py-16 lg:py-20">
+    <section class="py-20 lg:py-28">
       <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <a href="#" class="nbhd-card h-80 block"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=75" alt="Sydney" class="w-full h-full object-cover" /><div class="nbhd-overlay"></div><div class="absolute bottom-0 left-0 p-5"><h3 class="font-serif text-2xl font-light text-white mb-1">Sydney</h3><p class="text-xs text-stone-300 tracking-widest2">48 Listings</p></div></a>
-          <a href="#" class="nbhd-card h-80 block"><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=75" alt="Melbourne" class="w-full h-full object-cover" /><div class="nbhd-overlay"></div><div class="absolute bottom-0 left-0 p-5"><h3 class="font-serif text-2xl font-light text-white mb-1">Melbourne</h3><p class="text-xs text-stone-300 tracking-widest2">32 Listings</p></div></a>
-          <a href="#" class="nbhd-card sm:row-span-2 h-80 sm:h-auto block"><img src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?w=600&q=75" alt="Brisbane" class="w-full h-full object-cover" /><div class="nbhd-overlay"></div><div class="absolute bottom-0 left-0 p-5"><h3 class="font-serif text-2xl font-light text-white mb-1">Brisbane</h3><p class="text-xs text-stone-300 tracking-widest2">21 Listings</p></div></a>
-          <a href="#" class="nbhd-card h-80 block"><img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=75" alt="Gold Coast" class="w-full h-full object-cover" /><div class="nbhd-overlay"></div><div class="absolute bottom-0 left-0 p-5"><h3 class="font-serif text-2xl font-light text-white mb-1">Gold Coast</h3><p class="text-xs text-stone-300 tracking-widest2">27 Listings</p></div></a>
-          <a href="#" class="nbhd-card h-80 block"><img src="https://images.unsplash.com/photo-1602941525421-8f8b81d3edbb?w=600&q=75" alt="Perth" class="w-full h-full object-cover" /><div class="nbhd-overlay"></div><div class="absolute bottom-0 left-0 p-5"><h3 class="font-serif text-2xl font-light text-white mb-1">Perth</h3><p class="text-xs text-stone-300 tracking-widest2">19 Listings</p></div></a>
+        <div class="mb-12 max-w-3xl">
+          <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-600">Area Guides</p>
+          <h2 class="font-serif text-4xl font-light text-stone-900 lg:text-5xl">Prestige real estate across Australia's leading markets</h2>
+          <p class="mt-4 font-light leading-relaxed text-stone-600">HAVEN specialises in prestige real estate in Sydney, Melbourne, Brisbane, and the Gold Coast, from waterfront mansions and heritage estates to sky homes and boutique apartments.</p>
         </div>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article class="border border-stone-200 bg-white">
+            <div class="nbhd-card h-72"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop" alt="Sydney" class="w-full h-full object-cover" /><div class="nbhd-overlay"></div><div class="absolute bottom-0 left-0 p-6"><h3 class="font-serif text-3xl font-light text-white">Sydney</h3></div></div>
+            <div class="p-6"><p class="font-light text-stone-600">Harbourside prestige and world-famous waterfronts.</p><ul class="mt-5 space-y-2 text-sm font-light text-stone-500"><li>Prime suburbs: Mosman, Vaucluse, Bellevue Hill</li><li>Waterfront estates, family homes, luxury apartments</li></ul><a href="properties.html" class="mt-6 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600">View Sydney homes</a></div>
+          </article>
+          <article class="border border-stone-200 bg-white">
+            <div class="nbhd-card h-72"><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80&auto=format&fit=crop" alt="Melbourne" class="w-full h-full object-cover" /><div class="nbhd-overlay"></div><div class="absolute bottom-0 left-0 p-6"><h3 class="font-serif text-3xl font-light text-white">Melbourne</h3></div></div>
+            <div class="p-6"><p class="font-light text-stone-600">European charm, leafy boulevards, and grand estates.</p><ul class="mt-5 space-y-2 text-sm font-light text-stone-500"><li>Prime suburbs: Toorak, South Yarra, Brighton</li><li>Heritage mansions, designer townhouses, boutique apartments</li></ul><a href="properties.html" class="mt-6 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600">View Melbourne homes</a></div>
+          </article>
+          <article class="border border-stone-200 bg-white">
+            <div class="nbhd-card h-72"><img src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?w=800&q=80&auto=format&fit=crop" alt="Brisbane and Gold Coast" class="w-full h-full object-cover" /><div class="nbhd-overlay"></div><div class="absolute bottom-0 left-0 p-6"><h3 class="font-serif text-3xl font-light text-white">Brisbane & Gold Coast</h3></div></div>
+            <div class="p-6"><p class="font-light text-stone-600">Sun-drenched homes and luxury beachfront living.</p><ul class="mt-5 space-y-2 text-sm font-light text-stone-500"><li>Prime areas: New Farm, Ascot, Surfers Paradise</li><li>Riverfront homes, sky homes, coastal apartments</li></ul><a href="properties.html" class="mt-6 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600">View Queensland homes</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-stone-100 py-20 lg:py-24">
+      <div class="mx-auto grid max-w-screen-xl gap-10 px-6 lg:grid-cols-2 lg:px-10">
+        <div>
+          <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-600">Local Expertise</p>
+          <h2 class="mb-5 font-serif text-4xl font-light text-stone-900">Local insight, global perspective</h2>
+          <p class="font-light leading-relaxed text-stone-600">Our advisors live and work in these neighbourhoods. From school catchments and local cafes to off-market listings, we guide you with insight that goes far beyond the data.</p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-3">
+          <div class="bg-white p-5 text-sm font-light text-stone-600">Neighbourhood advisory</div>
+          <div class="bg-white p-5 text-sm font-light text-stone-600">Off-market access</div>
+          <div class="bg-white p-5 text-sm font-light text-stone-600">Relocation support</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-stone-900 py-20 lg:py-24">
+      <div class="mx-auto max-w-screen-xl px-6 text-center lg:px-10">
+        <h2 class="font-serif text-4xl font-light text-white">Not sure which neighbourhood is right for you?</h2>
+        <p class="mx-auto mt-5 max-w-2xl font-light leading-relaxed text-stone-300">Tell us about your lifestyle, family needs, and investment goals, and we'll recommend neighbourhoods that fit, with specific homes to consider.</p>
+        <a href="contact.html" class="mt-8 inline-flex bg-gold-500 px-8 py-4 text-xs font-medium uppercase tracking-widest2 text-stone-900 hover:bg-gold-400">Speak with a local advisor</a>
       </div>
     </section>
   </main>
 
-  <footer class="bg-stone-900 py-16">
-    <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
-      <div class="flex items-center gap-3 mb-5"><span class="font-serif text-2xl font-light text-white tracking-widest">HAVEN</span><span class="w-px h-5 bg-gold-400 opacity-70"></span><span class="text-xs text-stone-400 tracking-widest2">Real Estate</span></div>
-      <p class="text-stone-400 text-sm">© 2025 HAVEN Real Estate. All rights reserved.</p>
+  <footer class="bg-stone-900" role="contentinfo">
+    <!-- Top footer -->
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-10 py-16 lg:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-serif text-2xl font-light text-white tracking-widest">HAVEN</span>
+            <span class="w-px h-5 bg-gold-400 opacity-70"></span>
+            <span class="text-xs text-stone-400 tracking-widest2 font-light uppercase">Real Estate</span>
+          </div>
+          <p class="text-stone-400 text-sm font-light leading-relaxed mb-6 max-w-xs">Australia's premier luxury real estate agency. Connecting exceptional people with exceptional properties since 2001.</p>
+          <div class="flex gap-4">
+            <a href="#" class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all" aria-label="HAVEN on Facebook">
+              <i data-lucide="facebook" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all" aria-label="HAVEN on Instagram">
+              <i data-lucide="instagram" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all" aria-label="HAVEN on LinkedIn">
+              <i data-lucide="linkedin" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all" aria-label="HAVEN on YouTube">
+              <i data-lucide="youtube" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h3 class="text-xs text-stone-300 font-medium tracking-widest2 uppercase mb-5">Properties</h3>
+          <ul class="space-y-3" role="list">
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Buy</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Rent</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Sold Results</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">New Projects</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Off Market</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs text-stone-300 font-medium tracking-widest2 uppercase mb-5">Services</h3>
+          <ul class="space-y-3" role="list">
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Buyer's Advisory</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Property Management</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Appraisal</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Investment Advisory</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Project Marketing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs text-stone-300 font-medium tracking-widest2 uppercase mb-5">Company</h3>
+          <ul class="space-y-3" role="list">
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">About Us</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Our Agents</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Careers</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Media</a></li>
+            <li><a href="#contact" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-stone-800">
+      <div class="mx-auto max-w-screen-xl px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-stone-500 font-light">© 2025 HAVEN Real Estate Pty Ltd. All rights reserved. Licence No. 000001</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-xs text-stone-500 hover:text-stone-300 transition-colors font-light">Privacy Policy</a>
+          <a href="#" class="text-xs text-stone-500 hover:text-stone-300 transition-colors font-light">Terms of Use</a>
+          <a href="#" class="text-xs text-stone-500 hover:text-stone-300 transition-colors font-light">Accessibility</a>
+        </div>
+      </div>
     </div>
   </footer>
 
   <script>
+    // Init Lucide icons
+    lucide.createIcons();
+
     const nav = document.querySelector('.futuristic-nav');
     window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
   </script>

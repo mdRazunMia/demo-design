@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services — HAVEN Luxury Real Estate</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
@@ -116,60 +117,184 @@
   </header>
 
   <main id="main-content" class="pt-20">
-    <section class="bg-stone-900 py-16 lg:py-24">
-      <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+    <section class="relative overflow-hidden bg-stone-900 py-24 lg:py-32">
+      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80&auto=format&fit=crop" alt="Luxury property consultation" class="absolute inset-0 h-full w-full object-cover opacity-30" />
+      <div class="absolute inset-0 bg-stone-900/70"></div>
+      <div class="relative mx-auto max-w-screen-xl px-6 lg:px-10">
         <p class="text-gold-400 text-xs tracking-widest2 uppercase mb-4">Our Expertise</p>
-        <h1 class="font-serif text-4xl lg:text-6xl font-light text-white mb-6">Premium<br/><em class="italic font-light">Services</em></h1>
-        <p class="text-stone-300 text-lg max-w-2xl">End-to-end property solutions for discerning buyers and sellers.</p>
+        <h1 class="font-serif text-5xl lg:text-7xl font-light text-white mb-6">Premium <em class="italic font-light">Services</em></h1>
+        <p class="text-stone-200 text-lg lg:text-xl max-w-3xl font-light leading-relaxed">End-to-end property solutions for discerning buyers, sellers, investors, and international clients.</p>
+        <a href="#consultation" class="mt-8 inline-flex bg-gold-500 px-8 py-4 text-xs font-medium uppercase tracking-widest2 text-stone-900 hover:bg-gold-400">Speak with an advisor</a>
       </div>
     </section>
 
-    <section class="py-16 lg:py-20">
+    <section class="py-20 lg:py-28">
       <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+        <div class="mb-12 max-w-3xl">
+          <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-600">At a Glance</p>
+          <h2 class="font-serif text-4xl font-light text-stone-900 lg:text-5xl">How HAVEN can help</h2>
+        </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="service-card bg-white p-8 rounded-sm border border-stone-100">
             <div class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"><svg class="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
             <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">Buyer's Advisory</h3>
-            <p class="text-stone-500 font-light">Expert guidance through every step of your property purchase journey.</p>
+            <p class="text-stone-500 font-light">Independent guidance across the buying journey, from search and shortlisting to negotiation and settlement.</p>
           </div>
           <div class="service-card bg-white p-8 rounded-sm border border-stone-100">
             <div class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"><svg class="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
             <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">Property Appraisal</h3>
-            <p class="text-stone-500 font-light">Accurate market valuations to help you price your property competitively.</p>
+            <p class="text-stone-500 font-light">Detailed market appraisals to help you price with confidence and prepare a strategy for sale.</p>
           </div>
           <div class="service-card bg-white p-8 rounded-sm border border-stone-100">
             <div class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"><svg class="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div>
             <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">Property Management</h3>
-            <p class="text-stone-500 font-light">Full-service management for your investment properties.</p>
+            <p class="text-stone-500 font-light">Full-service management for prestige rentals, protecting your property and caring for tenants.</p>
           </div>
           <div class="service-card bg-white p-8 rounded-sm border border-stone-100">
             <div class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"><svg class="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
             <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">Investment Advisory</h3>
-            <p class="text-stone-500 font-light">Strategic advice to maximize your property portfolio returns.</p>
+            <p class="text-stone-500 font-light">Portfolio-level advice on acquisitions, divestments, and long-term performance across key markets.</p>
           </div>
           <div class="service-card bg-white p-8 rounded-sm border border-stone-100">
             <div class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"><svg class="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg></div>
             <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">International Buyers</h3>
-            <p class="text-stone-500 font-light">Specialized services for overseas investors and expats.</p>
+            <p class="text-stone-500 font-light">Specialised support for overseas investors and expats navigating regulations, finance, and settlement.</p>
           </div>
           <div class="service-card bg-white p-8 rounded-sm border border-stone-100">
             <div class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"><svg class="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
             <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">Conveyancing</h3>
-            <p class="text-stone-500 font-light">Seamless legal support for all your property transactions.</p>
+            <p class="text-stone-500 font-light">Seamless coordination with trusted legal partners across contracts, searches, and settlement.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-stone-50 py-20 lg:py-28">
+      <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+        <div class="mb-12 max-w-3xl">
+          <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-600">Included</p>
+          <h2 class="font-serif text-4xl font-light text-stone-900 lg:text-5xl">Detailed service pathways</h2>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-2">
+          <article class="bg-white p-8 border border-stone-200"><h3 class="font-serif text-3xl font-light">Buyer's Advisory</h3><p class="mt-3 font-light text-stone-600">From first brief to key handover, our buyer's advisory team acts exclusively in your interests.</p><ul class="mt-5 space-y-2 text-sm font-light text-stone-500"><li>Define your brief and shortlist suitable suburbs.</li><li>Provide on- and off-market opportunities.</li><li>Lead negotiations and bidding strategies.</li></ul><a href="#consultation" class="mt-6 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600">Start your buying brief</a></article>
+          <article class="bg-white p-8 border border-stone-200"><h3 class="font-serif text-3xl font-light">Property Appraisal</h3><p class="mt-3 font-light text-stone-600">Our appraisals combine live market data with on-the-ground insight into buyer demand.</p><ul class="mt-5 space-y-2 text-sm font-light text-stone-500"><li>In-person inspection and condition assessment.</li><li>Comparative market analysis of recent sales.</li><li>Pricing strategy and sale scenario modelling.</li></ul><a href="#consultation" class="mt-6 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600">Book a complimentary appraisal</a></article>
+          <article class="bg-white p-8 border border-stone-200"><h3 class="font-serif text-3xl font-light">Property Management</h3><p class="mt-3 font-light text-stone-600">We focus on preservation of value and quality tenant experiences.</p><ul class="mt-5 space-y-2 text-sm font-light text-stone-500"><li>Marketing and tenant selection.</li><li>Lease negotiation and documentation.</li><li>Inspections, repairs, reporting, and rent reviews.</li></ul><a href="#consultation" class="mt-6 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600">Discuss property management</a></article>
+          <article class="bg-white p-8 border border-stone-200"><h3 class="font-serif text-3xl font-light">Investment & International</h3><p class="mt-3 font-light text-stone-600">We provide a portfolio-level view of risk, return, and cross-border requirements.</p><ul class="mt-5 space-y-2 text-sm font-light text-stone-500"><li>Portfolio review and acquisition strategies.</li><li>FIRB, finance, tax, and legal coordination.</li><li>Virtual inspections and settlement support.</li></ul><a href="#consultation" class="mt-6 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600">Arrange a consultation</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-stone-900 py-20 lg:py-24">
+      <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+        <div class="mb-10 max-w-3xl">
+          <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-400">Why HAVEN</p>
+          <h2 class="font-serif text-4xl font-light text-white">Why clients choose HAVEN</h2>
+        </div>
+        <div class="grid gap-6 md:grid-cols-4">
+          <div class="border border-white/10 p-6 text-stone-300"><h3 class="mb-3 text-white">Luxury focus</h3><p class="text-sm font-light">Deep expertise in prestige homes, penthouses, and high-value investments.</p></div>
+          <div class="border border-white/10 p-6 text-stone-300"><h3 class="mb-3 text-white">Curated opportunities</h3><p class="text-sm font-light">Access to off-market, pre-market, and new developments across key cities.</p></div>
+          <div class="border border-white/10 p-6 text-stone-300"><h3 class="mb-3 text-white">Independent advice</h3><p class="text-sm font-light">Clear recommendations and honest feedback at each decision point.</p></div>
+          <div class="border border-white/10 p-6 text-stone-300"><h3 class="mb-3 text-white">End-to-end service</h3><p class="text-sm font-light">One team for buying, selling, leasing, and portfolio strategy.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consultation" class="py-20 lg:py-24">
+      <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+        <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+          <div><p class="mb-3 text-xs uppercase tracking-widest2 text-gold-600">Enquiry</p><h2 class="mb-5 font-serif text-4xl font-light text-stone-900">Book a confidential consultation</h2><p class="font-light leading-relaxed text-stone-600">Share a few details about your goals and we'll connect you with the right HAVEN advisor within one business day.</p></div>
+          <form class="grid gap-4 sm:grid-cols-2">
+            <input class="border border-stone-200 bg-white px-4 py-3 text-sm" placeholder="Name" />
+            <input class="border border-stone-200 bg-white px-4 py-3 text-sm" placeholder="Email" />
+            <input class="border border-stone-200 bg-white px-4 py-3 text-sm" placeholder="Phone" />
+            <select class="border border-stone-200 bg-white px-4 py-3 text-sm"><option>Service of interest</option><option>Buyer's Advisory</option><option>Property Appraisal</option><option>Property Management</option><option>Investment Advisory</option></select>
+            <textarea class="min-h-32 border border-stone-200 bg-white px-4 py-3 text-sm sm:col-span-2" placeholder="Message"></textarea>
+            <button class="bg-stone-900 px-8 py-4 text-xs font-medium uppercase tracking-widest2 text-white hover:bg-gold-500 hover:text-stone-900 sm:col-span-2">Send enquiry</button>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-stone-900 py-16">
-    <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
-      <div class="flex items-center gap-3"><span class="font-serif text-2xl font-light text-white tracking-widest">HAVEN</span><span class="w-px h-5 bg-gold-400"></span><span class="text-xs text-stone-400">Real Estate</span></div>
-      <p class="text-stone-400 text-sm mt-6">© 2025 HAVEN. All rights reserved.</p>
+  <footer class="bg-stone-900" role="contentinfo">
+    <!-- Top footer -->
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-10 py-16 lg:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-serif text-2xl font-light text-white tracking-widest">HAVEN</span>
+            <span class="w-px h-5 bg-gold-400 opacity-70"></span>
+            <span class="text-xs text-stone-400 tracking-widest2 font-light uppercase">Real Estate</span>
+          </div>
+          <p class="text-stone-400 text-sm font-light leading-relaxed mb-6 max-w-xs">Australia's premier luxury real estate agency. Connecting exceptional people with exceptional properties since 2001.</p>
+          <div class="flex gap-4">
+            <a href="#" class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all" aria-label="HAVEN on Facebook">
+              <i data-lucide="facebook" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all" aria-label="HAVEN on Instagram">
+              <i data-lucide="instagram" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all" aria-label="HAVEN on LinkedIn">
+              <i data-lucide="linkedin" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all" aria-label="HAVEN on YouTube">
+              <i data-lucide="youtube" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h3 class="text-xs text-stone-300 font-medium tracking-widest2 uppercase mb-5">Properties</h3>
+          <ul class="space-y-3" role="list">
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Buy</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Rent</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Sold Results</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">New Projects</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Off Market</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs text-stone-300 font-medium tracking-widest2 uppercase mb-5">Services</h3>
+          <ul class="space-y-3" role="list">
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Buyer's Advisory</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Property Management</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Appraisal</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Investment Advisory</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Project Marketing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs text-stone-300 font-medium tracking-widest2 uppercase mb-5">Company</h3>
+          <ul class="space-y-3" role="list">
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">About Us</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Our Agents</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Careers</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Media</a></li>
+            <li><a href="#contact" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-stone-800">
+      <div class="mx-auto max-w-screen-xl px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-stone-500 font-light">© 2025 HAVEN Real Estate Pty Ltd. All rights reserved. Licence No. 000001</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-xs text-stone-500 hover:text-stone-300 transition-colors font-light">Privacy Policy</a>
+          <a href="#" class="text-xs text-stone-500 hover:text-stone-300 transition-colors font-light">Terms of Use</a>
+          <a href="#" class="text-xs text-stone-500 hover:text-stone-300 transition-colors font-light">Accessibility</a>
+        </div>
+      </div>
     </div>
   </footer>
 
   <script>
+    // Init Lucide icons
+    lucide.createIcons();
+
     const nav = document.querySelector('.futuristic-nav');
     window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
   </script>

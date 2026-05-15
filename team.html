@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Team — HAVEN Luxury Real Estate</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <script>
     tailwind.config = {
@@ -116,54 +117,185 @@
   </header>
 
   <main id="main-content" class="pt-20">
-    <section class="bg-stone-900 py-16 lg:py-24">
-      <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+    <section class="relative overflow-hidden bg-stone-900 py-24 lg:py-32">
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1600&q=80&auto=format&fit=crop" alt="Professional advisory meeting" class="absolute inset-0 h-full w-full object-cover opacity-30" />
+      <div class="absolute inset-0 bg-stone-900/70"></div>
+      <div class="relative mx-auto max-w-screen-xl px-6 lg:px-10">
         <p class="text-gold-400 text-xs tracking-widest2 uppercase mb-4">Meet The Team</p>
-        <h1 class="font-serif text-4xl lg:text-6xl font-light text-white mb-6">Our Expert<br/><em class="italic font-light">Advisors</em></h1>
-        <p class="text-stone-300 text-lg max-w-2xl">Industry veterans with decades of combined experience in luxury property.</p>
+        <h1 class="font-serif text-5xl lg:text-7xl font-light text-white mb-6">Our Expert <em class="italic font-light">Advisors</em></h1>
+        <p class="text-stone-200 text-lg lg:text-xl max-w-3xl font-light leading-relaxed">Industry-leading specialists with decades of experience in prestige homes, penthouses, and investment property across Australia.</p>
+        <a href="#consultation" class="mt-8 inline-flex bg-gold-500 px-8 py-4 text-xs font-medium uppercase tracking-widest2 text-stone-900 hover:bg-gold-400">Speak with an advisor</a>
       </div>
     </section>
 
-    <section class="py-16 lg:py-20">
+    <section class="bg-stone-900 py-12">
       <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+        <ul class="grid gap-6 text-center text-white md:grid-cols-3">
+          <li><p class="font-serif text-4xl font-light">$835M+</p><p class="mt-1 text-xs uppercase tracking-widest2 text-stone-400">Combined sales</p></li>
+          <li><p class="font-serif text-4xl font-light">20+</p><p class="mt-1 text-xs uppercase tracking-widest2 text-stone-400">Average years experience</p></li>
+          <li><p class="font-serif text-4xl font-light">4</p><p class="mt-1 text-xs uppercase tracking-widest2 text-stone-400">Prime markets covered</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="py-20 lg:py-28">
+      <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+        <div class="mb-12 max-w-3xl">
+          <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-600">Advisory Team</p>
+          <h2 class="font-serif text-4xl font-light text-stone-900 lg:text-5xl">Senior specialists, connected nationally</h2>
+        </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <article class="agent-card text-center">
             <div class="overflow-hidden rounded-sm mb-4 aspect-[3/4]"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400" alt="Sophia Chen" class="w-full h-full object-cover" /></div>
             <h3 class="font-serif text-xl font-light text-stone-900">Sophia Chen</h3>
             <p class="text-xs text-stone-400 tracking-widest2 uppercase mt-1">Senior Advisor — Sydney</p>
             <p class="text-xs text-gold-600 mt-2">$240M+ in Sales</p>
+            <p class="mt-4 text-sm font-light leading-relaxed text-stone-500">Prestige homes across Sydney's Lower North Shore and Eastern Suburbs.</p>
+            <a href="mailto:sophia@haven.example" class="mt-5 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600">Email Sophia</a>
           </article>
           <article class="agent-card text-center">
             <div class="overflow-hidden rounded-sm mb-4 aspect-[3/4]"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Marcus Webb" class="w-full h-full object-cover" /></div>
             <h3 class="font-serif text-xl font-light text-stone-900">Marcus Webb</h3>
             <p class="text-xs text-stone-400 tracking-widest2 uppercase mt-1">Principal — Melbourne</p>
             <p class="text-xs text-gold-600 mt-2">$180M+ in Sales</p>
+            <p class="mt-4 text-sm font-light leading-relaxed text-stone-500">Melbourne principal for Toorak, South Yarra, and blue-chip suburbs.</p>
+            <a href="mailto:marcus@haven.example" class="mt-5 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600">Email Marcus</a>
           </article>
           <article class="agent-card text-center">
             <div class="overflow-hidden rounded-sm mb-4 aspect-[3/4]"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400" alt="Isabelle Park" class="w-full h-full object-cover" /></div>
             <h3 class="font-serif text-xl font-light text-stone-900">Isabelle Park</h3>
             <p class="text-xs text-stone-400 tracking-widest2 uppercase mt-1">Advisor — Brisbane</p>
             <p class="text-xs text-gold-600 mt-2">$95M+ in Sales</p>
+            <p class="mt-4 text-sm font-light leading-relaxed text-stone-500">Riverfront homes and premium apartments in Brisbane's inner-city suburbs.</p>
+            <a href="mailto:isabelle@haven.example" class="mt-5 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600">Email Isabelle</a>
           </article>
           <article class="agent-card text-center">
             <div class="overflow-hidden rounded-sm mb-4 aspect-[3/4]"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="James Howell" class="w-full h-full object-cover" /></div>
             <h3 class="font-serif text-xl font-light text-stone-900">James Howell</h3>
             <p class="text-xs text-stone-400 tracking-widest2 uppercase mt-1">Investment Specialist</p>
             <p class="text-xs text-gold-600 mt-2">$320M+ in Sales</p>
+            <p class="mt-4 text-sm font-light leading-relaxed text-stone-500">Portfolio strategy for private investors and family offices.</p>
+            <a href="services.html" class="mt-5 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600">Discuss strategy</a>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-stone-100 py-20 lg:py-24">
+      <div class="mx-auto grid max-w-screen-xl gap-10 px-6 lg:grid-cols-2 lg:px-10">
+        <div>
+          <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-600">Our Approach</p>
+          <h2 class="mb-5 font-serif text-4xl font-light text-stone-900">One connected team</h2>
+          <p class="font-light leading-relaxed text-stone-600">HAVEN advisors share insight across cities, coordinate off-market opportunities, and collaborate on complex transactions. You are supported by the full strength of our network, not just one individual.</p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-3">
+          <div class="bg-white p-5 text-sm font-light text-stone-600">Collaborative, cross-city advisory</div>
+          <div class="bg-white p-5 text-sm font-light text-stone-600">Discreet representation for high-profile clients</div>
+          <div class="bg-white p-5 text-sm font-light text-stone-600">Data-driven insights with local knowledge</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consultation" class="py-20 lg:py-24">
+      <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+        <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-600">Consultation</p>
+            <h2 class="mb-5 font-serif text-4xl font-light text-stone-900">Work with our team</h2>
+            <p class="font-light leading-relaxed text-stone-600">Tell us a little about your goals and we'll connect you with the advisor best suited to your needs.</p>
+          </div>
+          <form class="grid gap-4 sm:grid-cols-2">
+            <input class="border border-stone-200 bg-white px-4 py-3 text-sm" placeholder="Name" />
+            <input class="border border-stone-200 bg-white px-4 py-3 text-sm" placeholder="Email" />
+            <input class="border border-stone-200 bg-white px-4 py-3 text-sm" placeholder="Phone" />
+            <select class="border border-stone-200 bg-white px-4 py-3 text-sm"><option>Preferred location</option><option>Sydney</option><option>Melbourne</option><option>Brisbane</option><option>Gold Coast</option></select>
+            <textarea class="min-h-32 border border-stone-200 bg-white px-4 py-3 text-sm sm:col-span-2" placeholder="Message"></textarea>
+            <button class="bg-stone-900 px-8 py-4 text-xs font-medium uppercase tracking-widest2 text-white hover:bg-gold-500 hover:text-stone-900 sm:col-span-2">Send enquiry</button>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-stone-900 py-16">
-    <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
-      <div class="flex items-center gap-3"><span class="font-serif text-2xl font-light text-white tracking-widest">HAVEN</span><span class="w-px h-5 bg-gold-400"></span><span class="text-xs text-stone-400">Real Estate</span></div>
-      <p class="text-stone-400 text-sm mt-6">© 2025 HAVEN. All rights reserved.</p>
+  <footer class="bg-stone-900" role="contentinfo">
+    <!-- Top footer -->
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-10 py-16 lg:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-serif text-2xl font-light text-white tracking-widest">HAVEN</span>
+            <span class="w-px h-5 bg-gold-400 opacity-70"></span>
+            <span class="text-xs text-stone-400 tracking-widest2 font-light uppercase">Real Estate</span>
+          </div>
+          <p class="text-stone-400 text-sm font-light leading-relaxed mb-6 max-w-xs">Australia's premier luxury real estate agency. Connecting exceptional people with exceptional properties since 2001.</p>
+          <div class="flex gap-4">
+            <a href="#" class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all" aria-label="HAVEN on Facebook">
+              <i data-lucide="facebook" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all" aria-label="HAVEN on Instagram">
+              <i data-lucide="instagram" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all" aria-label="HAVEN on LinkedIn">
+              <i data-lucide="linkedin" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all" aria-label="HAVEN on YouTube">
+              <i data-lucide="youtube" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h3 class="text-xs text-stone-300 font-medium tracking-widest2 uppercase mb-5">Properties</h3>
+          <ul class="space-y-3" role="list">
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Buy</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Rent</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Sold Results</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">New Projects</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Off Market</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs text-stone-300 font-medium tracking-widest2 uppercase mb-5">Services</h3>
+          <ul class="space-y-3" role="list">
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Buyer's Advisory</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Property Management</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Appraisal</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Investment Advisory</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Project Marketing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs text-stone-300 font-medium tracking-widest2 uppercase mb-5">Company</h3>
+          <ul class="space-y-3" role="list">
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">About Us</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Our Agents</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Careers</a></li>
+            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Media</a></li>
+            <li><a href="#contact" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-stone-800">
+      <div class="mx-auto max-w-screen-xl px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-stone-500 font-light">© 2025 HAVEN Real Estate Pty Ltd. All rights reserved. Licence No. 000001</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-xs text-stone-500 hover:text-stone-300 transition-colors font-light">Privacy Policy</a>
+          <a href="#" class="text-xs text-stone-500 hover:text-stone-300 transition-colors font-light">Terms of Use</a>
+          <a href="#" class="text-xs text-stone-500 hover:text-stone-300 transition-colors font-light">Accessibility</a>
+        </div>
+      </div>
     </div>
   </footer>
 
   <script>
+    // Init Lucide icons
+    lucide.createIcons();
+
     const nav = document.querySelector('.futuristic-nav');
     window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
   </script>
