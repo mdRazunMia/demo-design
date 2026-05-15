@@ -217,6 +217,22 @@
     .futuristic-nav.scrolled .mobile-menu-link:hover { color: #D4A843; }
 
     .skip-link { position: absolute; top: -40px; left: 0; background: #D4A843; color: #231E19; padding: 8px 16px; font-size: 14px; font-weight: 600; z-index: 999; }
+    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+    img, video, svg { max-width: 100%; }
+    main, section, header, footer, nav, div, article, form { min-width: 0; }
+    h1, h2, h3, h4, p, a, button, span { overflow-wrap: anywhere; }
+    @media (max-width: 1023px) {
+      .futuristic-nav { width: 100%; }
+      .logo-group { min-width: 0; gap: 0.5rem; }
+      .mobile-menu-link { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex: 0 0 44px; border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; text-decoration: none; }
+      .futuristic-nav.scrolled .mobile-menu-link { border-color: rgba(35,30,25,0.18); }
+    }
+    @media (max-width: 640px) {
+      .logo-group .font-serif { font-size: 1.35rem; }
+      .dropdown-panel { grid-template-columns: 1fr; gap: 20px; padding: 24px; }
+      .mini-dropdown-content { max-width: calc(100vw - 32px); }
+      .tracking-widest2 { letter-spacing: 0.14em; }
+    }
   </style>
 </head>
 <body>
