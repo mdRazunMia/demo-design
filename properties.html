@@ -458,6 +458,12 @@
     .mobile-submenu.open { max-height: 500px; }
     .mobile-submenu a { display: block; padding: 12px 20px; font-size: 13px; color: rgba(255, 255, 255, 0.5); border-left: 2px solid transparent; transition: all 0.2s ease; }
     .mobile-submenu a:hover { color: #D4A843; border-left-color: #D4A843; padding-left: 28px; }
+    .menu-toggle-futuristic svg { transition: transform 0.3s ease, opacity 0.3s ease; }
+    .menu-toggle-futuristic.active svg { transform: rotate(90deg); }
+    .menu-toggle-futuristic .hamburger-icon { display: block; }
+    .menu-toggle-futuristic .close-icon { display: none; transform: rotate(90deg); }
+    .menu-toggle-futuristic.active .hamburger-icon { display: none; }
+    .menu-toggle-futuristic.active .close-icon { display: block; }
   </style>
 </head>
 
@@ -651,10 +657,14 @@
         </div>
 
         <button id="menu-toggle" class="menu-toggle-futuristic lg:hidden" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg class="hamburger-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg class="close-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
         </button>
       </div>
@@ -1036,12 +1046,14 @@
     if (menuToggle && mobileMenu) {
       menuToggle.addEventListener('click', () => {
         const isOpen = mobileMenu.classList.toggle('open');
+        menuToggle.classList.toggle('active', isOpen);
         menuToggle.setAttribute('aria-expanded', isOpen);
         document.body.style.overflow = isOpen ? 'hidden' : '';
       });
       if (menuClose) {
         menuClose.addEventListener('click', () => {
           mobileMenu.classList.remove('open');
+          menuToggle.classList.remove('active');
           menuToggle.setAttribute('aria-expanded', 'false');
           document.body.style.overflow = '';
         });
