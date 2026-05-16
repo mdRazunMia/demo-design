@@ -1,490 +1,1694 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services — HAVEN Luxury Real Estate</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { serif: ['"Cormorant Garamond"', 'serif'], sans: ['"DM Sans"', 'sans-serif'] },
-          colors: { stone: { 50: '#FAF9F7', 100: '#F2F0EB', 200: '#E3DFD6', 300: '#C9C3B5', 400: '#ADA492', 500: '#8C8070', 600: '#6E6358', 700: '#534A41', 800: '#3A332C', 900: '#231E19' }, gold: { 300: '#E8C97E', 400: '#D4A843', 500: '#B8891F', 600: '#9A700E' } },
-          letterSpacing: { widest2: '0.25em' },
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services — HAVEN Luxury Real Estate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <!-- Font Awesome for social icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Cormorant Garamond"', "serif"],
+              sans: ['"DM Sans"', "sans-serif"],
+            },
+            colors: {
+              stone: {
+                50: "#FAF9F7",
+                100: "#F2F0EB",
+                200: "#E3DFD6",
+                300: "#C9C3B5",
+                400: "#ADA492",
+                500: "#8C8070",
+                600: "#6E6358",
+                700: "#534A41",
+                800: "#3A332C",
+                900: "#231E19",
+              },
+              gold: {
+                300: "#E8C97E",
+                400: "#D4A843",
+                500: "#B8891F",
+                600: "#9A700E",
+              },
+            },
+            letterSpacing: { widest2: "0.25em" },
+          },
         },
-      },
-    }
-  </script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background-color: #FAF9F7; color: #231E19; overflow-x: hidden; }
-    .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+      };
+    </script>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background-color: #faf9f7;
+        color: #231e19;
+        overflow-x: hidden;
+      }
+      .font-serif {
+        font-family: "Cormorant Garamond", Georgia, serif;
+      }
 
-    .futuristic-nav { background: rgba(20, 18, 15, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(212, 168, 67, 0.15); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); }
-    .futuristic-nav.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(35, 30, 25, 0.08); box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12); }
+      .futuristic-nav {
+        background: rgba(20, 18, 15, 0.85);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(212, 168, 67, 0.15);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      }
+      .futuristic-nav.scrolled {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(35, 30, 25, 0.08);
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+      }
 
-    .nav-item { position: relative; padding: 8px 16px; cursor: pointer; }
+      .nav-item {
+        position: relative;
+        padding: 8px 16px;
+        cursor: pointer;
+      }
 
-    .futuristic-link { position: relative; display: flex; align-items: center; gap: 6px; padding: 8px 0; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.85); text-decoration: none; transition: all 0.3s ease; }
-    .futuristic-link::before { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: #D4A843; transform: translateX(-50%); transition: width 0.3s ease; border-radius: 1px; }
-    .futuristic-link:hover::before { width: 100%; }
-    .futuristic-link:hover { color: #D4A843; }
+      .futuristic-link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 0;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      .futuristic-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: #d4a843;
+        transform: translateX(-50%);
+        transition: width 0.3s ease;
+        border-radius: 1px;
+      }
+      .futuristic-link:hover::before {
+        width: 100%;
+      }
+      .futuristic-link:hover {
+        color: #d4a843;
+      }
 
-    .dropdown-arrow { width: 16px; height: 16px; transition: transform 0.3s ease; }
-    .nav-item:hover .dropdown-arrow { transform: rotate(180deg); }
+      .dropdown-arrow {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.3s ease;
+      }
+      .nav-item:hover .dropdown-arrow {
+        transform: rotate(180deg);
+      }
 
-    .mega-dropdown { position: static; }
-    .mega-dropdown-content { position: absolute; top: 100%; left: 0; right: 0; background: rgba(20, 18, 15, 0.98); backdrop-filter: blur(24px); border-top: 1px solid rgba(212, 168, 67, 0.2); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 100; }
-    .mega-dropdown:hover .mega-dropdown-content { opacity: 1; visibility: visible; transform: translateY(0); }
+      .mega-dropdown {
+        position: static;
+      }
+      .mega-dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(20, 18, 15, 0.98);
+        backdrop-filter: blur(24px);
+        border-top: 1px solid rgba(212, 168, 67, 0.2);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 100;
+      }
+      .mega-dropdown:hover .mega-dropdown-content {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
 
-    .dropdown-panel { max-width: 1400px; margin: 0 auto; padding: 40px 60px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 40px; }
-    .dropdown-column { position: relative; }
-    .dropdown-title { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #D4A843; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-    .dropdown-link { display: block; padding: 8px 0; font-size: 13px; color: rgba(255, 255, 255, 0.65); text-decoration: none; transition: all 0.25s ease; }
-    .dropdown-link:hover { color: #fff; }
-    .dropdown-highlight { background: rgba(212, 168, 67, 0.08); border-radius: 8px; padding: 24px; border: 1px solid rgba(212, 168, 67, 0.15); }
+      .dropdown-panel {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 40px 60px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 40px;
+      }
+      .dropdown-column {
+        position: relative;
+      }
+      .dropdown-title {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #d4a843;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .dropdown-link {
+        display: block;
+        padding: 8px 0;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.65);
+        text-decoration: none;
+        transition: all 0.25s ease;
+      }
+      .dropdown-link:hover {
+        color: #fff;
+      }
+      .dropdown-highlight {
+        background: rgba(212, 168, 67, 0.08);
+        border-radius: 8px;
+        padding: 24px;
+        border: 1px solid rgba(212, 168, 67, 0.15);
+      }
 
-    .mini-dropdown-content { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px); background: rgba(20, 18, 15, 0.98); backdrop-filter: blur(24px); border: 1px solid rgba(212, 168, 67, 0.15); border-radius: 8px; padding: 16px 0; min-width: 220px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4); opacity: 0; visibility: hidden; transition: all 0.3s ease; }
-    .mini-dropdown:hover .mini-dropdown-content { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-    .mini-dropdown-link { display: block; padding: 10px 24px; font-size: 13px; color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: all 0.2s ease; }
-    .mini-dropdown-link:hover { background: rgba(212, 168, 67, 0.1); color: #D4A843; padding-left: 32px; }
+      .mini-dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        background: rgba(20, 18, 15, 0.98);
+        backdrop-filter: blur(24px);
+        border: 1px solid rgba(212, 168, 67, 0.15);
+        border-radius: 8px;
+        padding: 16px 0;
+        min-width: 220px;
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+      .mini-dropdown:hover .mini-dropdown-content {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+      }
+      .mini-dropdown-link {
+        display: block;
+        padding: 10px 24px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+      .mini-dropdown-link:hover {
+        background: rgba(212, 168, 67, 0.1);
+        color: #d4a843;
+        padding-left: 32px;
+      }
 
-    .nav-cta { padding: 10px 24px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, rgba(212, 168, 67, 0.9), rgba(184, 137, 31, 0.9)); border-radius: 4px; text-decoration: none; transition: all 0.3s ease; }
-    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212, 168, 67, 0.4); }
+      .nav-cta {
+        padding: 10px 24px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #fff;
+        background: linear-gradient(
+          135deg,
+          rgba(212, 168, 67, 0.9),
+          rgba(184, 137, 31, 0.9)
+        );
+        border-radius: 4px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      .nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(212, 168, 67, 0.4);
+      }
 
-    .futuristic-nav.scrolled .futuristic-link { color: rgba(35, 30, 25, 0.75); }
-    .futuristic-nav.scrolled .futuristic-link::before { background: #D4A843; }
-    .futuristic-nav.scrolled .futuristic-link:hover { color: #D4A843; }
-    .futuristic-nav.scrolled .mega-dropdown-content, .futuristic-nav.scrolled .mini-dropdown-content { background: rgba(255, 255, 255, 0.98); border-color: rgba(35, 30, 25, 0.12); box-shadow: 0 18px 50px rgba(35, 30, 25, 0.18); }
-    .futuristic-nav.scrolled .dropdown-title { border-bottom-color: rgba(35, 30, 25, 0.1); }
-    .futuristic-nav.scrolled .dropdown-link { color: rgba(35, 30, 25, 0.65); }
-    .futuristic-nav.scrolled .dropdown-link:hover { color: #231E19; }
-    .futuristic-nav.scrolled .mini-dropdown-link { color: rgba(35, 30, 25, 0.72); }
-    .futuristic-nav.scrolled .mini-dropdown-link:hover { color: #D4A843; }
-    .futuristic-nav.scrolled .dropdown-arrow { color: rgba(35, 30, 25, 0.5); }
-    .futuristic-nav.scrolled .logo-group .font-serif { color: #231E19; }
-    .futuristic-nav.scrolled .logo-group:hover .font-serif { color: #D4A843; }
-    .futuristic-nav.scrolled .logo-sub { color: rgba(35, 30, 25, 0.55); }
-    .futuristic-nav.scrolled .mobile-menu-link { color: #231E19; }
-    .futuristic-nav.scrolled .mobile-menu-link:hover { color: #D4A843; }
+      .futuristic-nav.scrolled .futuristic-link {
+        color: rgba(35, 30, 25, 0.75);
+      }
+      .futuristic-nav.scrolled .futuristic-link::before {
+        background: #d4a843;
+      }
+      .futuristic-nav.scrolled .futuristic-link:hover {
+        color: #d4a843;
+      }
+      .futuristic-nav.scrolled .mega-dropdown-content,
+      .futuristic-nav.scrolled .mini-dropdown-content {
+        background: rgba(255, 255, 255, 0.98);
+        border-color: rgba(35, 30, 25, 0.12);
+        box-shadow: 0 18px 50px rgba(35, 30, 25, 0.18);
+      }
+      .futuristic-nav.scrolled .dropdown-title {
+        border-bottom-color: rgba(35, 30, 25, 0.1);
+      }
+      .futuristic-nav.scrolled .dropdown-link {
+        color: rgba(35, 30, 25, 0.65);
+      }
+      .futuristic-nav.scrolled .dropdown-link:hover {
+        color: #231e19;
+      }
+      .futuristic-nav.scrolled .mini-dropdown-link {
+        color: rgba(35, 30, 25, 0.72);
+      }
+      .futuristic-nav.scrolled .mini-dropdown-link:hover {
+        color: #d4a843;
+      }
+      .futuristic-nav.scrolled .dropdown-arrow {
+        color: rgba(35, 30, 25, 0.5);
+      }
+      .futuristic-nav.scrolled .logo-group .font-serif {
+        color: #231e19;
+      }
+      .futuristic-nav.scrolled .logo-group:hover .font-serif {
+        color: #d4a843;
+      }
+      .futuristic-nav.scrolled .logo-sub {
+        color: rgba(35, 30, 25, 0.55);
+      }
+      .futuristic-nav.scrolled .mobile-menu-link {
+        color: #231e19;
+      }
+      .futuristic-nav.scrolled .mobile-menu-link:hover {
+        color: #d4a843;
+      }
 
-    .service-card { transition: transform 0.3s, box-shadow 0.3s; }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(35,30,25,0.12); }
-    .skip-link { position: absolute; top: -40px; left: 0; background: #D4A843; color: #231E19; padding: 8px 16px; font-size: 14px; font-weight: 600; z-index: 999; }
-    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
-    img, video, svg { max-width: 100%; }
-    main, section, header, footer, nav, div, article, form { min-width: 0; }
-    h1, h2, h3, h4, p, a, button, span { overflow-wrap: anywhere; }
-    @media (max-width: 1023px) {
-      .futuristic-nav { width: 100%; }
-      .logo-group { min-width: 0; gap: 0.5rem; }
-      .mobile-menu-link { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex: 0 0 44px; border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; text-decoration: none; }
-      .futuristic-nav.scrolled .mobile-menu-link { border-color: rgba(35,30,25,0.18); }
-    }
-    @media (max-width: 640px) {
-      .logo-group .font-serif { font-size: 1.35rem; }
-      .dropdown-panel { grid-template-columns: 1fr; gap: 20px; padding: 24px; }
-      .mini-dropdown-content { max-width: calc(100vw - 32px); }
-      .tracking-widest2 { letter-spacing: 0.14em; }
-    }
-    #mobile-menu { opacity: 0; pointer-events: none; visibility: hidden; transition: opacity 0.25s ease, visibility 0.25s ease; }
-    #mobile-menu.open { opacity: 1; pointer-events: auto; visibility: visible; }
-    .mobile-nav { background: rgba(20, 18, 15, 0.98); backdrop-filter: blur(20px); }
-    .mobile-nav-item { border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-    .mobile-nav-link { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; font-size: 15px; font-weight: 500; color: rgba(255, 255, 255, 0.8); letter-spacing: 0.05em; }
-    .mobile-nav-link:hover { color: #D4A843; }
-    .mobile-submenu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-    .mobile-submenu.open { max-height: 500px; }
-    .mobile-submenu a { display: block; padding: 12px 20px; font-size: 13px; color: rgba(255, 255, 255, 0.5); border-left: 2px solid transparent; transition: all 0.2s ease; }
-    .mobile-submenu a:hover { color: #D4A843; border-left-color: #D4A843; padding-left: 28px; }
-    .menu-toggle-futuristic { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; cursor: pointer; transition: all 0.3s ease; }
-    .menu-toggle-futuristic:hover { border-color: #D4A843; color: #D4A843; box-shadow: 0 0 20px rgba(212, 168, 67, 0.2); }
-    .futuristic-nav.scrolled .menu-toggle-futuristic { border-color: rgba(35, 30, 25, 0.2); color: rgba(35, 30, 25, 0.8); }
-    .futuristic-nav.scrolled .menu-toggle-futuristic:hover { border-color: #D4A843; color: #D4A843; }
-    .menu-toggle-futuristic svg { transition: transform 0.3s ease, opacity 0.3s ease; }
-    .menu-toggle-futuristic.active svg { transform: rotate(90deg); }
-    .menu-toggle-futuristic .hamburger-icon { display: block; }
-    .menu-toggle-futuristic .close-icon { display: none; transform: rotate(90deg); }
-    .menu-toggle-futuristic.active .hamburger-icon { display: none; }
-    .menu-toggle-futuristic.active .close-icon { display: block; }
-    /* Touch-friendly */
-    @media (hover: none) and (pointer: coarse) {
-      input, select, textarea { font-size: 16px; }
-    }
-    /* Mobile Small: 320px - 374px */
-    @media (max-width: 374px) {
-      .container, .mx-auto.max-w-screen-xl { padding-left: 12px; padding-right: 12px; }
-      .logo-group .font-serif { font-size: 1.25rem; }
-      .font-serif.text-5xl, .font-serif.text-4xl, .font-serif.text-3xl { font-size: 1.5rem; }
-      .section-padding { padding: 2rem 1rem; }
-    }
-    /* Mobile Medium: 375px - 424px */
-    @media (min-width: 375px) and (max-width: 424px) {
-      .container, .mx-auto.max-w-screen-xl { padding-left: 16px; padding-right: 16px; }
-    }
-    /* Mobile Large: 425px - 767px */
-    @media (max-width: 767px) {
-      .grid { gap: 1rem; }
-      .section-padding { padding: 2.5rem 1rem; }
-      h1 { font-size: 2rem; }
-      h2 { font-size: 1.75rem; }
-      h3 { font-size: 1.25rem; }
-      input, select, textarea { min-height: 48px; font-size: 16px; }
-      .btn-primary { min-height: 48px; }
-      .service-card { margin-bottom: 1rem; }
-      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .footer-links { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-      .grid-cols-1.md\:grid-cols-2, .grid-cols-1.lg\:grid-cols-3 { grid-template-columns: 1fr; }
-      .md\:grid-cols-4 { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 480px) {
-      .footer-links { grid-template-columns: 1fr; }
-      .md\:grid-cols-4 { grid-template-columns: 1fr; }
-    }
-    /* Navbar responsive */
-    @media (max-width: 767px) {
-      .menu-toggle-futuristic { width: 44px; height: 44px; min-width: 44px; }
-      .mobile-nav-link { min-height: 44px; padding: 12px 0; }
-      .mobile-submenu a { min-height: 44px; padding: 12px 16px; }
-    }
-    /* No horizontal scroll */
-    html, body { overflow-x: hidden; max-width: 100vw; }
-    *, *::before, *::after { box-sizing: border-box; max-width: 100%; }
-  </style>
-</head>
-<body>
-  <a href="#main-content" class="skip-link">Skip to main</a>
+      .service-card {
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+      .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 48px rgba(35, 30, 25, 0.12);
+      }
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #d4a843;
+        color: #231e19;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        z-index: 999;
+      }
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+      img,
+      video,
+      svg {
+        max-width: 100%;
+      }
+      main,
+      section,
+      header,
+      footer,
+      nav,
+      div,
+      article,
+      form {
+        min-width: 0;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      a,
+      button,
+      span {
+        overflow-wrap: anywhere;
+      }
+      @media (max-width: 1023px) {
+        .futuristic-nav {
+          width: 100%;
+        }
+        .logo-group {
+          min-width: 0;
+          gap: 0.5rem;
+        }
+        .mobile-menu-link {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 44px;
+          height: 44px;
+          flex: 0 0 44px;
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          border-radius: 999px;
+          text-decoration: none;
+        }
+        .futuristic-nav.scrolled .mobile-menu-link {
+          border-color: rgba(35, 30, 25, 0.18);
+        }
+      }
+      @media (max-width: 640px) {
+        .logo-group .font-serif {
+          font-size: 1.35rem;
+        }
+        .dropdown-panel {
+          grid-template-columns: 1fr;
+          gap: 20px;
+          padding: 24px;
+        }
+        .mini-dropdown-content {
+          max-width: calc(100vw - 32px);
+        }
+        .tracking-widest2 {
+          letter-spacing: 0.14em;
+        }
+      }
+      #mobile-menu {
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        transition:
+          opacity 0.25s ease,
+          visibility 0.25s ease;
+      }
+      #mobile-menu.open {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+      }
+      .mobile-nav {
+        background: rgba(20, 18, 15, 0.98);
+        backdrop-filter: blur(20px);
+      }
+      .mobile-nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .mobile-nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+        font-size: 15px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.8);
+        letter-spacing: 0.05em;
+      }
+      .mobile-nav-link:hover {
+        color: #d4a843;
+      }
+      .mobile-submenu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      .mobile-submenu.open {
+        max-height: 500px;
+      }
+      .mobile-submenu a {
+        display: block;
+        padding: 12px 20px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.5);
+        border-left: 2px solid transparent;
+        transition: all 0.2s ease;
+      }
+      .mobile-submenu a:hover {
+        color: #d4a843;
+        border-left-color: #d4a843;
+        padding-left: 28px;
+      }
+      .menu-toggle-futuristic {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .menu-toggle-futuristic:hover {
+        border-color: #d4a843;
+        color: #d4a843;
+        box-shadow: 0 0 20px rgba(212, 168, 67, 0.2);
+      }
+      .futuristic-nav.scrolled .menu-toggle-futuristic {
+        border-color: rgba(35, 30, 25, 0.2);
+        color: rgba(35, 30, 25, 0.8);
+      }
+      .futuristic-nav.scrolled .menu-toggle-futuristic:hover {
+        border-color: #d4a843;
+        color: #d4a843;
+      }
+      .menu-toggle-futuristic svg {
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease;
+      }
+      .menu-toggle-futuristic.active svg {
+        transform: rotate(90deg);
+      }
+      .menu-toggle-futuristic .hamburger-icon {
+        display: block;
+      }
+      .menu-toggle-futuristic .close-icon {
+        display: none;
+        transform: rotate(90deg);
+      }
+      .menu-toggle-futuristic.active .hamburger-icon {
+        display: none;
+      }
+      .menu-toggle-futuristic.active .close-icon {
+        display: block;
+      }
+      /* Touch-friendly */
+      @media (hover: none) and (pointer: coarse) {
+        input,
+        select,
+        textarea {
+          font-size: 16px;
+        }
+      }
+      /* Mobile Small: 320px - 374px */
+      @media (max-width: 374px) {
+        .container,
+        .mx-auto.max-w-screen-xl {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+        .logo-group .font-serif {
+          font-size: 1.25rem;
+        }
+        .font-serif.text-5xl,
+        .font-serif.text-4xl,
+        .font-serif.text-3xl {
+          font-size: 1.5rem;
+        }
+        .section-padding {
+          padding: 2rem 1rem;
+        }
+      }
+      /* Mobile Medium: 375px - 424px */
+      @media (min-width: 375px) and (max-width: 424px) {
+        .container,
+        .mx-auto.max-w-screen-xl {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+      }
+      /* Mobile Large: 425px - 767px */
+      @media (max-width: 767px) {
+        .grid {
+          gap: 1rem;
+        }
+        .section-padding {
+          padding: 2.5rem 1rem;
+        }
+        h1 {
+          font-size: 2rem;
+        }
+        h2 {
+          font-size: 1.75rem;
+        }
+        h3 {
+          font-size: 1.25rem;
+        }
+        input,
+        select,
+        textarea {
+          min-height: 48px;
+          font-size: 16px;
+        }
+        .btn-primary {
+          min-height: 48px;
+        }
+        .service-card {
+          margin-bottom: 1rem;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        .footer-links {
+          grid-template-columns: 1fr 1fr;
+          gap: 1.5rem;
+        }
+        .grid-cols-1.md\:grid-cols-2,
+        .grid-cols-1.lg\:grid-cols-3 {
+          grid-template-columns: 1fr;
+        }
+        .md\:grid-cols-4 {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 480px) {
+        .footer-links {
+          grid-template-columns: 1fr;
+        }
+        .md\:grid-cols-4 {
+          grid-template-columns: 1fr;
+        }
+      }
+      /* Navbar responsive */
+      @media (max-width: 767px) {
+        .menu-toggle-futuristic {
+          width: 44px;
+          height: 44px;
+          min-width: 44px;
+        }
+        .mobile-nav-link {
+          min-height: 44px;
+          padding: 12px 0;
+        }
+        .mobile-submenu a {
+          min-height: 44px;
+          padding: 12px 16px;
+        }
+      }
+      /* No horizontal scroll */
+      html,
+      body {
+        overflow-x: hidden;
+        max-width: 100vw;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main</a>
 
-  <header id="site-header" class="fixed top-0 left-0 right-0 z-50">
-    <nav class="futuristic-nav mx-auto px-4 lg:px-8 py-3">
-      <div class="mx-auto max-w-screen-2xl flex items-center justify-between">
+    <header id="site-header" class="fixed top-0 left-0 right-0 z-50">
+      <nav class="futuristic-nav mx-auto px-4 lg:px-8 py-3">
+        <div class="mx-auto max-w-screen-2xl flex items-center justify-between">
+          <a href="index.html" class="flex items-center gap-3 group logo-group">
+            <span
+              class="font-serif text-2xl font-light text-white tracking-widest group-hover:text-gold-400"
+              >HAVEN</span
+            >
+            <span class="w-px h-5 bg-gold-400/50"></span>
+            <span
+              class="text-xs text-white/60 tracking-widest2 uppercase hidden sm:inline logo-sub"
+              >Real Estate</span
+            >
+          </a>
 
-        <a href="index.html" class="flex items-center gap-3 group logo-group">
-          <span class="font-serif text-2xl font-light text-white tracking-widest group-hover:text-gold-400">HAVEN</span>
-          <span class="w-px h-5 bg-gold-400/50"></span>
-          <span class="text-xs text-white/60 tracking-widest2 uppercase hidden sm:inline logo-sub">Real Estate</span>
-        </a>
-
-        <div class="hidden lg:flex items-center gap-1">
-          <div class="nav-item mega-dropdown">
-            <a href="properties.html" class="futuristic-link">Properties<svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-            <div class="mega-dropdown-content"><div class="dropdown-panel"><div class="dropdown-column"><h4 class="dropdown-title">Buy</h4><a href="properties.html" class="dropdown-link">All Properties</a><a href="properties.html" class="dropdown-link">Houses</a><a href="properties.html" class="dropdown-link">Apartments</a></div><div class="dropdown-column"><h4 class="dropdown-title">Rent</h4><a href="properties.html" class="dropdown-link">Rentals</a><a href="properties.html" class="dropdown-link">Luxury Rentals</a></div><div class="dropdown-column"><h4 class="dropdown-title">Status</h4><a href="properties.html" class="dropdown-link">New Listings</a><a href="properties.html" class="dropdown-link">Sold</a></div><div class="dropdown-column dropdown-highlight"><h4 class="dropdown-title">Featured</h4><a href="properties.html" class="dropdown-link">Off-Market</a><a href="properties.html" class="dropdown-link">Premium</a></div><div class="dropdown-column"><h4 class="dropdown-title">Price</h4><a href="properties.html" class="dropdown-link">Up to $1M</a><a href="properties.html" class="dropdown-link">$5M+</a></div></div></div>
+          <div class="hidden lg:flex items-center gap-1">
+            <div class="nav-item mega-dropdown">
+              <a href="properties.html" class="futuristic-link"
+                >Properties<svg
+                  class="dropdown-arrow"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline></svg
+              ></a>
+              <div class="mega-dropdown-content">
+                <div class="dropdown-panel">
+                  <div class="dropdown-column">
+                    <h4 class="dropdown-title">Buy</h4>
+                    <a href="properties.html" class="dropdown-link"
+                      >All Properties</a
+                    ><a href="properties.html" class="dropdown-link">Houses</a
+                    ><a href="properties.html" class="dropdown-link"
+                      >Apartments</a
+                    >
+                  </div>
+                  <div class="dropdown-column">
+                    <h4 class="dropdown-title">Rent</h4>
+                    <a href="properties.html" class="dropdown-link">Rentals</a
+                    ><a href="properties.html" class="dropdown-link"
+                      >Luxury Rentals</a
+                    >
+                  </div>
+                  <div class="dropdown-column">
+                    <h4 class="dropdown-title">Status</h4>
+                    <a href="properties.html" class="dropdown-link"
+                      >New Listings</a
+                    ><a href="properties.html" class="dropdown-link">Sold</a>
+                  </div>
+                  <div class="dropdown-column dropdown-highlight">
+                    <h4 class="dropdown-title">Featured</h4>
+                    <a href="properties.html" class="dropdown-link"
+                      >Off-Market</a
+                    ><a href="properties.html" class="dropdown-link">Premium</a>
+                  </div>
+                  <div class="dropdown-column">
+                    <h4 class="dropdown-title">Price</h4>
+                    <a href="properties.html" class="dropdown-link">Up to $1M</a
+                    ><a href="properties.html" class="dropdown-link">$5M+</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nav-item mini-dropdown">
+              <a href="locations.html" class="futuristic-link"
+                >Locations<svg
+                  class="dropdown-arrow"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline></svg
+              ></a>
+              <div class="mini-dropdown-content">
+                <a href="locations.html" class="mini-dropdown-link"
+                  >Sydney Region</a
+                ><a href="locations.html" class="mini-dropdown-link"
+                  >Melbourne Region</a
+                ><a href="locations.html" class="mini-dropdown-link"
+                  >Brisbane Region</a
+                ><a href="locations.html" class="mini-dropdown-link"
+                  >Gold Coast</a
+                ><a href="locations.html" class="mini-dropdown-link">Perth</a>
+              </div>
+            </div>
+            <div class="nav-item mini-dropdown">
+              <a href="projects.html" class="futuristic-link"
+                >Projects<svg
+                  class="dropdown-arrow"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline></svg
+              ></a>
+              <div class="mini-dropdown-content">
+                <a href="projects.html" class="mini-dropdown-link"
+                  >All Developments</a
+                ><a href="projects.html" class="mini-dropdown-link"
+                  >Off-the-Plan</a
+                ><a href="projects.html" class="mini-dropdown-link"
+                  >New Construction</a
+                >
+              </div>
+            </div>
+            <div class="nav-item mega-dropdown">
+              <a href="services.html" class="futuristic-link"
+                >Services<svg
+                  class="dropdown-arrow"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline></svg
+              ></a>
+              <div class="mega-dropdown-content">
+                <div class="dropdown-panel">
+                  <div class="dropdown-column">
+                    <h4 class="dropdown-title">Buying</h4>
+                    <a href="services.html" class="dropdown-link"
+                      >Buyer's Advisory</a
+                    ><a href="services.html" class="dropdown-link"
+                      >Property Search</a
+                    >
+                  </div>
+                  <div class="dropdown-column">
+                    <h4 class="dropdown-title">Selling</h4>
+                    <a href="services.html" class="dropdown-link">Appraisal</a
+                    ><a href="services.html" class="dropdown-link">Marketing</a>
+                  </div>
+                  <div class="dropdown-column">
+                    <h4 class="dropdown-title">Management</h4>
+                    <a href="services.html" class="dropdown-link"
+                      >Property Management</a
+                    ><a href="services.html" class="dropdown-link">Leasing</a>
+                  </div>
+                  <div class="dropdown-column dropdown-highlight">
+                    <h4 class="dropdown-title">Specialist</h4>
+                    <a href="services.html" class="dropdown-link"
+                      >International</a
+                    >
+                  </div>
+                  <div class="dropdown-column">
+                    <h4 class="dropdown-title">Resources</h4>
+                    <a href="services.html" class="dropdown-link"
+                      >Market Insights</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nav-item mini-dropdown">
+              <a href="team.html" class="futuristic-link"
+                >Team<svg
+                  class="dropdown-arrow"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline></svg
+              ></a>
+              <div class="mini-dropdown-content">
+                <a href="team.html" class="mini-dropdown-link">Our Agents</a
+                ><a href="team.html" class="mini-dropdown-link">Careers</a>
+              </div>
+            </div>
+            <div class="nav-item">
+              <a href="about.html" class="futuristic-link">About</a>
+            </div>
+            <div class="nav-item mini-dropdown">
+              <a href="journal.html" class="futuristic-link"
+                >Journal<svg
+                  class="dropdown-arrow"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline></svg
+              ></a>
+              <div class="mini-dropdown-content">
+                <a href="journal.html" class="mini-dropdown-link"
+                  >Market Updates</a
+                ><a href="journal.html" class="mini-dropdown-link"
+                  >Property News</a
+                >
+              </div>
+            </div>
           </div>
-          <div class="nav-item mini-dropdown">
-            <a href="locations.html" class="futuristic-link">Locations<svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-            <div class="mini-dropdown-content"><a href="locations.html" class="mini-dropdown-link">Sydney Region</a><a href="locations.html" class="mini-dropdown-link">Melbourne Region</a><a href="locations.html" class="mini-dropdown-link">Brisbane Region</a><a href="locations.html" class="mini-dropdown-link">Gold Coast</a><a href="locations.html" class="mini-dropdown-link">Perth</a></div>
-          </div>
-          <div class="nav-item mini-dropdown">
-            <a href="projects.html" class="futuristic-link">Projects<svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-            <div class="mini-dropdown-content"><a href="projects.html" class="mini-dropdown-link">All Developments</a><a href="projects.html" class="mini-dropdown-link">Off-the-Plan</a><a href="projects.html" class="mini-dropdown-link">New Construction</a></div>
-          </div>
-          <div class="nav-item mega-dropdown">
-            <a href="services.html" class="futuristic-link">Services<svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-            <div class="mega-dropdown-content"><div class="dropdown-panel"><div class="dropdown-column"><h4 class="dropdown-title">Buying</h4><a href="services.html" class="dropdown-link">Buyer's Advisory</a><a href="services.html" class="dropdown-link">Property Search</a></div><div class="dropdown-column"><h4 class="dropdown-title">Selling</h4><a href="services.html" class="dropdown-link">Appraisal</a><a href="services.html" class="dropdown-link">Marketing</a></div><div class="dropdown-column"><h4 class="dropdown-title">Management</h4><a href="services.html" class="dropdown-link">Property Management</a><a href="services.html" class="dropdown-link">Leasing</a></div><div class="dropdown-column dropdown-highlight"><h4 class="dropdown-title">Specialist</h4><a href="services.html" class="dropdown-link">International</a></div><div class="dropdown-column"><h4 class="dropdown-title">Resources</h4><a href="services.html" class="dropdown-link">Market Insights</a></div></div></div>
-          </div>
-          <div class="nav-item mini-dropdown">
-            <a href="team.html" class="futuristic-link">Team<svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-            <div class="mini-dropdown-content"><a href="team.html" class="mini-dropdown-link">Our Agents</a><a href="team.html" class="mini-dropdown-link">Careers</a></div>
-          </div>
-          <div class="nav-item"><a href="about.html" class="futuristic-link">About</a></div>
-          <div class="nav-item mini-dropdown">
-            <a href="journal.html" class="futuristic-link">Journal<svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-            <div class="mini-dropdown-content"><a href="journal.html" class="mini-dropdown-link">Market Updates</a><a href="journal.html" class="mini-dropdown-link">Property News</a></div>
-          </div>
-        </div>
 
-        <div class="hidden lg:flex"><a href="contact.html" class="nav-cta">List With Us</a></div>
-        <button id="menu-toggle" class="menu-toggle-futuristic lg:hidden" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
-          <svg class="hamburger-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-          <svg class="close-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-    </nav>
-  </header>
+          <div class="hidden lg:flex">
+            <a href="contact.html" class="nav-cta">List With Us</a>
+          </div>
+          <button
+            id="menu-toggle"
+            class="menu-toggle-futuristic lg:hidden"
+            aria-label="Toggle mobile menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <svg
+              class="hamburger-icon"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <svg
+              class="close-icon"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="fixed inset-0 z-40 mobile-nav pt-20 px-6" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-    <button id="menu-close" class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full border border-white/10 text-white/70 hover:border-gold-400 hover:text-gold-400 transition-all" aria-label="Close menu">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
-    <div class="flex flex-col overflow-y-auto pb-8" style="max-height: calc(100vh - 180px);">
-      <div class="mobile-nav-item">
-        <button class="mobile-nav-link w-full text-left" data-mobile-toggle="properties"><span>Properties</span><svg class="w-5 h-5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-        <div class="mobile-submenu" id="mobile-properties">
-          <a href="properties.html">All Properties</a><a href="properties.html">Houses</a><a href="properties.html">Apartments</a><a href="properties.html">Townhouses</a><a href="properties.html">Penthouses</a><a href="properties.html">Rent</a><a href="properties.html">New Listings</a><a href="properties.html">Sold</a>
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-40 mobile-nav pt-20 px-6"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobile navigation"
+    >
+      <button
+        id="menu-close"
+        class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full border border-white/10 text-white/70 hover:border-gold-400 hover:text-gold-400 transition-all"
+        aria-label="Close menu"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div
+        class="flex flex-col overflow-y-auto pb-8"
+        style="max-height: calc(100vh - 180px)"
+      >
+        <div class="mobile-nav-item">
+          <button
+            class="mobile-nav-link w-full text-left"
+            data-mobile-toggle="properties"
+          >
+            <span>Properties</span
+            ><svg
+              class="w-5 h-5 transition-transform"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="mobile-submenu" id="mobile-properties">
+            <a href="properties.html">All Properties</a
+            ><a href="properties.html">Houses</a
+            ><a href="properties.html">Apartments</a
+            ><a href="properties.html">Townhouses</a
+            ><a href="properties.html">Penthouses</a
+            ><a href="properties.html">Rent</a
+            ><a href="properties.html">New Listings</a
+            ><a href="properties.html">Sold</a>
+          </div>
+        </div>
+        <div class="mobile-nav-item">
+          <button
+            class="mobile-nav-link w-full text-left"
+            data-mobile-toggle="locations"
+          >
+            <span>Locations</span
+            ><svg
+              class="w-5 h-5 transition-transform"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="mobile-submenu" id="mobile-locations">
+            <a href="locations.html">Sydney</a
+            ><a href="locations.html">Melbourne</a
+            ><a href="locations.html">Brisbane</a
+            ><a href="locations.html">Gold Coast</a
+            ><a href="locations.html">Perth</a>
+          </div>
+        </div>
+        <div class="mobile-nav-item">
+          <button
+            class="mobile-nav-link w-full text-left"
+            data-mobile-toggle="projects"
+          >
+            <span>Projects</span
+            ><svg
+              class="w-5 h-5 transition-transform"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="mobile-submenu" id="mobile-projects">
+            <a href="projects.html">All Developments</a
+            ><a href="projects.html">Off-the-Plan</a
+            ><a href="projects.html">New Construction</a
+            ><a href="projects.html">House & Land</a>
+          </div>
+        </div>
+        <div class="mobile-nav-item">
+          <button
+            class="mobile-nav-link w-full text-left"
+            data-mobile-toggle="services"
+          >
+            <span>Services</span
+            ><svg
+              class="w-5 h-5 transition-transform"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="mobile-submenu" id="mobile-services">
+            <a href="services.html">Buyer's Advisory</a
+            ><a href="services.html">Property Appraisal</a
+            ><a href="services.html">Property Management</a
+            ><a href="services.html">Investment Advisory</a
+            ><a href="services.html">International Buyers</a>
+          </div>
+        </div>
+        <div class="mobile-nav-item">
+          <button
+            class="mobile-nav-link w-full text-left"
+            data-mobile-toggle="team"
+          >
+            <span>Team</span
+            ><svg
+              class="w-5 h-5 transition-transform"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="mobile-submenu" id="mobile-team">
+            <a href="team.html">Our Agents</a
+            ><a href="team.html">Meet the Team</a
+            ><a href="contact.html">Careers</a>
+          </div>
+        </div>
+        <div class="mobile-nav-item">
+          <a href="about.html" class="mobile-nav-link">About</a>
+        </div>
+        <div class="mobile-nav-item">
+          <button
+            class="mobile-nav-link w-full text-left"
+            data-mobile-toggle="journal"
+          >
+            <span>Journal</span
+            ><svg
+              class="w-5 h-5 transition-transform"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="mobile-submenu" id="mobile-journal">
+            <a href="journal.html">Market Updates</a
+            ><a href="journal.html">Property News</a
+            ><a href="journal.html">Lifestyle Features</a>
+          </div>
         </div>
       </div>
-      <div class="mobile-nav-item">
-        <button class="mobile-nav-link w-full text-left" data-mobile-toggle="locations"><span>Locations</span><svg class="w-5 h-5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-        <div class="mobile-submenu" id="mobile-locations">
-          <a href="locations.html">Sydney</a><a href="locations.html">Melbourne</a><a href="locations.html">Brisbane</a><a href="locations.html">Gold Coast</a><a href="locations.html">Perth</a>
-        </div>
-      </div>
-      <div class="mobile-nav-item">
-        <button class="mobile-nav-link w-full text-left" data-mobile-toggle="projects"><span>Projects</span><svg class="w-5 h-5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-        <div class="mobile-submenu" id="mobile-projects">
-          <a href="projects.html">All Developments</a><a href="projects.html">Off-the-Plan</a><a href="projects.html">New Construction</a><a href="projects.html">House & Land</a>
-        </div>
-      </div>
-      <div class="mobile-nav-item">
-        <button class="mobile-nav-link w-full text-left" data-mobile-toggle="services"><span>Services</span><svg class="w-5 h-5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-        <div class="mobile-submenu" id="mobile-services">
-          <a href="services.html">Buyer's Advisory</a><a href="services.html">Property Appraisal</a><a href="services.html">Property Management</a><a href="services.html">Investment Advisory</a><a href="services.html">International Buyers</a>
-        </div>
-      </div>
-      <div class="mobile-nav-item">
-        <button class="mobile-nav-link w-full text-left" data-mobile-toggle="team"><span>Team</span><svg class="w-5 h-5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-        <div class="mobile-submenu" id="mobile-team">
-          <a href="team.html">Our Agents</a><a href="team.html">Meet the Team</a><a href="contact.html">Careers</a>
-        </div>
-      </div>
-      <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></div>
-      <div class="mobile-nav-item">
-        <button class="mobile-nav-link w-full text-left" data-mobile-toggle="journal"><span>Journal</span><svg class="w-5 h-5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-        <div class="mobile-submenu" id="mobile-journal">
-          <a href="journal.html">Market Updates</a><a href="journal.html">Property News</a><a href="journal.html">Lifestyle Features</a>
-        </div>
+      <div
+        class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent"
+      >
+        <a href="contact.html" class="nav-cta w-full text-center block"
+          >List With Us</a
+        >
       </div>
     </div>
-    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-      <a href="contact.html" class="nav-cta w-full text-center block">List With Us</a>
-    </div>
-  </div>
 
-  <main id="main-content" class="pt-20">
-    <section class="relative overflow-hidden bg-stone-900 py-24 lg:py-32">
-      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80&auto=format&fit=crop" alt="Luxury property consultation" class="absolute inset-0 h-full w-full object-cover opacity-30" />
-      <div class="absolute inset-0 bg-stone-900/70"></div>
-      <div class="relative mx-auto max-w-screen-xl px-6 lg:px-10">
-        <p class="text-gold-400 text-xs tracking-widest2 uppercase mb-4">Our Expertise</p>
-        <h1 class="font-serif text-5xl lg:text-7xl font-light text-white mb-6">Premium <em class="italic font-light">Services</em></h1>
-        <p class="text-stone-200 text-lg lg:text-xl max-w-3xl font-light leading-relaxed">End-to-end property solutions for discerning buyers, sellers, investors, and international clients.</p>
-        <a href="#consultation" class="mt-8 inline-flex bg-gold-500 px-8 py-4 text-xs font-medium uppercase tracking-widest2 text-stone-900 hover:bg-gold-400">Speak with an advisor</a>
+    <main id="main-content" class="pt-20">
+      <section class="relative overflow-hidden bg-stone-900 py-24 lg:py-32">
+        <img
+          src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80&auto=format&fit=crop"
+          alt="Luxury property consultation"
+          class="absolute inset-0 h-full w-full object-cover opacity-30"
+        />
+        <div class="absolute inset-0 bg-stone-900/70"></div>
+        <div class="relative mx-auto max-w-screen-xl px-6 lg:px-10">
+          <p class="text-gold-400 text-xs tracking-widest2 uppercase mb-4">
+            Our Expertise
+          </p>
+          <h1
+            class="font-serif text-5xl lg:text-7xl font-light text-white mb-6"
+          >
+            Premium <em class="italic font-light">Services</em>
+          </h1>
+          <p
+            class="text-stone-200 text-lg lg:text-xl max-w-3xl font-light leading-relaxed"
+          >
+            End-to-end property solutions for discerning buyers, sellers,
+            investors, and international clients.
+          </p>
+          <a
+            href="#consultation"
+            class="mt-8 inline-flex bg-gold-500 px-8 py-4 text-xs font-medium uppercase tracking-widest2 text-stone-900 hover:bg-gold-400"
+            >Speak with an advisor</a
+          >
+        </div>
+      </section>
+
+      <section class="py-20 lg:py-28">
+        <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+          <div class="mb-12 max-w-3xl">
+            <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-600">
+              At a Glance
+            </p>
+            <h2
+              class="font-serif text-4xl font-light text-stone-900 lg:text-5xl"
+            >
+              How HAVEN can help
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+              class="service-card bg-white p-8 rounded-sm border border-stone-100"
+            >
+              <div
+                class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"
+              >
+                <svg
+                  class="w-6 h-6 text-gold-500"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">
+                Buyer's Advisory
+              </h3>
+              <p class="text-stone-500 font-light">
+                Independent guidance across the buying journey, from search and
+                shortlisting to negotiation and settlement.
+              </p>
+            </div>
+            <div
+              class="service-card bg-white p-8 rounded-sm border border-stone-100"
+            >
+              <div
+                class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"
+              >
+                <svg
+                  class="w-6 h-6 text-gold-500"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                  />
+                  <path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">
+                Property Appraisal
+              </h3>
+              <p class="text-stone-500 font-light">
+                Detailed market appraisals to help you price with confidence and
+                prepare a strategy for sale.
+              </p>
+            </div>
+            <div
+              class="service-card bg-white p-8 rounded-sm border border-stone-100"
+            >
+              <div
+                class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"
+              >
+                <svg
+                  class="w-6 h-6 text-gold-500"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">
+                Property Management
+              </h3>
+              <p class="text-stone-500 font-light">
+                Full-service management for prestige rentals, protecting your
+                property and caring for tenants.
+              </p>
+            </div>
+            <div
+              class="service-card bg-white p-8 rounded-sm border border-stone-100"
+            >
+              <div
+                class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"
+              >
+                <svg
+                  class="w-6 h-6 text-gold-500"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">
+                Investment Advisory
+              </h3>
+              <p class="text-stone-500 font-light">
+                Portfolio-level advice on acquisitions, divestments, and
+                long-term performance across key markets.
+              </p>
+            </div>
+            <div
+              class="service-card bg-white p-8 rounded-sm border border-stone-100"
+            >
+              <div
+                class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"
+              >
+                <svg
+                  class="w-6 h-6 text-gold-500"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">
+                International Buyers
+              </h3>
+              <p class="text-stone-500 font-light">
+                Specialised support for overseas investors and expats navigating
+                regulations, finance, and settlement.
+              </p>
+            </div>
+            <div
+              class="service-card bg-white p-8 rounded-sm border border-stone-100"
+            >
+              <div
+                class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"
+              >
+                <svg
+                  class="w-6 h-6 text-gold-500"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">
+                Conveyancing
+              </h3>
+              <p class="text-stone-500 font-light">
+                Seamless coordination with trusted legal partners across
+                contracts, searches, and settlement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-stone-50 py-20 lg:py-28">
+        <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+          <div class="mb-12 max-w-3xl">
+            <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-600">
+              Included
+            </p>
+            <h2
+              class="font-serif text-4xl font-light text-stone-900 lg:text-5xl"
+            >
+              Detailed service pathways
+            </h2>
+          </div>
+          <div class="grid gap-6 lg:grid-cols-2">
+            <article class="bg-white p-8 border border-stone-200">
+              <h3 class="font-serif text-3xl font-light">Buyer's Advisory</h3>
+              <p class="mt-3 font-light text-stone-600">
+                From first brief to key handover, our buyer's advisory team acts
+                exclusively in your interests.
+              </p>
+              <ul class="mt-5 space-y-2 text-sm font-light text-stone-500">
+                <li>Define your brief and shortlist suitable suburbs.</li>
+                <li>Provide on- and off-market opportunities.</li>
+                <li>Lead negotiations and bidding strategies.</li>
+              </ul>
+              <a
+                href="#consultation"
+                class="mt-6 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600"
+                >Start your buying brief</a
+              >
+            </article>
+            <article class="bg-white p-8 border border-stone-200">
+              <h3 class="font-serif text-3xl font-light">Property Appraisal</h3>
+              <p class="mt-3 font-light text-stone-600">
+                Our appraisals combine live market data with on-the-ground
+                insight into buyer demand.
+              </p>
+              <ul class="mt-5 space-y-2 text-sm font-light text-stone-500">
+                <li>In-person inspection and condition assessment.</li>
+                <li>Comparative market analysis of recent sales.</li>
+                <li>Pricing strategy and sale scenario modelling.</li>
+              </ul>
+              <a
+                href="#consultation"
+                class="mt-6 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600"
+                >Book a complimentary appraisal</a
+              >
+            </article>
+            <article class="bg-white p-8 border border-stone-200">
+              <h3 class="font-serif text-3xl font-light">
+                Property Management
+              </h3>
+              <p class="mt-3 font-light text-stone-600">
+                We focus on preservation of value and quality tenant
+                experiences.
+              </p>
+              <ul class="mt-5 space-y-2 text-sm font-light text-stone-500">
+                <li>Marketing and tenant selection.</li>
+                <li>Lease negotiation and documentation.</li>
+                <li>Inspections, repairs, reporting, and rent reviews.</li>
+              </ul>
+              <a
+                href="#consultation"
+                class="mt-6 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600"
+                >Discuss property management</a
+              >
+            </article>
+            <article class="bg-white p-8 border border-stone-200">
+              <h3 class="font-serif text-3xl font-light">
+                Investment & International
+              </h3>
+              <p class="mt-3 font-light text-stone-600">
+                We provide a portfolio-level view of risk, return, and
+                cross-border requirements.
+              </p>
+              <ul class="mt-5 space-y-2 text-sm font-light text-stone-500">
+                <li>Portfolio review and acquisition strategies.</li>
+                <li>FIRB, finance, tax, and legal coordination.</li>
+                <li>Virtual inspections and settlement support.</li>
+              </ul>
+              <a
+                href="#consultation"
+                class="mt-6 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600"
+                >Arrange a consultation</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-stone-900 py-20 lg:py-24">
+        <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+          <div class="mb-10 max-w-3xl">
+            <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-400">
+              Why HAVEN
+            </p>
+            <h2 class="font-serif text-4xl font-light text-white">
+              Why clients choose HAVEN
+            </h2>
+          </div>
+          <div class="grid gap-6 md:grid-cols-4">
+            <div class="border border-white/10 p-6 text-stone-300">
+              <h3 class="mb-3 text-white">Luxury focus</h3>
+              <p class="text-sm font-light">
+                Deep expertise in prestige homes, penthouses, and high-value
+                investments.
+              </p>
+            </div>
+            <div class="border border-white/10 p-6 text-stone-300">
+              <h3 class="mb-3 text-white">Curated opportunities</h3>
+              <p class="text-sm font-light">
+                Access to off-market, pre-market, and new developments across
+                key cities.
+              </p>
+            </div>
+            <div class="border border-white/10 p-6 text-stone-300">
+              <h3 class="mb-3 text-white">Independent advice</h3>
+              <p class="text-sm font-light">
+                Clear recommendations and honest feedback at each decision
+                point.
+              </p>
+            </div>
+            <div class="border border-white/10 p-6 text-stone-300">
+              <h3 class="mb-3 text-white">End-to-end service</h3>
+              <p class="text-sm font-light">
+                One team for buying, selling, leasing, and portfolio strategy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="consultation" class="py-20 lg:py-24">
+        <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
+          <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+            <div>
+              <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-600">
+                Enquiry
+              </p>
+              <h2 class="mb-5 font-serif text-4xl font-light text-stone-900">
+                Book a confidential consultation
+              </h2>
+              <p class="font-light leading-relaxed text-stone-600">
+                Share a few details about your goals and we'll connect you with
+                the right HAVEN advisor within one business day.
+              </p>
+            </div>
+            <form class="grid gap-4 sm:grid-cols-2">
+              <input
+                class="border border-stone-200 bg-white px-4 py-3 text-sm"
+                placeholder="Name"
+              />
+              <input
+                class="border border-stone-200 bg-white px-4 py-3 text-sm"
+                placeholder="Email"
+              />
+              <input
+                class="border border-stone-200 bg-white px-4 py-3 text-sm"
+                placeholder="Phone"
+              />
+              <select
+                class="border border-stone-200 bg-white px-4 py-3 text-sm"
+              >
+                <option>Service of interest</option>
+                <option>Buyer's Advisory</option>
+                <option>Property Appraisal</option>
+                <option>Property Management</option>
+                <option>Investment Advisory</option>
+              </select>
+              <textarea
+                class="min-h-32 border border-stone-200 bg-white px-4 py-3 text-sm sm:col-span-2"
+                placeholder="Message"
+              ></textarea>
+              <button
+                class="bg-stone-900 px-8 py-4 text-xs font-medium uppercase tracking-widest2 text-white hover:bg-gold-500 hover:text-stone-900 sm:col-span-2"
+              >
+                Send enquiry
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-stone-900" role="contentinfo">
+      <!-- Top footer -->
+      <div class="mx-auto max-w-screen-xl px-6 lg:px-10 py-16 lg:py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
+          <!-- Brand -->
+          <div class="lg:col-span-2">
+            <div class="flex items-center gap-3 mb-5">
+              <span
+                class="font-serif text-2xl font-light text-white tracking-widest"
+                >HAVEN</span
+              >
+              <span class="w-px h-5 bg-gold-400 opacity-70"></span>
+              <span
+                class="text-xs text-stone-400 tracking-widest2 font-light uppercase"
+                >Real Estate</span
+              >
+            </div>
+            <p
+              class="text-stone-400 text-sm font-light leading-relaxed mb-6 max-w-xs"
+            >
+              Australia's premier luxury real estate agency. Connecting
+              exceptional people with exceptional properties since 2001.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all"
+                aria-label="HAVEN on Facebook"
+              >
+                <i class="fab fa-facebook-f w-4 h-4" aria-hidden="true"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all"
+                aria-label="HAVEN on Instagram"
+              >
+                <i class="fab fa-instagram w-4 h-4" aria-hidden="true"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all"
+                aria-label="HAVEN on LinkedIn"
+              >
+                <i class="fab fa-linkedin-in w-4 h-4" aria-hidden="true"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all"
+                aria-label="HAVEN on YouTube"
+              >
+                <i class="fab fa-youtube w-4 h-4" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div>
+            <h3
+              class="text-xs text-stone-300 font-medium tracking-widest2 uppercase mb-5"
+            >
+              Properties
+            </h3>
+            <ul class="space-y-3" role="list">
+              <li>
+                <a
+                  href="#"
+                  class="text-stone-400 hover:text-white text-sm font-light transition-colors"
+                  >Buy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-stone-400 hover:text-white text-sm font-light transition-colors"
+                  >Rent</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-stone-400 hover:text-white text-sm font-light transition-colors"
+                  >Sold Results</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-stone-400 hover:text-white text-sm font-light transition-colors"
+                  >New Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-stone-400 hover:text-white text-sm font-light transition-colors"
+                  >Off Market</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3
+              class="text-xs text-stone-300 font-medium tracking-widest2 uppercase mb-5"
+            >
+              Services
+            </h3>
+            <ul class="space-y-3" role="list">
+              <li>
+                <a
+                  href="#"
+                  class="text-stone-400 hover:text-white text-sm font-light transition-colors"
+                  >Buyer's Advisory</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-stone-400 hover:text-white text-sm font-light transition-colors"
+                  >Property Management</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-stone-400 hover:text-white text-sm font-light transition-colors"
+                  >Appraisal</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-stone-400 hover:text-white text-sm font-light transition-colors"
+                  >Investment Advisory</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-stone-400 hover:text-white text-sm font-light transition-colors"
+                  >Project Marketing</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3
+              class="text-xs text-stone-300 font-medium tracking-widest2 uppercase mb-5"
+            >
+              Company
+            </h3>
+            <ul class="space-y-3" role="list">
+              <li>
+                <a
+                  href="#"
+                  class="text-stone-400 hover:text-white text-sm font-light transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-stone-400 hover:text-white text-sm font-light transition-colors"
+                  >Our Agents</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-stone-400 hover:text-white text-sm font-light transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-stone-400 hover:text-white text-sm font-light transition-colors"
+                  >Media</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-stone-400 hover:text-white text-sm font-light transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <section class="py-20 lg:py-28">
-      <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
-        <div class="mb-12 max-w-3xl">
-          <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-600">At a Glance</p>
-          <h2 class="font-serif text-4xl font-light text-stone-900 lg:text-5xl">How HAVEN can help</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="service-card bg-white p-8 rounded-sm border border-stone-100">
-            <div class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"><svg class="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
-            <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">Buyer's Advisory</h3>
-            <p class="text-stone-500 font-light">Independent guidance across the buying journey, from search and shortlisting to negotiation and settlement.</p>
-          </div>
-          <div class="service-card bg-white p-8 rounded-sm border border-stone-100">
-            <div class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"><svg class="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
-            <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">Property Appraisal</h3>
-            <p class="text-stone-500 font-light">Detailed market appraisals to help you price with confidence and prepare a strategy for sale.</p>
-          </div>
-          <div class="service-card bg-white p-8 rounded-sm border border-stone-100">
-            <div class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"><svg class="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div>
-            <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">Property Management</h3>
-            <p class="text-stone-500 font-light">Full-service management for prestige rentals, protecting your property and caring for tenants.</p>
-          </div>
-          <div class="service-card bg-white p-8 rounded-sm border border-stone-100">
-            <div class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"><svg class="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
-            <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">Investment Advisory</h3>
-            <p class="text-stone-500 font-light">Portfolio-level advice on acquisitions, divestments, and long-term performance across key markets.</p>
-          </div>
-          <div class="service-card bg-white p-8 rounded-sm border border-stone-100">
-            <div class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"><svg class="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg></div>
-            <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">International Buyers</h3>
-            <p class="text-stone-500 font-light">Specialised support for overseas investors and expats navigating regulations, finance, and settlement.</p>
-          </div>
-          <div class="service-card bg-white p-8 rounded-sm border border-stone-100">
-            <div class="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-6"><svg class="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-            <h3 class="font-serif text-2xl font-light text-stone-900 mb-3">Conveyancing</h3>
-            <p class="text-stone-500 font-light">Seamless coordination with trusted legal partners across contracts, searches, and settlement.</p>
+      <!-- Bottom bar -->
+      <div class="border-t border-stone-800">
+        <div
+          class="mx-auto max-w-screen-xl px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <p class="text-xs text-stone-500 font-light">
+            © 2025 HAVEN Real Estate Pty Ltd. All rights reserved. Licence No.
+            000001
+          </p>
+          <div class="flex gap-6">
+            <a
+              href="#"
+              class="text-xs text-stone-500 hover:text-stone-300 transition-colors font-light"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="text-xs text-stone-500 hover:text-stone-300 transition-colors font-light"
+              >Terms of Use</a
+            >
+            <a
+              href="#"
+              class="text-xs text-stone-500 hover:text-stone-300 transition-colors font-light"
+              >Accessibility</a
+            >
           </div>
         </div>
       </div>
-    </section>
+    </footer>
 
-    <section class="bg-stone-50 py-20 lg:py-28">
-      <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
-        <div class="mb-12 max-w-3xl">
-          <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-600">Included</p>
-          <h2 class="font-serif text-4xl font-light text-stone-900 lg:text-5xl">Detailed service pathways</h2>
-        </div>
-        <div class="grid gap-6 lg:grid-cols-2">
-          <article class="bg-white p-8 border border-stone-200"><h3 class="font-serif text-3xl font-light">Buyer's Advisory</h3><p class="mt-3 font-light text-stone-600">From first brief to key handover, our buyer's advisory team acts exclusively in your interests.</p><ul class="mt-5 space-y-2 text-sm font-light text-stone-500"><li>Define your brief and shortlist suitable suburbs.</li><li>Provide on- and off-market opportunities.</li><li>Lead negotiations and bidding strategies.</li></ul><a href="#consultation" class="mt-6 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600">Start your buying brief</a></article>
-          <article class="bg-white p-8 border border-stone-200"><h3 class="font-serif text-3xl font-light">Property Appraisal</h3><p class="mt-3 font-light text-stone-600">Our appraisals combine live market data with on-the-ground insight into buyer demand.</p><ul class="mt-5 space-y-2 text-sm font-light text-stone-500"><li>In-person inspection and condition assessment.</li><li>Comparative market analysis of recent sales.</li><li>Pricing strategy and sale scenario modelling.</li></ul><a href="#consultation" class="mt-6 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600">Book a complimentary appraisal</a></article>
-          <article class="bg-white p-8 border border-stone-200"><h3 class="font-serif text-3xl font-light">Property Management</h3><p class="mt-3 font-light text-stone-600">We focus on preservation of value and quality tenant experiences.</p><ul class="mt-5 space-y-2 text-sm font-light text-stone-500"><li>Marketing and tenant selection.</li><li>Lease negotiation and documentation.</li><li>Inspections, repairs, reporting, and rent reviews.</li></ul><a href="#consultation" class="mt-6 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600">Discuss property management</a></article>
-          <article class="bg-white p-8 border border-stone-200"><h3 class="font-serif text-3xl font-light">Investment & International</h3><p class="mt-3 font-light text-stone-600">We provide a portfolio-level view of risk, return, and cross-border requirements.</p><ul class="mt-5 space-y-2 text-sm font-light text-stone-500"><li>Portfolio review and acquisition strategies.</li><li>FIRB, finance, tax, and legal coordination.</li><li>Virtual inspections and settlement support.</li></ul><a href="#consultation" class="mt-6 inline-block text-xs uppercase tracking-widest2 text-stone-900 hover:text-gold-600">Arrange a consultation</a></article>
-        </div>
-      </div>
-    </section>
+    <script>
+      // Init Lucide icons
+      lucide.createIcons();
 
-    <section class="bg-stone-900 py-20 lg:py-24">
-      <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
-        <div class="mb-10 max-w-3xl">
-          <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-400">Why HAVEN</p>
-          <h2 class="font-serif text-4xl font-light text-white">Why clients choose HAVEN</h2>
-        </div>
-        <div class="grid gap-6 md:grid-cols-4">
-          <div class="border border-white/10 p-6 text-stone-300"><h3 class="mb-3 text-white">Luxury focus</h3><p class="text-sm font-light">Deep expertise in prestige homes, penthouses, and high-value investments.</p></div>
-          <div class="border border-white/10 p-6 text-stone-300"><h3 class="mb-3 text-white">Curated opportunities</h3><p class="text-sm font-light">Access to off-market, pre-market, and new developments across key cities.</p></div>
-          <div class="border border-white/10 p-6 text-stone-300"><h3 class="mb-3 text-white">Independent advice</h3><p class="text-sm font-light">Clear recommendations and honest feedback at each decision point.</p></div>
-          <div class="border border-white/10 p-6 text-stone-300"><h3 class="mb-3 text-white">End-to-end service</h3><p class="text-sm font-light">One team for buying, selling, leasing, and portfolio strategy.</p></div>
-        </div>
-      </div>
-    </section>
+      const nav = document.querySelector(".futuristic-nav");
+      window.addEventListener(
+        "scroll",
+        () => {
+          nav.classList.toggle("scrolled", window.scrollY > 60);
+        },
+        { passive: true },
+      );
 
-    <section id="consultation" class="py-20 lg:py-24">
-      <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
-        <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div><p class="mb-3 text-xs uppercase tracking-widest2 text-gold-600">Enquiry</p><h2 class="mb-5 font-serif text-4xl font-light text-stone-900">Book a confidential consultation</h2><p class="font-light leading-relaxed text-stone-600">Share a few details about your goals and we'll connect you with the right HAVEN advisor within one business day.</p></div>
-          <form class="grid gap-4 sm:grid-cols-2">
-            <input class="border border-stone-200 bg-white px-4 py-3 text-sm" placeholder="Name" />
-            <input class="border border-stone-200 bg-white px-4 py-3 text-sm" placeholder="Email" />
-            <input class="border border-stone-200 bg-white px-4 py-3 text-sm" placeholder="Phone" />
-            <select class="border border-stone-200 bg-white px-4 py-3 text-sm"><option>Service of interest</option><option>Buyer's Advisory</option><option>Property Appraisal</option><option>Property Management</option><option>Investment Advisory</option></select>
-            <textarea class="min-h-32 border border-stone-200 bg-white px-4 py-3 text-sm sm:col-span-2" placeholder="Message"></textarea>
-            <button class="bg-stone-900 px-8 py-4 text-xs font-medium uppercase tracking-widest2 text-white hover:bg-gold-500 hover:text-stone-900 sm:col-span-2">Send enquiry</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="bg-stone-900" role="contentinfo">
-    <!-- Top footer -->
-    <div class="mx-auto max-w-screen-xl px-6 lg:px-10 py-16 lg:py-20">
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
-        <!-- Brand -->
-        <div class="lg:col-span-2">
-          <div class="flex items-center gap-3 mb-5">
-            <span class="font-serif text-2xl font-light text-white tracking-widest">HAVEN</span>
-            <span class="w-px h-5 bg-gold-400 opacity-70"></span>
-            <span class="text-xs text-stone-400 tracking-widest2 font-light uppercase">Real Estate</span>
-          </div>
-          <p class="text-stone-400 text-sm font-light leading-relaxed mb-6 max-w-xs">Australia's premier luxury real estate agency. Connecting exceptional people with exceptional properties since 2001.</p>
-          <div class="flex gap-4">
-            <a href="#" class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all" aria-label="HAVEN on Facebook">
-              <i data-lucide="facebook" class="w-4 h-4" aria-hidden="true"></i>
-            </a>
-            <a href="#" class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all" aria-label="HAVEN on Instagram">
-              <i data-lucide="instagram" class="w-4 h-4" aria-hidden="true"></i>
-            </a>
-            <a href="#" class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all" aria-label="HAVEN on LinkedIn">
-              <i data-lucide="linkedin" class="w-4 h-4" aria-hidden="true"></i>
-            </a>
-            <a href="#" class="w-9 h-9 rounded-full border border-stone-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 text-stone-400 transition-all" aria-label="HAVEN on YouTube">
-              <i data-lucide="youtube" class="w-4 h-4" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Links -->
-        <div>
-          <h3 class="text-xs text-stone-300 font-medium tracking-widest2 uppercase mb-5">Properties</h3>
-          <ul class="space-y-3" role="list">
-            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Buy</a></li>
-            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Rent</a></li>
-            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Sold Results</a></li>
-            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">New Projects</a></li>
-            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Off Market</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-xs text-stone-300 font-medium tracking-widest2 uppercase mb-5">Services</h3>
-          <ul class="space-y-3" role="list">
-            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Buyer's Advisory</a></li>
-            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Property Management</a></li>
-            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Appraisal</a></li>
-            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Investment Advisory</a></li>
-            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Project Marketing</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-xs text-stone-300 font-medium tracking-widest2 uppercase mb-5">Company</h3>
-          <ul class="space-y-3" role="list">
-            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">About Us</a></li>
-            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Our Agents</a></li>
-            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Careers</a></li>
-            <li><a href="#" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Media</a></li>
-            <li><a href="#contact" class="text-stone-400 hover:text-white text-sm font-light transition-colors">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom bar -->
-    <div class="border-t border-stone-800">
-      <div class="mx-auto max-w-screen-xl px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-stone-500 font-light">© 2025 HAVEN Real Estate Pty Ltd. All rights reserved. Licence No. 000001</p>
-        <div class="flex gap-6">
-          <a href="#" class="text-xs text-stone-500 hover:text-stone-300 transition-colors font-light">Privacy Policy</a>
-          <a href="#" class="text-xs text-stone-500 hover:text-stone-300 transition-colors font-light">Terms of Use</a>
-          <a href="#" class="text-xs text-stone-500 hover:text-stone-300 transition-colors font-light">Accessibility</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Init Lucide icons
-    lucide.createIcons();
-
-    const nav = document.querySelector('.futuristic-nav');
-    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
-
-    // Mobile Menu with Accordion
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuClose = document.getElementById('menu-close');
-    if (menuToggle && mobileMenu) {
-      menuToggle.addEventListener('click', () => {
-        const isOpen = mobileMenu.classList.toggle('open');
-        menuToggle.classList.toggle('active', isOpen);
-        menuToggle.setAttribute('aria-expanded', isOpen);
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-      });
-      if (menuClose) {
-        menuClose.addEventListener('click', () => {
-          mobileMenu.classList.remove('open');
-          menuToggle.classList.remove('active');
-          menuToggle.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = '';
+      // Mobile Menu with Accordion
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuClose = document.getElementById("menu-close");
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", () => {
+          const isOpen = mobileMenu.classList.toggle("open");
+          menuToggle.classList.toggle("active", isOpen);
+          menuToggle.setAttribute("aria-expanded", isOpen);
+          document.body.style.overflow = isOpen ? "hidden" : "";
+        });
+        if (menuClose) {
+          menuClose.addEventListener("click", () => {
+            mobileMenu.classList.remove("open");
+            menuToggle.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+            document.body.style.overflow = "";
+          });
+        }
+        document.querySelectorAll("[data-mobile-toggle]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const targetId = btn.getAttribute("data-mobile-toggle");
+            const target = document.getElementById("mobile-" + targetId);
+            const icon = btn.querySelector("svg");
+            target.classList.toggle("open");
+            icon.classList.toggle("rotate-180");
+            document.querySelectorAll(".mobile-submenu").forEach((sub) => {
+              if (sub.id !== "mobile-" + targetId) sub.classList.remove("open");
+            });
+            document
+              .querySelectorAll("[data-mobile-toggle] svg")
+              .forEach((svg) => {
+                if (svg !== icon) svg.classList.remove("rotate-180");
+              });
+          });
+        });
+        mobileMenu.querySelectorAll("a").forEach((a) => {
+          a.addEventListener("click", () => {
+            mobileMenu.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            document.body.style.overflow = "";
+          });
         });
       }
-      document.querySelectorAll('[data-mobile-toggle]').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const targetId = btn.getAttribute('data-mobile-toggle');
-          const target = document.getElementById('mobile-' + targetId);
-          const icon = btn.querySelector('svg');
-          target.classList.toggle('open');
-          icon.classList.toggle('rotate-180');
-          document.querySelectorAll('.mobile-submenu').forEach(sub => { if (sub.id !== 'mobile-' + targetId) sub.classList.remove('open'); });
-          document.querySelectorAll('[data-mobile-toggle] svg').forEach(svg => { if (svg !== icon) svg.classList.remove('rotate-180'); });
-        });
-      });
-      mobileMenu.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-          mobileMenu.classList.remove('open');
-          menuToggle.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = '';
-        });
-      });
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>
