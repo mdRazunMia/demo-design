@@ -777,17 +777,14 @@
       display: block;
     }
 
-    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
-    img, video, svg { max-width: 100%; }
+    /* Essential base styles - keep from old CSS */
     main, section, header, footer, nav, div, article, form { min-width: 0; }
-    h1, h2, h3, h4, p, a, button, span { overflow-wrap: anywhere; }
-    #mobile-menu { width: 100%; max-width: 100vw; overflow-x: hidden; }
+    
+    /* Mobile nav dropdown panel */
     @media (max-width: 1023px) {
-      .futuristic-nav { width: 100%; }
-      .nav-container, .logo-group { min-width: 0; gap: 0.5rem; }
-      .menu-toggle-futuristic { flex: 0 0 44px; }
       .dropdown-panel { grid-template-columns: 1fr; gap: 20px; padding: 24px; }
     }
+    
     @media (max-width: 640px) {
       .logo-group .font-serif { font-size: 1.35rem; }
       .mini-dropdown-content { max-width: calc(100vw - 32px); }
@@ -795,87 +792,8 @@
       .search-glass .flex { overflow-x: auto; scrollbar-width: none; }
       .search-glass .flex::-webkit-scrollbar { display: none; }
       .testimonial-card { flex-basis: calc(100vw - 48px); }
-      .absolute.-bottom-8 { bottom: -1rem !important; }
-      .absolute.-right-6 { right: 0 !important; }
-      .absolute.-left-6 { left: 0 !important; }
       .flex.items-center.gap-4.text-xs { flex-wrap: wrap; row-gap: 0.5rem; }
       .flex.items-center.gap-6 { flex-wrap: wrap; row-gap: 0.5rem; }
-    }
-
-    /* Responsive fixes for all sections */
-    @media (max-width: 1024px) {
-      .hero-bg { min-height: 100vh; }
-      .hero-bg h1 { font-size: 2.5rem; }
-      .search-glass { padding: 1rem; }
-    }
-
-    @media (max-width: 768px) {
-      .hero-bg { min-height: 90vh; }
-      .hero-bg h1 { font-size: 2rem; }
-      .hero-bg p { font-size: 1rem; }
-      .search-glass { margin-top: 2rem; }
-      .search-glass .grid { grid-template-columns: 1fr; }
-      .search-tabs-container { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-      .search-tabs-container::-webkit-scrollbar { display: none; }
-      .search-tab { white-space: nowrap; padding: 0.75rem 1rem; font-size: 0.7rem; }
-      .property-grid { grid-template-columns: 1fr; }
-      .stats-grid { grid-template-columns: 1fr 1fr; }
-      .stats-grid li { padding: 1rem 0.5rem; }
-      .stats-grid .font-serif { font-size: 1.75rem; }
-      .filter-buttons { flex-wrap: wrap; gap: 0.5rem; }
-      .filter-btn { font-size: 0.65rem; padding: 0.5rem 0.75rem; }
-      .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-      .section-header h2 { font-size: 2rem; }
-      .testimonial-track { padding: 0 1rem; }
-      .testimonial-card { flex: 0 0 calc(100vw - 4rem); }
-      .faq-grid { grid-template-columns: 1fr; }
-      .cta-section { padding: 4rem 1.5rem; }
-      .cta-section h2 { font-size: 2rem; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .contact-form { padding: 1.5rem; }
-      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    }
-
-    @media (max-width: 640px) {
-      .hero-bg { min-height: 85vh; padding-top: 5rem; }
-      .hero-bg h1 { font-size: 1.75rem; }
-      .hero-bg .max-w-2xl { margin-bottom: 2rem; }
-      .search-glass { padding: 0.75rem; }
-      .search-glass .flex { gap: 0.25rem; }
-      .search-glass input, .search-glass select { padding: 0.625rem; font-size: 0.875rem; }
-      .search-glass button { width: 100%; justify-content: center; margin-top: 0.5rem; }
-      .filters-row { flex-direction: column; width: 100%; }
-      .filters-row select { width: 100%; }
-      .stats-section { padding: 1.5rem 0; }
-      .stats-grid { grid-template-columns: 1fr; }
-      .stats-grid li { border-bottom: 1px solid rgba(255,255,255,0.1); }
-      .stats-grid li:last-child { border-bottom: none; }
-      .section-padding { padding: 3rem 1rem; }
-      .section-header h2 { font-size: 1.75rem; }
-      .section-header .flex { width: 100%; justify-content: flex-start; }
-      .property-card { margin-bottom: 1rem; }
-      .property-card .p-5 { padding: 1rem; }
-      .property-card h3 { font-size: 1.125rem; }
-      .property-features { flex-wrap: wrap; gap: 0.5rem; }
-      .testimonial-section { padding: 2rem 0; }
-      .testimonial-card { padding: 1.25rem; }
-      .testimonial-card p { font-size: 0.9rem; }
-      .cta-section { padding: 3rem 1rem; }
-      .cta-section .flex { flex-direction: column; gap: 1rem; }
-      .cta-section a { width: 100%; text-align: center; }
-      .faq-section { padding: 2rem 1rem; }
-      .faq-button { font-size: 0.875rem; padding: 1rem 0; }
-      .contact-section { padding: 2rem 1rem; }
-      .contact-info { margin-bottom: 2rem; }
-      .contact-form { padding: 1rem; }
-      .contact-form input, .contact-form select, .contact-form textarea { padding: 0.75rem; font-size: 0.875rem; }
-      .footer-section { padding: 2rem 1rem; }
-      .footer-social { justify-content: center; }
-      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
-      .nbhd-grid { grid-template-columns: 1fr; }
-      .agent-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 480px) {
@@ -897,79 +815,812 @@
     }
 
     /* ═══════════════════════════════════════════════════
-       COMPREHENSIVE RESPONSIVE BREAKPOINTS
+       COMPREHENSIVE MOBILE-FIRST RESPONSIVE BREAKPOINTS
        ═══════════════════════════════════════════════════ */
 
-    /* Mobile Small: 320px - 374px */
-    @media (max-width: 374px) {
-      .container, .mx-auto.max-w-screen-xl { padding-left: 12px; padding-right: 12px; }
-      .logo-group .font-serif { font-size: 1.25rem; }
-      .hero-bg h1 { font-size: 1.35rem; }
-      .hero-bg .max-w-2xl { margin-bottom: 1.5rem; }
-      .search-glass { padding: 0.5rem; margin-top: 1rem; }
-      .search-glass input, .search-glass select { padding: 0.5rem; font-size: 0.8rem; }
-      .search-glass button { min-height: 44px; }
-      .search-tab { padding: 0.5rem 0.75rem; font-size: 0.65rem; }
-      .property-card .p-5 { padding: 0.75rem; }
-      .property-card h3 { font-size: 1rem; }
-      .section-header h2 { font-size: 1.5rem; }
-      .footer-links { grid-template-columns: 1fr !important; gap: 1.5rem; }
+    /* ═══════════════════════════════════════════════════
+       BASE (Mobile First - 320px and above)
+       ═══════════════════════════════════════════════════ */
+    
+    html { 
+      overflow-x: hidden; 
+      -webkit-text-size-adjust: 100%;
+    }
+    
+    body { 
+      overflow-x: hidden; 
+      max-width: 100vw;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    *, *::before, *::after { 
+      box-sizing: border-box; 
+      max-width: 100%;
+    }
+    
+    img, video, svg, iframe { 
+      max-width: 100%; 
+      height: auto;
+    }
+    
+    h1, h2, h3, h4, h5, h6, p, a, span { 
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
 
-    /* Mobile Medium: 375px - 424px */
+    .container, .mx-auto, .max-w-screen-xl {
+      width: 100%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    /* Mobile navigation base */
+    #mobile-menu { 
+      width: 100%; 
+      max-width: 100vw; 
+      overflow-x: hidden; 
+    }
+
+    /* Base touch targets for mobile */
+    a, button, input, select, textarea {
+      min-height: 44px;
+    }
+
+    .btn-primary, .btn-gold, .btn-outline, .btn-outline-light, .nav-cta {
+      min-height: 44px;
+      padding: 12px 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       MOBILE SMALL (320px - 374px)
+       ═══════════════════════════════════════════════════ */
+    @media (min-width: 320px) and (max-width: 374px) {
+      .container, .mx-auto.max-w-screen-xl { 
+        padding-left: 0.75rem; 
+        padding-right: 0.75rem; 
+      }
+      
+      .logo-group .font-serif { 
+        font-size: 1.25rem; 
+      }
+      
+      .logo-sub {
+        display: none;
+      }
+      
+      /* Hero section */
+      .hero-bg { 
+        min-height: 85vh; 
+        padding-top: 4rem;
+      }
+      
+      .hero-bg h1 { 
+        font-size: clamp(1.25rem, 5vw, 1.4rem); 
+        line-height: 1.3;
+      }
+      
+      .hero-bg p { 
+        font-size: 0.875rem; 
+      }
+      
+      .hero-bg .max-w-2xl { 
+        margin-bottom: 1.25rem; 
+      }
+      
+      /* Search glass */
+      .search-glass { 
+        padding: 0.5rem; 
+        margin-top: 1rem; 
+        border-radius: 4px;
+      }
+      
+      .search-glass input, 
+      .search-glass select { 
+        padding: 0.5rem; 
+        font-size: 0.8rem; 
+        min-height: 40px;
+      }
+      
+      .search-glass button { 
+        min-height: 44px; 
+        width: 100%;
+        justify-content: center;
+        margin-top: 0.5rem;
+      }
+      
+      /* Search tabs */
+      .search-tab { 
+        padding: 0.5rem 0.75rem; 
+        font-size: 0.65rem; 
+        white-space: nowrap;
+      }
+      
+      /* Property cards */
+      .property-card .p-5 { 
+        padding: 0.75rem; 
+      }
+      
+      .property-card h3 { 
+        font-size: 1rem; 
+      }
+      
+      .property-features {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      
+      /* Section headers */
+      .section-header h2 { 
+        font-size: 1.5rem; 
+      }
+      
+      /* Typography */
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.375rem; }
+      h3 { font-size: 1.25rem; }
+      p, body { font-size: 0.875rem; line-height: 1.5; }
+      
+      /* Footer */
+      .footer-links { 
+        grid-template-columns: 1fr !important; 
+        gap: 1.5rem; 
+      }
+      
+      /* Stats */
+      .stats-grid { 
+        grid-template-columns: 1fr; 
+      }
+      
+      .stats-grid li { 
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding: 1rem 0.5rem;
+      }
+      
+      .stats-grid li:last-child { 
+        border-bottom: none; 
+      }
+      
+      /* Testimonials */
+      .testimonial-track {
+        padding: 0 0.75rem;
+        gap: 12px;
+      }
+      
+      .testimonial-card { 
+        flex: 0 0 calc(100vw - 2rem);
+        padding: 1rem;
+      }
+      
+      /* Form elements */
+      input, select, textarea {
+        font-size: 16px !important;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════
+       MOBILE MEDIUM (375px - 424px)
+       ═══════════════════════════════════════════════════ */
     @media (min-width: 375px) and (max-width: 424px) {
-      .container, .mx-auto.max-w-screen-xl { padding-left: 16px; padding-right: 16px; }
-      .hero-bg h1 { font-size: 1.5rem; }
-      .search-glass { margin-top: 1.5rem; }
-      .section-header h2 { font-size: 1.75rem; }
+      .container, .mx-auto.max-w-screen-xl { 
+        padding-left: 1rem; 
+        padding-right: 1rem; 
+      }
+      
+      /* Hero section */
+      .hero-bg { 
+        min-height: 85vh;
+        padding-top: 4.5rem;
+      }
+      
+      .hero-bg h1 { 
+        font-size: clamp(1.35rem, 5.5vw, 1.55rem); 
+      }
+      
+      .hero-bg p { 
+        font-size: 0.9rem; 
+      }
+      
+      .search-glass { 
+        margin-top: 1.25rem; 
+      }
+      
+      /* Section headers */
+      .section-header h2 { 
+        font-size: 1.75rem; 
+      }
+      
+      /* Property cards */
+      .property-card .p-5 { 
+        padding: 0.875rem; 
+      }
+      
+      /* Stats */
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      /* Testimonials */
+      .testimonial-card { 
+        flex: 0 0 calc(100vw - 2.5rem);
+      }
     }
 
-    /* Mobile Large: 425px - 767px */
+    /* ═══════════════════════════════════════════════════
+       MOBILE LARGE (425px - 767px)
+       ═══════════════════════════════════════════════════ */
     @media (min-width: 425px) and (max-width: 767px) {
-      .hero-bg h1 { font-size: 1.75rem; }
-      .hero-bg p { font-size: 0.95rem; }
+      .container, .mx-auto.max-w-screen-xl { 
+        padding-left: 1.25rem; 
+        padding-right: 1.25rem; 
+      }
+      
+      /* Hero */
+      .hero-bg { 
+        min-height: 90vh; 
+        padding-top: 5rem;
+      }
+      
+      .hero-bg h1 { 
+        font-size: clamp(1.5rem, 6vw, 1.85rem); 
+      }
+      
+      .hero-bg p { 
+        font-size: 0.95rem; 
+      }
+      
+      /* Search */
+      .search-glass { 
+        margin-top: 1.5rem; 
+      }
+      
+      /* Section headers */
+      .section-header h2 { 
+        font-size: 2rem; 
+      }
+      
+      /* Property grid - 2 columns on larger mobile */
+      .property-grid { 
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      
+      /* Filter buttons */
+      .filter-buttons { 
+        flex-wrap: wrap; 
+        gap: 0.5rem; 
+      }
+      
+      .filter-btn { 
+        flex: 1 1 calc(50% - 0.25rem); 
+        min-width: 100px;
+      }
+      
+      /* Stats */
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      /* Testimonials */
+      .testimonial-card { 
+        flex: 0 0 calc(50vw - 1.5rem); 
+      }
+      
+      /* Footer */
+      .footer-links { 
+        grid-template-columns: 1fr 1fr; 
+        gap: 1.5rem; 
+      }
     }
 
-    /* Tablet Portrait: 768px - 1023px */
+    /* ═══════════════════════════════════════════════════
+       TABLET PORTRAIT (768px - 1023px)
+       ═══════════════════════════════════════════════════ */
     @media (min-width: 768px) and (max-width: 1023px) {
-      .hero-bg h1 { font-size: 2.5rem; }
-      .hero-bg .max-w-2xl { margin-bottom: 2rem; }
-      .search-glass { margin-top: 2rem; }
-      .property-grid { grid-template-columns: repeat(2, 1fr); }
-      .testimonial-card { flex: 0 0 calc(50vw - 2rem); }
+      .container, .mx-auto.max-w-screen-xl { 
+        padding-left: 2rem; 
+        padding-right: 2rem; 
+      }
+      
+      /* Hero section */
+      .hero-bg { 
+        min-height: 100vh; 
+        padding-top: 5rem;
+      }
+      
+      .hero-bg h1 { 
+        font-size: clamp(2rem, 5vw, 2.75rem); 
+      }
+      
+      .hero-bg .max-w-2xl { 
+        margin-bottom: 2rem; 
+      }
+      
+      .hero-bg p { 
+        font-size: 1.1rem; 
+      }
+      
+      /* Search glass */
+      .search-glass { 
+        margin-top: 2rem; 
+        padding: 1.25rem;
+      }
+      
+      .search-glass .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      /* Property grid - 2 columns */
+      .property-grid { 
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      
+      /* Stats */
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      .stats-grid .font-serif {
+        font-size: 2rem;
+      }
+      
+      /* Section headers */
+      .section-header { 
+        flex-direction: row; 
+        align-items: flex-end; 
+        justify-content: space-between;
+      }
+      
+      .section-header h2 { 
+        font-size: 2.5rem; 
+      }
+      
+      /* Testimonials */
+      .testimonial-card { 
+        flex: 0 0 calc(50vw - 2rem); 
+      }
+      
+      /* Filter buttons */
+      .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+      
+      /* Forms */
+      .contact-form {
+        padding: 2rem;
+      }
+      
+      /* Grid layouts */
+      .grid-cols-1.md\:grid-cols-2,
+      .grid-cols-1.lg\:grid-cols-2,
+      .grid-cols-1.lg\:grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      /* Nav improvements for tablet */
+      .nav-container {
+        max-width: 100%;
+      }
     }
 
-    /* Tablet Landscape: 1024px - 1279px */
+    /* ═══════════════════════════════════════════════════
+       TABLET LANDSCAPE (1024px - 1279px) - FIX MENU BAR
+       ═══════════════════════════════════════════════════ */
     @media (min-width: 1024px) and (max-width: 1279px) {
-      .property-grid { grid-template-columns: repeat(3, 1fr); }
+      .container, .mx-auto.max-w-screen-xl { 
+        padding-left: 2.5rem; 
+        padding-right: 2.5rem; 
+      }
+      
+      /* Hero section */
+      .hero-bg { 
+        min-height: 100vh; 
+        padding-top: 5rem;
+      }
+      
+      .hero-bg h1 { 
+        font-size: clamp(2.5rem, 4.5vw, 3.25rem); 
+      }
+      
+      .hero-bg .max-w-2xl { 
+        margin-bottom: 2.5rem; 
+      }
+      
+      /* Navigation - fix menubar text breaking */
+      .nav-container { 
+        max-width: 100%; 
+        padding: 0 1rem;
+      }
+      
+      .desktop-nav { 
+        display: flex;
+        flex-shrink: 1;
+      }
+      
+      /* Compact nav items for tablet landscape */
+      .nav-item {
+        padding: 6px 10px;
+      }
+      
+      .futuristic-link {
+        font-size: 11px;
+        padding: 6px 0;
+        gap: 4px;
+      }
+      
+      .dropdown-arrow {
+        width: 12px;
+        height: 12px;
+      }
+      
+      /* Reduce nav spacing */
+      .nav-item .gap-1 {
+        gap: 0;
+      }
+      
+      /* Nav CTA button smaller */
+      .nav-cta {
+        padding: 8px 16px;
+        font-size: 10px;
+      }
+      
+      /* Search icon */
+      .nav-search {
+        width: 36px;
+        height: 36px;
+      }
+      
+      /* Property grid - 3 columns */
+      .property-grid { 
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      
+      /* Search glass */
+      .search-glass { 
+        margin-top: 2.5rem; 
+        padding: 1.5rem;
+      }
+      
+      .search-glass .grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      /* Stats */
+      .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      
+      /* Section headers */
+      .section-header h2 { 
+        font-size: 3rem; 
+      }
+      
+      /* Testimonials */
+      .testimonial-card { 
+        flex: 0 0 calc(33.333vw - 2rem); 
+        max-width: 400px;
+      }
+      
+      /* Mega dropdown panel */
+      .dropdown-panel {
+        padding: 24px 32px;
+        gap: 24px;
+      }
+      
+      /* Footer */
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+      
+      /* Two column grids */
+      .grid-cols-1.lg\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    /* Desktop Small: 1280px - 1439px */
+    /* ═══════════════════════════════════════════════════
+       LAPTOP / DESKTOP (1280px - 1439px)
+       ═══════════════════════════════════════════════════ */
     @media (min-width: 1280px) and (max-width: 1439px) {
-      .dropdown-panel { padding: 32px 40px; }
+      .container, .mx-auto.max-w-screen-xl { 
+        padding-left: 3rem; 
+        padding-right: 3rem; 
+      }
+      
+      /* Hero */
+      .hero-bg h1 { 
+        font-size: clamp(3rem, 4vw, 4rem); 
+      }
+      
+      /* Nav */
+      .dropdown-panel { 
+        padding: 32px 40px; 
+      }
+      
+      /* Property grid - 3 columns */
+      .property-grid { 
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+      
+      /* Section headers */
+      .section-header h2 { 
+        font-size: 3.5rem; 
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════
+       LARGE DESKTOP (1440px+)
+       ═══════════════════════════════════════════════════ */
+    @media (min-width: 1440px) {
+      .container, .mx-auto.max-w-screen-xl { 
+        padding-left: 4rem; 
+        padding-right: 4rem; 
+        max-width: 1920px;
+      }
+      
+      /* Hero */
+      .hero-bg h1 { 
+        font-size: 4.5rem; 
+      }
+      
+      /* Property grid */
+      .property-grid { 
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+      }
+      
+      /* Section headers */
+      .section-header h2 { 
+        font-size: 4rem; 
+      }
+      
+      /* Mega dropdown max width */
+      .mega-dropdown-content {
+        max-width: 1600px;
+      }
     }
 
     /* ═══════════════════════════════════════════════════
        NAVBAR RESPONSIVE IMPROVEMENTS
        ═══════════════════════════════════════════════════ */
-    @media (max-width: 1023px) {
-      .futuristic-nav { padding: 0.75rem 1rem; }
-      .logo-group { gap: 0.5rem; }
-      .nav-container { max-width: 100%; }
+    
+    /* Default - hide desktop nav on mobile, show toggle */
+    .desktop-nav {
+      display: none;
     }
-
+    
+    .menu-toggle-futuristic {
+      display: flex;
+    }
+    
+    /* Tablet Portrait and below - hide desktop nav, show mobile */
+    @media (max-width: 1023px) {
+      .futuristic-nav { 
+        padding: 0.75rem 1rem; 
+      }
+      .logo-group { 
+        gap: 0.5rem; 
+      }
+      .nav-container { 
+        max-width: 100%; 
+      }
+      .desktop-nav {
+        display: none !important;
+      }
+      .menu-toggle-futuristic {
+        display: flex;
+      }
+    }
+    
+    /* Tablet Landscape (1024px - 1279px) - FIX MENU BAR TEXT */
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      .desktop-nav {
+        display: flex !important;
+        flex-shrink: 1;
+        overflow-x: auto;
+        max-width: calc(100% - 200px);
+      }
+      
+      .menu-toggle-futuristic {
+        display: none !important;
+      }
+      
+      /* Compact nav items - reduce padding and font size */
+      .nav-item {
+        padding: 4px 8px;
+        flex-shrink: 0;
+      }
+      
+      .futuristic-link {
+        font-size: 10px;
+        padding: 6px 4px;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+        gap: 3px;
+      }
+      
+      .dropdown-arrow {
+        width: 10px;
+        height: 10px;
+      }
+      
+      /* Make logo smaller */
+      .logo-group .font-serif {
+        font-size: 1.25rem !important;
+      }
+      
+      .logo-sub {
+        display: none;
+      }
+      
+      /* Compact CTA */
+      .nav-cta {
+        padding: 6px 12px;
+        font-size: 9px;
+        white-space: nowrap;
+      }
+      
+      /* Compact search */
+      .nav-search {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+      }
+      
+      /* Dropdown fixes */
+      .dropdown-panel {
+        padding: 20px;
+        gap: 16px;
+      }
+      
+      .dropdown-title {
+        font-size: 10px;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+      }
+      
+      .dropdown-link {
+        font-size: 11px;
+        padding: 6px 0;
+      }
+      
+      /* Hide some dropdown columns if needed */
+      .dropdown-column:nth-child(5) {
+        display: none;
+      }
+      
+      /* Make mega dropdown smaller */
+      .mega-dropdown-content {
+        padding: 0;
+      }
+    }
+    
+    /* Desktop (1280px+) - full nav */
+    @media (min-width: 1280px) {
+      .desktop-nav {
+        display: flex !important;
+        flex-wrap: wrap;
+      }
+      
+      .menu-toggle-futuristic {
+        display: none !important;
+      }
+      
+      .logo-group .font-serif {
+        font-size: 1.5rem;
+      }
+      
+      .logo-sub {
+        display: inline;
+      }
+    }
+    
     @media (max-width: 767px) {
-      .futuristic-nav { min-height: 60px; }
-      .menu-toggle-futuristic { width: 44px; height: 44px; min-width: 44px; }
-      .mobile-nav-link { min-height: 44px; padding: 12px 0; }
-      .mobile-submenu a { min-height: 44px; padding: 12px 16px; }
-      #mobile-menu .nav-cta { min-height: 50px; font-size: 12px; }
+      .futuristic-nav { 
+        min-height: 60px; 
+      }
+      .menu-toggle-futuristic { 
+        width: 44px; 
+        height: 44px; 
+        min-width: 44px; 
+      }
+      .mobile-nav-link { 
+        min-height: 44px; 
+        padding: 12px 0; 
+      }
+      .mobile-submenu a { 
+        min-height: 44px; 
+        padding: 12px 16px; 
+      }
+      #mobile-menu .nav-cta { 
+        min-height: 50px; 
+        font-size: 12px; 
+      }
     }
 
     /* ═══════════════════════════════════════════════════
        FORM RESPONSIVE IMPROVEMENTS
        ═══════════════════════════════════════════════════ */
-    @media (max-width: 767px) {
+    
+    /* Base form styles - mobile first */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="search"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      min-height: 44px;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 4px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    
+    label {
+      display: block;
+      font-size: 0.75rem;
+      margin-bottom: 6px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    
+    /* Mobile Small */
+    @media (min-width: 320px) and (max-width: 374px) {
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="search"],
+      select,
+      textarea {
+        min-height: 42px;
+        padding: 10px;
+        font-size: 15px;
+      }
+      
+      .contact-form {
+        padding: 1rem;
+      }
+    }
+    
+    /* Mobile Medium */
+    @media (min-width: 375px) and (max-width: 424px) {
+      .contact-form {
+        padding: 1.25rem;
+      }
+    }
+    
+    /* Mobile Large / Tablet Portrait */
+    @media (min-width: 425px) and (max-width: 1023px) {
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="search"],
+      select,
+      textarea {
+        min-height: 46px;
+        padding: 12px;
+        font-size: 16px;
+      }
+      
+      .contact-form {
+        padding: 1.5rem;
+      }
+    }
+    
+    /* Tablet Landscape and up */
+    @media (min-width: 1024px) {
       input[type="text"],
       input[type="email"],
       input[type="tel"],
@@ -977,42 +1628,239 @@
       select,
       textarea {
         min-height: 48px;
-        padding: 12px;
-        font-size: 16px;
+        padding: 14px;
       }
-      label { font-size: 0.75rem; margin-bottom: 6px; }
+      
+      .contact-form {
+        padding: 2rem;
+      }
     }
 
     /* ═══════════════════════════════════════════════════
        BUTTON RESPONSIVE IMPROVEMENTS
        ═══════════════════════════════════════════════════ */
-    @media (max-width: 767px) {
-      .btn-primary, .btn-gold, .btn-outline, .btn-outline-light {
-        min-height: 48px;
-        padding: 12px 24px;
-        font-size: 0.75rem;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+    
+    /* Base button styles - mobile first */
+    .btn-primary, 
+    .btn-gold, 
+    .btn-outline, 
+    .btn-outline-light {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 24px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    
+    .nav-cta {
+      min-height: 44px;
+      padding: 10px 20px;
+      font-size: 11px;
+    }
+    
+    .filter-btn {
+      min-height: 40px;
+      padding: 10px 16px;
+      font-size: 0.7rem;
+    }
+    
+    /* Mobile Small */
+    @media (min-width: 320px) and (max-width: 374px) {
+      .btn-primary, 
+      .btn-gold, 
+      .btn-outline, 
+      .btn-outline-light {
+        min-height: 44px;
+        padding: 10px 18px;
+        font-size: 0.7rem;
       }
-      .nav-cta { min-height: 44px; padding: 12px 20px; }
-      .filter-btn { min-height: 40px; padding: 10px 16px; }
+      
+      .nav-cta {
+        min-height: 40px;
+        padding: 8px 14px;
+        font-size: 10px;
+      }
+      
+      .filter-btn {
+        min-height: 36px;
+        padding: 8px 12px;
+        font-size: 0.65rem;
+      }
+    }
+    
+    /* Mobile Medium */
+    @media (min-width: 375px) and (max-width: 424px) {
+      .btn-primary, 
+      .btn-gold, 
+      .btn-outline, 
+      .btn-outline-light {
+        min-height: 46px;
+        padding: 11px 20px;
+      }
+    }
+    
+    /* Tablet Landscape */
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      .btn-primary, 
+      .btn-gold, 
+      .btn-outline, 
+      .btn-outline-light {
+        min-height: 50px;
+        padding: 14px 28px;
+        font-size: 0.8rem;
+      }
+      
+      .filter-btn {
+        min-height: 42px;
+        padding: 12px 18px;
+      }
+    }
+    
+    /* Desktop */
+    @media (min-width: 1280px) {
+      .btn-primary, 
+      .btn-gold, 
+      .btn-outline, 
+      .btn-outline-light {
+        min-height: 52px;
+        padding: 16px 32px;
+        font-size: 0.85rem;
+      }
     }
 
     /* ═══════════════════════════════════════════════════
        GRID & LAYOUT RESPONSIVE IMPROVEMENTS
        ═══════════════════════════════════════════════════ */
-    @media (max-width: 767px) {
-      .grid { gap: 1rem; }
-      .property-grid { gap: 1rem; }
-      .section-padding { padding: 2.5rem 1rem; }
-      .testimonial-track { gap: 16px; padding: 0 1rem; }
-      .cta-section { padding: 3rem 1rem; }
+    
+    /* Base grid - mobile first */
+    .grid {
+      display: grid;
+      gap: 1rem;
     }
-
-    @media (max-width: 480px) {
-      .section-padding { padding: 2rem 0.75rem; }
-      .container { padding-left: 0.75rem; padding-right: 0.75rem; }
+    
+    .section-padding {
+      padding: 2rem 1rem;
+    }
+    
+    /* Mobile Small */
+    @media (min-width: 320px) and (max-width: 374px) {
+      .grid { 
+        gap: 0.75rem; 
+      }
+      .property-grid { 
+        gap: 0.75rem; 
+      }
+      .section-padding { 
+        padding: 2rem 0.75rem; 
+      }
+      .testimonial-track { 
+        gap: 12px; 
+        padding: 0 0.75rem; 
+      }
+      .cta-section { 
+        padding: 2.5rem 0.75rem; 
+      }
+    }
+    
+    /* Mobile Medium */
+    @media (min-width: 375px) and (max-width: 424px) {
+      .grid { 
+        gap: 0.875rem; 
+      }
+      .property-grid { 
+        gap: 0.875rem; 
+      }
+      .section-padding { 
+        padding: 2.25rem 1rem; 
+      }
+    }
+    
+    /* Mobile Large */
+    @media (min-width: 425px) and (max-width: 767px) {
+      .grid { 
+        gap: 1rem; 
+      }
+      .property-grid { 
+        gap: 1rem; 
+      }
+      .section-padding { 
+        padding: 2.5rem 1.25rem; 
+      }
+      .testimonial-track { 
+        gap: 16px; 
+        padding: 0 1.25rem; 
+      }
+      .cta-section { 
+        padding: 3rem 1.25rem; 
+      }
+    }
+    
+    /* Tablet Portrait */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .grid { 
+        gap: 1.25rem; 
+      }
+      .property-grid { 
+        gap: 1.25rem; 
+      }
+      .section-padding { 
+        padding: 3rem 2rem; 
+      }
+      .testimonial-track { 
+        gap: 20px; 
+        padding: 0 2rem; 
+      }
+      .cta-section { 
+        padding: 4rem 2rem; 
+      }
+    }
+    
+    /* Tablet Landscape */
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      .grid { 
+        gap: 1.5rem; 
+      }
+      .property-grid { 
+        gap: 1.5rem; 
+      }
+      .section-padding { 
+        padding: 4rem 2.5rem; 
+      }
+      .testimonial-track { 
+        gap: 24px; 
+        padding: 0 2.5rem; 
+      }
+      .cta-section { 
+        padding: 5rem 2.5rem; 
+      }
+    }
+    
+    /* Desktop */
+    @media (min-width: 1280px) {
+      .grid { 
+        gap: 2rem; 
+      }
+      .property-grid { 
+        gap: 2rem; 
+      }
+      .section-padding { 
+        padding: 5rem 3rem; 
+      }
+      .testimonial-track { 
+        gap: 24px; 
+        padding: 0 3rem; 
+      }
+      .cta-section { 
+        padding: 6rem 3rem; 
+      }
     }
 
     /* ═══════════════════════════════════════════════════
@@ -1033,20 +1881,152 @@
     /* ═══════════════════════════════════════════════════
        TYPOGRAPHY RESPONSIVE IMPROVEMENTS
        ═══════════════════════════════════════════════════ */
-    @media (max-width: 767px) {
-      h1 { font-size: 2rem; }
-      h2 { font-size: 1.75rem; }
-      h3 { font-size: 1.5rem; }
-      h4 { font-size: 1.25rem; }
-      p, body { font-size: 1rem; line-height: 1.6; }
-      .text-sm { font-size: 0.875rem; }
-      .text-xs { font-size: 0.75rem; }
+    
+    /* Base typography - mobile first */
+    h1 { 
+      font-size: 1.75rem; 
+      line-height: 1.2;
     }
-
-    @media (max-width: 480px) {
-      h1 { font-size: 1.75rem; }
-      h2 { font-size: 1.5rem; }
-      h3 { font-size: 1.25rem; }
+    h2 { 
+      font-size: 1.5rem; 
+      line-height: 1.25;
+    }
+    h3 { 
+      font-size: 1.25rem; 
+      line-height: 1.3;
+    }
+    h4 { 
+      font-size: 1.125rem; 
+      line-height: 1.35;
+    }
+    p, body { 
+      font-size: 1rem; 
+      line-height: 1.6;
+    }
+    .text-sm { 
+      font-size: 0.875rem; 
+    }
+    .text-xs { 
+      font-size: 0.75rem; 
+    }
+    .text-xxs {
+      font-size: 0.65rem;
+    }
+    
+    /* Mobile Small */
+    @media (min-width: 320px) and (max-width: 374px) {
+      h1 { 
+        font-size: 1.5rem; 
+      }
+      h2 { 
+        font-size: 1.375rem; 
+      }
+      h3 { 
+        font-size: 1.125rem; 
+      }
+      h4 { 
+        font-size: 1rem; 
+      }
+      p, body { 
+        font-size: 0.875rem; 
+        line-height: 1.5;
+      }
+      .text-sm { 
+        font-size: 0.8rem; 
+      }
+      .text-xs { 
+        font-size: 0.7rem; 
+      }
+      .text-xxs {
+        font-size: 0.6rem;
+      }
+    }
+    
+    /* Mobile Medium */
+    @media (min-width: 375px) and (max-width: 424px) {
+      h1 { 
+        font-size: 1.625rem; 
+      }
+      h2 { 
+        font-size: 1.4375rem; 
+      }
+      h3 { 
+        font-size: 1.1875rem; 
+      }
+      p, body { 
+        font-size: 0.9375rem; 
+      }
+    }
+    
+    /* Mobile Large */
+    @media (min-width: 425px) and (max-width: 767px) {
+      h1 { 
+        font-size: 1.875rem; 
+      }
+      h2 { 
+        font-size: 1.625rem; 
+      }
+      h3 { 
+        font-size: 1.375rem; 
+      }
+      h4 { 
+        font-size: 1.125rem; 
+      }
+    }
+    
+    /* Tablet Portrait */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      h1 { 
+        font-size: 2.25rem; 
+      }
+      h2 { 
+        font-size: 2rem; 
+      }
+      h3 { 
+        font-size: 1.5rem; 
+      }
+      h4 { 
+        font-size: 1.25rem; 
+      }
+      p, body { 
+        font-size: 1rem; 
+        line-height: 1.65;
+      }
+    }
+    
+    /* Tablet Landscape */
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      h1 { 
+        font-size: 2.75rem; 
+      }
+      h2 { 
+        font-size: 2.25rem; 
+      }
+      h3 { 
+        font-size: 1.75rem; 
+      }
+    }
+    
+    /* Desktop */
+    @media (min-width: 1280px) {
+      h1 { 
+        font-size: 3.5rem; 
+      }
+      h2 { 
+        font-size: 2.75rem; 
+      }
+      h3 { 
+        font-size: 2rem; 
+      }
+      h4 { 
+        font-size: 1.5rem; 
+      }
+    }
+    
+/* Large Desktop */
+    @media (min-width: 1440px) {
+      h1 { font-size: 4rem; }
+      h2 { font-size: 3rem; }
     }
 
     /* ═══════════════════════════════════════════════════
@@ -1130,6 +2110,41 @@
 
     /* Proper box-sizing for all elements */
     *, *::before, *::after { box-sizing: border-box; max-width: 100%; }
+
+    /* ═══════════════════════════════════════════════════
+       ADDITIONAL MOBILE-FIRST ENHANCEMENTS
+       ═══════════════════════════════════════════════════ */
+    
+    /* Touch-friendly scrollbars */
+    .search-tabs-container::-webkit-scrollbar,
+    .filters-row::-webkit-scrollbar {
+      display: none;
+    }
+    
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Image handling */
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    
+    /* Focus states for accessibility */
+    :focus-visible {
+      outline: 2px solid #D4A843;
+      outline-offset: 3px;
+    }
+    
+    /* Selection styling */
+    ::selection {
+      background: #D4A843;
+      color: #231E19;
+    }
   </style>
 </head>
 
@@ -1155,7 +2170,7 @@
         </a>
 
         <!-- Desktop Navigation -->
-        <div class="hidden lg:flex items-center gap-1">
+        <div class="desktop-nav hidden lg:flex items-center gap-1">
           <!-- Properties Mega Dropdown -->
           <div class="nav-item mega-dropdown">
             <a href="properties.html" class="futuristic-link">
