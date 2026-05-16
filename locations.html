@@ -369,6 +369,79 @@
       span {
         overflow-wrap: anywhere;
       }
+
+
+                  /* Extra fix for nav text breaking between 1024px and 1070px */
+            @media (min-width: 1024px) and (max-width: 1070px) {
+              .nav-item {
+                padding: 6px 4px;
+              }
+              .futuristic-link {
+                font-size: 10.5px;
+                letter-spacing: 0.04em;
+              }
+              .nav-cta {
+                padding: 8px 10px;
+                font-size: 9px;
+              }
+            }
+      /* Fix nav text breaking between 1024px and 1251px */
+      @media (min-width: 1024px) and (max-width: 1251px) {
+        .nav-item {
+          padding: 8px 8px;
+        }
+        .futuristic-link {
+          font-size: 12px;
+          letter-spacing: 0.06em;
+        }
+        .nav-cta {
+          padding: 10px 16px;
+          font-size: 10px;
+        }
+        /* Fix nav text breaking between 1024px and 1251px */
+        @media (min-width: 1024px) and (max-width: 1251px) {
+          .nav-item {
+            padding: 8px 8px;
+          }
+          .futuristic-link {
+            font-size: 12px;
+            letter-spacing: 0.06em;
+          }
+          .nav-cta {
+            padding: 10px 16px;
+            font-size: 10px;
+          }
+        }
+        /* Extra fix for nav text breaking between 1024px and 1070px */
+        @media (min-width: 1024px) and (max-width: 1070px) {
+          .nav-item {
+            padding: 6px 4px;
+          }
+          .futuristic-link {
+            font-size: 10.5px;
+            letter-spacing: 0.04em;
+          }
+          .nav-cta {
+            padding: 8px 10px;
+            font-size: 9px;
+          }
+        }
+        /* Extra fix for nav text breaking between 1024px and 1070px */
+        @media (min-width: 1024px) and (max-width: 1070px) {
+          .nav-item {
+            padding: 6px 4px;
+          }
+          .futuristic-link {
+            font-size: 10.5px;
+            letter-spacing: 0.04em;
+          }
+          .nav-cta {
+            padding: 8px 10px;
+            font-size: 9px;
+          }
+        }
+      }
+
       @media (max-width: 1023px) {
         .futuristic-nav {
           width: 100%;
@@ -614,12 +687,27 @@
   </head>
 
   <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a
+      href="#main-content"
+      class="skip-link focus:outline-none focus-visible:outline-2 focus-visible:outline-gold-400"
+      >Skip to main content</a
+    >
 
     <header id="site-header" class="fixed top-0 left-0 right-0 z-50">
-      <nav class="futuristic-nav mx-auto px-4 lg:px-8 py-3">
-        <div class="mx-auto max-w-screen-2xl flex items-center justify-between">
-          <a href="index.html" class="flex items-center gap-3 group logo-group">
+      <nav
+        class="futuristic-nav mx-auto px-4 lg:px-8 py-3"
+        role="navigation"
+        aria-label="Primary navigation"
+      >
+        <div
+          class="mx-auto max-w-screen-2xl flex items-center justify-between nav-container"
+        >
+          <a
+            href="index.html"
+            class="flex items-center gap-3 group logo-group focus-visible:outline-none"
+            aria-label="HAVEN — Home"
+            tabindex="0"
+          >
             <span
               class="font-serif text-2xl font-light text-white tracking-widest group-hover:text-gold-400"
               >HAVEN</span
@@ -633,7 +721,10 @@
 
           <div class="hidden lg:flex items-center gap-1">
             <div class="nav-item mega-dropdown">
-              <a href="properties.html" class="futuristic-link"
+              <a
+                href="properties.html"
+                class="futuristic-link focus-visible:outline-gold-400"
+                tabindex="0"
                 >Properties<svg
                   class="dropdown-arrow"
                   viewBox="0 0 24 24"
