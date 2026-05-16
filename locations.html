@@ -99,6 +99,20 @@
       .mini-dropdown-content { max-width: calc(100vw - 32px); }
       .tracking-widest2 { letter-spacing: 0.14em; }
     }
+    #mobile-menu { opacity: 0; pointer-events: none; visibility: hidden; transition: opacity 0.25s ease, visibility 0.25s ease; }
+    #mobile-menu.open { opacity: 1; pointer-events: auto; visibility: visible; }
+    .mobile-nav { background: rgba(20, 18, 15, 0.98); backdrop-filter: blur(20px); }
+    .mobile-nav-item { border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    .mobile-nav-link { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; font-size: 15px; font-weight: 500; color: rgba(255, 255, 255, 0.8); letter-spacing: 0.05em; }
+    .mobile-nav-link:hover { color: #D4A843; }
+    .mobile-submenu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .mobile-submenu.open { max-height: 500px; }
+    .mobile-submenu a { display: block; padding: 12px 20px; font-size: 13px; color: rgba(255, 255, 255, 0.5); border-left: 2px solid transparent; transition: all 0.2s ease; }
+    .mobile-submenu a:hover { color: #D4A843; border-left-color: #D4A843; padding-left: 28px; }
+    .menu-toggle-futuristic { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; cursor: pointer; transition: all 0.3s ease; }
+    .menu-toggle-futuristic:hover { border-color: #D4A843; color: #D4A843; box-shadow: 0 0 20px rgba(212, 168, 67, 0.2); }
+    .futuristic-nav.scrolled .menu-toggle-futuristic { border-color: rgba(35, 30, 25, 0.2); color: rgba(35, 30, 25, 0.8); }
+    .futuristic-nav.scrolled .menu-toggle-futuristic:hover { border-color: #D4A843; color: #D4A843; }
   </style>
 </head>
 
@@ -144,10 +158,73 @@
         </div>
 
         <div class="hidden lg:flex"><a href="contact.html" class="nav-cta">List With Us</a></div>
-        <a href="contact.html" class="lg:hidden text-white mobile-menu-link">☰</a>
+        <button id="menu-toggle" class="menu-toggle-futuristic lg:hidden" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
     </nav>
   </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 mobile-nav pt-20 px-6" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button id="menu-close" class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full border border-white/10 text-white/70 hover:border-gold-400 hover:text-gold-400 transition-all" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <div class="flex items-center gap-3 mb-8 pb-6 border-b border-white/10">
+      <span class="font-serif text-2xl font-light text-white tracking-widest">HAVEN</span>
+      <span class="w-px h-4 bg-gold-400/50"></span>
+      <span class="text-xs text-white/50 tracking-widest2 uppercase">Real Estate</span>
+    </div>
+    <div class="flex flex-col overflow-y-auto pb-8" style="max-height: calc(100vh - 180px);">
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link w-full text-left" data-mobile-toggle="properties"><span>Properties</span><svg class="w-5 h-5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+        <div class="mobile-submenu" id="mobile-properties">
+          <a href="properties.html">All Properties</a><a href="properties.html">Houses</a><a href="properties.html">Apartments</a><a href="properties.html">Townhouses</a><a href="properties.html">Penthouses</a><a href="properties.html">Rent</a><a href="properties.html">New Listings</a><a href="properties.html">Sold</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link w-full text-left" data-mobile-toggle="locations"><span>Locations</span><svg class="w-5 h-5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+        <div class="mobile-submenu" id="mobile-locations">
+          <a href="locations.html">Sydney</a><a href="locations.html">Melbourne</a><a href="locations.html">Brisbane</a><a href="locations.html">Gold Coast</a><a href="locations.html">Perth</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link w-full text-left" data-mobile-toggle="projects"><span>Projects</span><svg class="w-5 h-5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+        <div class="mobile-submenu" id="mobile-projects">
+          <a href="projects.html">All Developments</a><a href="projects.html">Off-the-Plan</a><a href="projects.html">New Construction</a><a href="projects.html">House & Land</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link w-full text-left" data-mobile-toggle="services"><span>Services</span><svg class="w-5 h-5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+        <div class="mobile-submenu" id="mobile-services">
+          <a href="services.html">Buyer's Advisory</a><a href="services.html">Property Appraisal</a><a href="services.html">Property Management</a><a href="services.html">Investment Advisory</a><a href="services.html">International Buyers</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link w-full text-left" data-mobile-toggle="team"><span>Team</span><svg class="w-5 h-5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+        <div class="mobile-submenu" id="mobile-team">
+          <a href="team.html">Our Agents</a><a href="team.html">Meet the Team</a><a href="contact.html">Careers</a>
+        </div>
+      </div>
+      <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></div>
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link w-full text-left" data-mobile-toggle="journal"><span>Journal</span><svg class="w-5 h-5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+        <div class="mobile-submenu" id="mobile-journal">
+          <a href="journal.html">Market Updates</a><a href="journal.html">Property News</a><a href="journal.html">Lifestyle Features</a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+      <a href="contact.html" class="nav-cta w-full text-center block">List With Us</a>
+    </div>
+  </div>
 
   <main id="main-content" class="pt-20">
     <section class="relative overflow-hidden bg-stone-900 py-24 lg:py-32">
@@ -289,6 +366,43 @@
 
     const nav = document.querySelector('.futuristic-nav');
     window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+
+    // Mobile Menu with Accordion
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuClose = document.getElementById('menu-close');
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      if (menuClose) {
+        menuClose.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      }
+      document.querySelectorAll('[data-mobile-toggle]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-mobile-toggle');
+          const target = document.getElementById('mobile-' + targetId);
+          const icon = btn.querySelector('svg');
+          target.classList.toggle('open');
+          icon.classList.toggle('rotate-180');
+          document.querySelectorAll('.mobile-submenu').forEach(sub => { if (sub.id !== 'mobile-' + targetId) sub.classList.remove('open'); });
+          document.querySelectorAll('[data-mobile-toggle] svg').forEach(svg => { if (svg !== icon) svg.classList.remove('rotate-180'); });
+        });
+      });
+      mobileMenu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    }
   </script>
 </body>
 </html>
