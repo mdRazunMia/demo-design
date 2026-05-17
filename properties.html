@@ -651,19 +651,30 @@
           row-gap: 0.5rem;
         }
       }
+      /* ─── Mobile menu ─── */
       #mobile-menu {
         opacity: 0;
         pointer-events: none;
         visibility: hidden;
         transition:
-          opacity 0.25s ease,
-          visibility 0.25s ease;
+          opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+          visibility 0.4s;
       }
       #mobile-menu.open {
         opacity: 1;
         pointer-events: auto;
         visibility: visible;
       }
+
+      /* Hide vertical scrollbar in mobile menu while keeping scroll functionality */
+      .mobile-menu-scroll::-webkit-scrollbar {
+        display: none;
+      }
+      .mobile-menu-scroll {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
       .mobile-nav {
         background: rgba(20, 18, 15, 0.98);
         backdrop-filter: blur(20px);
@@ -675,11 +686,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 16px 0;
+        padding: 18px 0;
         font-size: 15px;
         font-weight: 500;
         color: rgba(255, 255, 255, 0.8);
         letter-spacing: 0.05em;
+        gap: 20px;
       }
       .mobile-nav-link:hover {
         color: #d4a843;
@@ -1244,7 +1256,7 @@
         </svg>
       </button>
       <div
-        class="flex flex-col overflow-y-auto pb-8"
+        class="mobile-menu-scroll flex flex-col overflow-y-auto pb-8"
         style="max-height: calc(100vh - 180px)"
       >
         <div class="mobile-nav-item">
