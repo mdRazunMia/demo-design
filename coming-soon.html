@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Developments — HAVEN Luxury Real Estate</title>
+    <title>Coming Soon � HAVEN Luxury Real Estate</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <!-- Font Awesome for social icons -->
@@ -69,14 +69,12 @@
         font-family: "Cormorant Garamond", Georgia, serif;
       }
 
-      /* Futuristic Navigation */
       .futuristic-nav {
         background: rgba(20, 18, 15, 0.85);
         backdrop-filter: blur(20px);
         border-bottom: 1px solid rgba(212, 168, 67, 0.15);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
       }
-
       .futuristic-nav.scrolled {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(20px);
@@ -104,7 +102,6 @@
         text-decoration: none;
         transition: all 0.3s ease;
       }
-
       .futuristic-link::before {
         content: "";
         position: absolute;
@@ -117,7 +114,6 @@
         transition: width 0.3s ease;
         border-radius: 1px;
       }
-
       .futuristic-link:hover::before {
         width: 100%;
       }
@@ -134,11 +130,9 @@
         transform: rotate(180deg);
       }
 
-      /* Mega Dropdown */
       .mega-dropdown {
         position: static;
       }
-
       .mega-dropdown-content {
         position: absolute;
         top: 100%;
@@ -154,7 +148,6 @@
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 100;
       }
-
       .mega-dropdown:hover .mega-dropdown-content {
         opacity: 1;
         visibility: visible;
@@ -169,11 +162,9 @@
         grid-template-columns: repeat(5, 1fr);
         gap: 40px;
       }
-
       .dropdown-column {
         position: relative;
       }
-
       .dropdown-title {
         font-size: 11px;
         font-weight: 600;
@@ -184,7 +175,6 @@
         padding-bottom: 12px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
-
       .dropdown-link {
         display: block;
         padding: 8px 0;
@@ -193,11 +183,9 @@
         text-decoration: none;
         transition: all 0.25s ease;
       }
-
       .dropdown-link:hover {
         color: #fff;
       }
-
       .dropdown-highlight {
         background: rgba(212, 168, 67, 0.08);
         border-radius: 8px;
@@ -205,7 +193,6 @@
         border: 1px solid rgba(212, 168, 67, 0.15);
       }
 
-      /* Mini Dropdown */
       .mini-dropdown-content {
         position: absolute;
         top: 100%;
@@ -222,13 +209,11 @@
         visibility: hidden;
         transition: all 0.3s ease;
       }
-
       .mini-dropdown:hover .mini-dropdown-content {
         opacity: 1;
         visibility: visible;
         transform: translateX(-50%) translateY(0);
       }
-
       .mini-dropdown-link {
         display: block;
         padding: 10px 24px;
@@ -237,14 +222,12 @@
         text-decoration: none;
         transition: all 0.2s ease;
       }
-
       .mini-dropdown-link:hover {
         background: rgba(212, 168, 67, 0.1);
         color: #d4a843;
         padding-left: 32px;
       }
 
-      /* CTA Button */
       .nav-cta {
         padding: 10px 24px;
         font-size: 11px;
@@ -261,13 +244,11 @@
         text-decoration: none;
         transition: all 0.3s ease;
       }
-
       .nav-cta:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 24px rgba(212, 168, 67, 0.4);
       }
 
-      /* Scrolled State */
       .futuristic-nav.scrolled .futuristic-link {
         color: rgba(35, 30, 25, 0.75);
       }
@@ -311,6 +292,22 @@
         color: rgba(35, 30, 25, 0.55);
       }
 
+      .feature-circle {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        border: 1px solid #c9c3b5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .feature-item:hover .feature-circle {
+        background: #231e19;
+        border-color: #231e19;
+      }
+      .feature-item:hover .feature-circle svg {
+        stroke: #faf9f7;
+      }
       .skip-link {
         position: absolute;
         top: -40px;
@@ -353,22 +350,30 @@
       span {
         overflow-wrap: anywhere;
       }
+      @media (max-width: 1023px) {
+        .futuristic-nav {
+          width: 100%;
+        }
+        .logo-group {
+          min-width: 0;
+          gap: 0.5rem;
+        }
+      }
 
-
-                  /* Extra fix for nav text breaking between 1024px and 1070px */
-            @media (min-width: 1024px) and (max-width: 1070px) {
-              .nav-item {
-                padding: 6px 4px;
-              }
-              .futuristic-link {
-                font-size: 10.5px;
-                letter-spacing: 0.04em;
-              }
-              .nav-cta {
-                padding: 8px 10px;
-                font-size: 9px;
-              }
-            }
+      /* Extra fix for nav text breaking between 1024px and 1070px */
+      @media (min-width: 1024px) and (max-width: 1070px) {
+        .nav-item {
+          padding: 6px 4px;
+        }
+        .futuristic-link {
+          font-size: 10.5px;
+          letter-spacing: 0.04em;
+        }
+        .nav-cta {
+          padding: 8px 10px;
+          font-size: 9px;
+        }
+      }
       /* Fix nav text breaking between 1024px and 1251px */
       @media (min-width: 1024px) and (max-width: 1251px) {
         .nav-item {
@@ -426,15 +431,6 @@
         }
       }
 
-      @media (max-width: 1023px) {
-        .futuristic-nav {
-          width: 100%;
-        }
-        .logo-group {
-          min-width: 0;
-          gap: 0.5rem;
-        }
-      }
       @media (max-width: 640px) {
         .logo-group .font-serif {
           font-size: 1.35rem;
@@ -451,6 +447,7 @@
           letter-spacing: 0.14em;
         }
       }
+
       /* ─── Mobile menu ─── */
       #mobile-menu {
         opacity: 0;
@@ -583,6 +580,9 @@
         .font-serif.text-4xl {
           font-size: 1.75rem;
         }
+        .section-padding {
+          padding: 2rem 1rem;
+        }
       }
       /* Mobile Medium: 375px - 424px */
       @media (min-width: 375px) and (max-width: 424px) {
@@ -612,15 +612,8 @@
           min-height: 48px;
           font-size: 16px;
         }
-        .btn-primary,
-        .btn-gold {
+        .btn-primary {
           min-height: 48px;
-        }
-        .projects-grid {
-          grid-template-columns: 1fr;
-        }
-        .project-card {
-          margin-bottom: 1rem;
         }
         .footer-grid {
           grid-template-columns: 1fr;
@@ -629,6 +622,9 @@
         .footer-links {
           grid-template-columns: 1fr 1fr;
           gap: 1.5rem;
+        }
+        .feature-item .grid {
+          grid-template-columns: 1fr;
         }
       }
       @media (max-width: 480px) {
@@ -689,7 +685,7 @@
             tabindex="0"
           >
             <span
-              class="font-serif text-2xl font-light text-white tracking-widest group-hover:text-gold-400 transition-colors"
+              class="font-serif text-2xl font-light text-white tracking-widest group-hover:text-gold-400"
               >HAVEN</span
             >
             <span class="w-px h-5 bg-gold-400/50"></span>
@@ -699,49 +695,36 @@
             >
           </a>
 
-          <!-- Desktop Navigation -->
           <div class="hidden lg:flex items-center gap-1">
             <div class="nav-item mega-dropdown">
               <a
-                href="properties.html"
+                href="projects.html"
                 class="futuristic-link focus-visible:outline-gold-400"
                 tabindex="0"
-              >
-                Properties
-                <svg
+                >Properties<svg
                   class="dropdown-arrow"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
                 >
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </a>
+                  <polyline points="6 9 12 15 18 9"></polyline></svg
+              ></a>
               <div class="mega-dropdown-content">
                 <div class="dropdown-panel">
                   <div class="dropdown-column">
                     <h4 class="dropdown-title">Buy</h4>
                     <a href="coming-soon.html" class="dropdown-link"
                       >All Properties</a
-                    >
-                    <a href="coming-soon.html" class="dropdown-link">Houses</a>
-                    <a href="coming-soon.html" class="dropdown-link"
+                    ><a href="coming-soon.html" class="dropdown-link">Houses</a
+                    ><a href="coming-soon.html" class="dropdown-link"
                       >Apartments</a
-                    >
-                    <a href="coming-soon.html" class="dropdown-link"
-                      >Townhouses</a
-                    >
-                    <a href="coming-soon.html" class="dropdown-link"
-                      >Penthouses</a
                     >
                   </div>
                   <div class="dropdown-column">
                     <h4 class="dropdown-title">Rent</h4>
-                    <a href="coming-soon.html" class="dropdown-link"
-                      >Rental Properties</a
-                    >
-                    <a href="coming-soon.html" class="dropdown-link"
+                    <a href="coming-soon.html" class="dropdown-link">Rentals</a
+                    ><a href="coming-soon.html" class="dropdown-link"
                       >Luxury Rentals</a
                     >
                   </div>
@@ -749,124 +732,82 @@
                     <h4 class="dropdown-title">Status</h4>
                     <a href="coming-soon.html" class="dropdown-link"
                       >New Listings</a
-                    >
-                    <a href="coming-soon.html" class="dropdown-link">Sold</a>
-                  </div>
-                  <div class="dropdown-column">
-                    <h4 class="dropdown-title">Price Range</h4>
-                    <a href="coming-soon.html" class="dropdown-link"
-                      >Up to $1M</a
-                    >
-                    <a href="coming-soon.html" class="dropdown-link"
-                      >$1M - $5M</a
-                    >
-                    <a href="coming-soon.html" class="dropdown-link">$5M+</a>
+                    ><a href="coming-soon.html" class="dropdown-link">Sold</a>
                   </div>
                   <div class="dropdown-column dropdown-highlight">
                     <h4 class="dropdown-title">Featured</h4>
                     <a href="coming-soon.html" class="dropdown-link"
                       >Off-Market</a
                     >
-                    <a href="coming-soon.html" class="dropdown-link">Premium</a>
+                  </div>
+                  <div class="dropdown-column">
+                    <h4 class="dropdown-title">Price</h4>
+                    <a href="coming-soon.html" class="dropdown-link">$5M+</a>
                   </div>
                 </div>
               </div>
             </div>
-
             <div class="nav-item mini-dropdown">
-              <a href="locations.html" class="futuristic-link">
-                Locations
-                <svg
+              <a href="locations.html" class="futuristic-link"
+                >Locations<svg
                   class="dropdown-arrow"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
                 >
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </a>
+                  <polyline points="6 9 12 15 18 9"></polyline></svg
+              ></a>
               <div class="mini-dropdown-content">
                 <a href="coming-soon.html" class="mini-dropdown-link"
                   >Sydney Region</a
-                >
-                <a href="coming-soon.html" class="mini-dropdown-link"
+                ><a href="coming-soon.html" class="mini-dropdown-link"
                   >Melbourne Region</a
-                >
-                <a href="coming-soon.html" class="mini-dropdown-link"
-                  >Brisbane Region</a
-                >
-                <a href="coming-soon.html" class="mini-dropdown-link"
+                ><a href="coming-soon.html" class="mini-dropdown-link">Brisbane</a
+                ><a href="coming-soon.html" class="mini-dropdown-link"
                   >Gold Coast</a
                 >
-                <a href="coming-soon.html" class="mini-dropdown-link">Perth</a>
               </div>
             </div>
-
             <div class="nav-item mini-dropdown">
-              <a href="projects.html" class="futuristic-link">
-                Projects
-                <svg
+              <a href="projects.html" class="futuristic-link"
+                >Projects<svg
                   class="dropdown-arrow"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
                 >
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </a>
+                  <polyline points="6 9 12 15 18 9"></polyline></svg
+              ></a>
               <div class="mini-dropdown-content">
                 <a href="coming-soon.html" class="mini-dropdown-link"
                   >All Developments</a
-                >
-                <a href="coming-soon.html" class="mini-dropdown-link"
+                ><a href="coming-soon.html" class="mini-dropdown-link"
                   >Off-the-Plan</a
-                >
-                <a href="coming-soon.html" class="mini-dropdown-link"
-                  >New Construction</a
-                >
-                <a href="coming-soon.html" class="mini-dropdown-link"
-                  >House & Land</a
                 >
               </div>
             </div>
-
             <div class="nav-item mega-dropdown">
-              <a href="services.html" class="futuristic-link">
-                Services
-                <svg
+              <a href="services.html" class="futuristic-link"
+                >Services<svg
                   class="dropdown-arrow"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
                 >
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </a>
+                  <polyline points="6 9 12 15 18 9"></polyline></svg
+              ></a>
               <div class="mega-dropdown-content">
                 <div class="dropdown-panel">
                   <div class="dropdown-column">
                     <h4 class="dropdown-title">Buying</h4>
-                    <a href="coming-soon.html" class="dropdown-link"
-                      >Buyer's Advisory</a
-                    >
-                    <a href="coming-soon.html" class="dropdown-link"
-                      >Property Search</a
-                    >
+                    <a href="coming-soon.html" class="dropdown-link">Advisory</a>
                   </div>
                   <div class="dropdown-column">
                     <h4 class="dropdown-title">Selling</h4>
                     <a href="coming-soon.html" class="dropdown-link">Appraisal</a>
-                    <a href="coming-soon.html" class="dropdown-link">Marketing</a>
-                  </div>
-                  <div class="dropdown-column">
-                    <h4 class="dropdown-title">Management</h4>
-                    <a href="coming-soon.html" class="dropdown-link"
-                      >Property Management</a
-                    >
-                    <a href="coming-soon.html" class="dropdown-link">Leasing</a>
                   </div>
                   <div class="dropdown-column dropdown-highlight">
                     <h4 class="dropdown-title">Specialist</h4>
@@ -874,57 +815,43 @@
                       >International</a
                     >
                   </div>
-                  <div class="dropdown-column">
-                    <h4 class="dropdown-title">Resources</h4>
-                    <a href="coming-soon.html" class="dropdown-link"
-                      >Market Insights</a
-                    >
-                  </div>
                 </div>
               </div>
             </div>
-
             <div class="nav-item mini-dropdown">
-              <a href="team.html" class="futuristic-link">
-                Team
-                <svg
+              <a href="team.html" class="futuristic-link"
+                >Team<svg
                   class="dropdown-arrow"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
                 >
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </a>
+                  <polyline points="6 9 12 15 18 9"></polyline></svg
+              ></a>
               <div class="mini-dropdown-content">
-                <a href="coming-soon.html" class="mini-dropdown-link">Our Agents</a>
-                <a href="coming-soon.html" class="mini-dropdown-link">Careers</a>
+                <a href="coming-soon.html" class="mini-dropdown-link">Our Agents</a
+                ><a href="coming-soon.html" class="mini-dropdown-link">Careers</a>
               </div>
             </div>
-
             <div class="nav-item">
               <a href="about.html" class="futuristic-link">About</a>
             </div>
-
             <div class="nav-item mini-dropdown">
-              <a href="journal.html" class="futuristic-link">
-                Journal
-                <svg
+              <a href="journal.html" class="futuristic-link"
+                >Journal<svg
                   class="dropdown-arrow"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
                 >
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </a>
+                  <polyline points="6 9 12 15 18 9"></polyline></svg
+              ></a>
               <div class="mini-dropdown-content">
                 <a href="coming-soon.html" class="mini-dropdown-link"
                   >Market Updates</a
-                >
-                <a href="coming-soon.html" class="mini-dropdown-link"
+                ><a href="coming-soon.html" class="mini-dropdown-link"
                   >Property News</a
                 >
               </div>
@@ -934,7 +861,6 @@
           <div class="hidden lg:flex">
             <a href="contact.html" class="nav-cta">List With Us</a>
           </div>
-
           <button
             id="menu-toggle"
             class="menu-toggle-futuristic lg:hidden"
@@ -1159,288 +1085,73 @@
     <main id="main-content" class="pt-20">
       <section class="relative overflow-hidden bg-stone-900 py-24 lg:py-32">
         <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80&auto=format&fit=crop"
-          alt="Contemporary residential tower"
-          class="absolute inset-0 h-full w-full object-cover opacity-30"
+          src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=80&auto=format&fit=crop"
+          alt="Elegant architectural exterior"
+          class="absolute inset-0 h-full w-full object-cover opacity-35"
         />
         <div class="absolute inset-0 bg-stone-900/70"></div>
-        <div class="relative mx-auto max-w-screen-xl px-6 lg:px-10">
-          <p class="text-gold-400 text-xs tracking-widest2 uppercase mb-4">
-            Coming Soon
+        <div class="relative mx-auto max-w-screen-xl px-6 lg:px-10 text-center">
+          <p class="mb-4 text-xs uppercase tracking-widest2 text-gold-400">
+            Coming Up
           </p>
           <h1
-            class="font-serif text-5xl lg:text-7xl font-light text-white mb-6"
+            class="mx-auto mb-6 max-w-4xl font-serif text-5xl font-light leading-tight text-white lg:text-7xl"
           >
-            New <em class="italic font-light">Developments</em>
+            Something <em class="italic font-light">exceptional</em> is on the way
           </h1>
           <p
-            class="text-stone-200 text-lg lg:text-xl max-w-3xl font-light leading-relaxed"
+            class="mx-auto mb-10 max-w-2xl text-lg font-light leading-relaxed text-stone-200 lg:text-xl"
           >
-            Discover carefully curated off-the-plan residences and masterplanned
-            communities across Australia's most coveted locations.
+            We are preparing this page and curating a better experience for you. Please check back soon for new updates, refined features, and fresh listings.
           </p>
-          <a
-            href="#register"
-            class="mt-8 inline-flex bg-gold-500 px-8 py-4 text-xs font-medium uppercase tracking-widest2 text-stone-900 hover:bg-gold-400"
-            >Register your interest</a
-          >
+          <div class="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="index.html"
+              class="inline-flex items-center justify-center bg-white px-8 py-4 text-xs font-medium uppercase tracking-widest2 text-stone-900 transition-colors hover:bg-gold-400"
+              >Back to Home</a
+            >
+            <a
+              href="contact.html"
+              class="inline-flex items-center justify-center border border-white/60 px-8 py-4 text-xs font-medium uppercase tracking-widest2 text-white transition-colors hover:border-gold-400 hover:text-gold-400"
+              >Contact Our Team</a
+            >
+          </div>
         </div>
       </section>
 
-      <section class="py-20 lg:py-28 bg-stone-50">
+      <section class="bg-stone-50 py-16 lg:py-20">
         <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
-          <div class="mb-12 max-w-3xl">
+          <div class="mb-10 text-center">
             <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-600">
-              Project Collection
+              What�s Coming
             </p>
-            <h2
-              class="font-serif text-4xl font-light text-stone-900 lg:text-5xl"
-            >
-              Curated residences before they reach the open market
+            <h2 class="font-serif text-4xl font-light text-stone-900 lg:text-5xl">
+              A new experience is being crafted
             </h2>
           </div>
-          <div class="space-y-8">
-            <article
-              class="grid overflow-hidden border border-stone-200 bg-white lg:grid-cols-[0.95fr_1.05fr]"
-            >
-              <div class="overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=80&auto=format&fit=crop"
-                  alt="The Ellara"
-                  class="h-full min-h-80 w-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <div class="p-8 lg:p-10">
-                <span
-                  class="bg-gold-500 px-3 py-1 text-xs uppercase tracking-widest2 text-stone-900"
-                  >Now Selling</span
-                >
-                <h3 class="mt-5 font-serif text-4xl font-light text-stone-900">
-                  The Ellara, South Yarra
-                </h3>
-                <p
-                  class="mt-2 text-xs uppercase tracking-widest2 text-stone-400"
-                >
-                  South Yarra, VIC
-                </p>
-                <p class="mt-4 font-light text-stone-600">
-                  45 residences across 14 levels - From $1.15M
-                </p>
-                <p class="mt-4 font-light leading-relaxed text-stone-600">
-                  Boutique luxury living with light-filled residences, refined
-                  finishes, and sweeping city and river views.
-                </p>
-                <ul class="mt-5 space-y-2 text-sm font-light text-stone-500">
-                  <li>
-                    Residents' club, rooftop garden, and private dining room.
-                  </li>
-                  <li>Concierge services and secure basement parking.</li>
-                  <li>Walkable to cafes, boutiques, and transport.</li>
-                </ul>
-                <div class="mt-8 flex flex-wrap gap-3">
-                  <a
-                    href="#"
-                    class="bg-stone-900 px-6 py-3 text-xs uppercase tracking-widest2 text-white hover:bg-gold-500 hover:text-stone-900"
-                    >View project details</a
-                  ><a
-                    href="#register"
-                    class="border border-stone-300 px-6 py-3 text-xs uppercase tracking-widest2 text-stone-900 hover:border-gold-500"
-                    >Register interest</a
-                  >
-                </div>
-              </div>
-            </article>
-            <article
-              class="grid overflow-hidden border border-stone-200 bg-white lg:grid-cols-[0.95fr_1.05fr]"
-            >
-              <div class="overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?w=900&q=80&auto=format&fit=crop"
-                  alt="Coves at Manly"
-                  class="h-full min-h-80 w-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <div class="p-8 lg:p-10">
-                <span
-                  class="bg-stone-900 px-3 py-1 text-xs uppercase tracking-widest2 text-white"
-                  >Coming Soon</span
-                >
-                <h3 class="mt-5 font-serif text-4xl font-light text-stone-900">
-                  Coves at Manly
-                </h3>
-                <p
-                  class="mt-2 text-xs uppercase tracking-widest2 text-stone-400"
-                >
-                  Manly, NSW
-                </p>
-                <p class="mt-4 font-light text-stone-600">
-                  Beachfront residences - From $2.4M
-                </p>
-                <p class="mt-4 font-light leading-relaxed text-stone-600">
-                  Coastal residences with expansive ocean vistas, generous
-                  terraces, and effortless access to Manly's cafes and surf.
-                </p>
-                <ul class="mt-5 space-y-2 text-sm font-light text-stone-500">
-                  <li>Beachfront position with ocean-facing balconies.</li>
-                  <li>Residents' pool, wellness studio, and secure parking.</li>
-                  <li>Coastal-inspired interiors with premium finishes.</li>
-                </ul>
-                <div class="mt-8 flex flex-wrap gap-3">
-                  <a
-                    href="#"
-                    class="bg-stone-900 px-6 py-3 text-xs uppercase tracking-widest2 text-white hover:bg-gold-500 hover:text-stone-900"
-                    >Join priority list</a
-                  ><a
-                    href="#register"
-                    class="border border-stone-300 px-6 py-3 text-xs uppercase tracking-widest2 text-stone-900 hover:border-gold-500"
-                    >Register interest</a
-                  >
-                </div>
-              </div>
-            </article>
-            <article
-              class="grid overflow-hidden border border-stone-200 bg-white lg:grid-cols-[0.95fr_1.05fr]"
-            >
-              <div class="overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1467533003447-e295ff1b0435?w=900&q=80&auto=format&fit=crop"
-                  alt="Griffith Quarter"
-                  class="h-full min-h-80 w-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <div class="p-8 lg:p-10">
-                <span
-                  class="bg-stone-900 px-3 py-1 text-xs uppercase tracking-widest2 text-white"
-                  >Coming Soon</span
-                >
-                <h3 class="mt-5 font-serif text-4xl font-light text-stone-900">
-                  Griffith Quarter
-                </h3>
-                <p
-                  class="mt-2 text-xs uppercase tracking-widest2 text-stone-400"
-                >
-                  Griffith, QLD
-                </p>
-                <p class="mt-4 font-light text-stone-600">
-                  Urban village apartments - From $890K
-                </p>
-                <p class="mt-4 font-light leading-relaxed text-stone-600">
-                  A new urban village bringing together contemporary apartments,
-                  green spaces, and neighbourhood dining.
-                </p>
-                <ul class="mt-5 space-y-2 text-sm font-light text-stone-500">
-                  <li>Landscaped central park and resident terraces.</li>
-                  <li>Ground-floor retail and dining.</li>
-                  <li>Easy access to transport and employment hubs.</li>
-                </ul>
-                <div class="mt-8 flex flex-wrap gap-3">
-                  <a
-                    href="#"
-                    class="bg-stone-900 px-6 py-3 text-xs uppercase tracking-widest2 text-white hover:bg-gold-500 hover:text-stone-900"
-                    >Learn more</a
-                  ><a
-                    href="#register"
-                    class="border border-stone-300 px-6 py-3 text-xs uppercase tracking-widest2 text-stone-900 hover:border-gold-500"
-                    >Register interest</a
-                  >
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
 
-      <section class="bg-stone-900 py-20 lg:py-24">
-        <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
-          <div class="mb-10 max-w-3xl">
-            <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-400">
-              Advisory
-            </p>
-            <h2 class="font-serif text-4xl font-light text-white">
-              Why buy off-the-plan with HAVEN?
-            </h2>
-          </div>
-          <div class="grid gap-6 md:grid-cols-3">
-            <div class="border border-white/10 p-7 text-stone-300">
-              <h3 class="mb-3 text-white">Curated developments</h3>
-              <p class="text-sm font-light">
-                We partner with reputable developers and award-winning design
-                teams.
+          <div class="grid gap-5 md:grid-cols-3">
+            <article class="border border-stone-200 bg-white p-7">
+              <i data-lucide="building-2" class="mb-5 h-7 w-7 text-gold-500"></i>
+              <h3 class="mb-2 font-medium text-stone-900">Curated Projects</h3>
+              <p class="text-sm font-light leading-relaxed text-stone-500">
+                A clean showcase of premium developments with clearer details and visuals.
               </p>
-            </div>
-            <div class="border border-white/10 p-7 text-stone-300">
-              <h3 class="mb-3 text-white">Independent advice</h3>
-              <p class="text-sm font-light">
-                We help compare projects, pricing, and timelines, not just sell
-                one development.
+            </article>
+            <article class="border border-stone-200 bg-white p-7">
+              <i data-lucide="map-pinned" class="mb-5 h-7 w-7 text-gold-500"></i>
+              <h3 class="mb-2 font-medium text-stone-900">Better Discovery</h3>
+              <p class="text-sm font-light leading-relaxed text-stone-500">
+                Improved location navigation and smarter browsing to find the right area faster.
               </p>
-            </div>
-            <div class="border border-white/10 p-7 text-stone-300">
-              <h3 class="mb-3 text-white">End-to-end guidance</h3>
-              <p class="text-sm font-light">
-                From selection and contracts to settlement and leasing
-                strategies.
+            </article>
+            <article class="border border-stone-200 bg-white p-7">
+              <i data-lucide="sparkles" class="mb-5 h-7 w-7 text-gold-500"></i>
+              <h3 class="mb-2 font-medium text-stone-900">Refined Design</h3>
+              <p class="text-sm font-light leading-relaxed text-stone-500">
+                A polished presentation aligned with the HAVEN brand's premium look and feel.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="register" class="py-20 lg:py-24">
-        <div class="mx-auto max-w-screen-xl px-6 lg:px-10">
-          <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-            <div>
-              <p class="mb-3 text-xs uppercase tracking-widest2 text-gold-600">
-                Register
-              </p>
-              <h2 class="mb-5 font-serif text-4xl font-light text-stone-900">
-                Register your interest
-              </h2>
-              <p class="font-light leading-relaxed text-stone-600">
-                Share your preferred locations, budget, and timing, and we'll
-                connect you with the right development and available residences.
-              </p>
-            </div>
-            <form class="grid gap-4 sm:grid-cols-2">
-              <input
-                class="border border-stone-200 bg-white px-4 py-3 text-sm"
-                placeholder="Name"
-              />
-              <input
-                class="border border-stone-200 bg-white px-4 py-3 text-sm"
-                placeholder="Email"
-              />
-              <input
-                class="border border-stone-200 bg-white px-4 py-3 text-sm"
-                placeholder="Phone"
-              />
-              <select
-                class="border border-stone-200 bg-white px-4 py-3 text-sm"
-              >
-                <option>Preferred city/area</option>
-                <option>Sydney</option>
-                <option>Melbourne</option>
-                <option>Brisbane</option>
-                <option>Gold Coast</option>
-              </select>
-              <select
-                class="border border-stone-200 bg-white px-4 py-3 text-sm"
-              >
-                <option>Budget range</option>
-                <option>Under $1M</option>
-                <option>$1M - $2M</option>
-                <option>$2M+</option>
-              </select>
-              <textarea
-                class="min-h-32 border border-stone-200 bg-white px-4 py-3 text-sm sm:col-span-2"
-                placeholder="Message"
-              ></textarea>
-              <button
-                class="bg-stone-900 px-8 py-4 text-xs font-medium uppercase tracking-widest2 text-white hover:bg-gold-500 hover:text-stone-900 sm:col-span-2"
-              >
-                Send enquiry
-              </button>
-            </form>
+            </article>
           </div>
         </div>
       </section>
