@@ -591,7 +591,7 @@
         stroke: #faf9f7;
       }
 
-      /* ─── Testimonial card ─── */
+      /* ─── Testimonial Slider Improvements ─── */
       .testimonial-track {
         display: flex;
         gap: 24px;
@@ -599,14 +599,66 @@
         scroll-snap-type: x mandatory;
         scrollbar-width: none;
         -ms-overflow-style: none;
-        padding-bottom: 4px;
+        padding: 20px 0;
+        cursor: grab;
+        scroll-behavior: smooth;
+        user-select: none;
+        -webkit-user-drag: none;
       }
       .testimonial-track::-webkit-scrollbar {
         display: none;
       }
+      .testimonial-track:active {
+        cursor: grabbing;
+      }
       .testimonial-card {
-        scroll-snap-align: start;
-        flex: 0 0 340px;
+        scroll-snap-align: center;
+        flex: 0 0 380px;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      @media (max-width: 767px) {
+        .testimonial-card {
+          flex: 0 0 calc(100vw - 3rem);
+        }
+      }
+      .slider-nav-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 1px solid #e3dfd6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        color: #231e19;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      .slider-nav-btn:hover:not(:disabled) {
+        background: #231e19;
+        color: #fff;
+        border-color: #231e19;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+      .slider-nav-btn:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+      .testimonial-progress-container {
+        width: 100%;
+        max-width: 200px;
+        height: 2px;
+        background: #e3dfd6;
+        margin: 0 auto;
+        border-radius: 1px;
+        overflow: hidden;
+      }
+      .testimonial-progress-bar {
+        height: 100%;
+        background: #d4a843;
+        width: 0;
+        transition: width 0.2s ease;
       }
 
       /* ─── Map placeholder ─── */
@@ -3340,255 +3392,291 @@
             </h2>
           </div>
 
-          <div
-            class="testimonial-track"
-            role="list"
-            aria-label="Client testimonials"
-          >
-            <!-- T1 -->
+          <div class="relative group/slider">
             <div
-              class="testimonial-card bg-white p-7 border border-stone-100 rounded-sm"
-              role="listitem"
+              class="testimonial-track"
+              id="testimonial-track"
+              role="list"
+              aria-label="Client testimonials"
             >
-              <div class="flex gap-0.5 mb-5" aria-label="5 out of 5 stars">
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-              </div>
-              <blockquote>
-                <p
-                  class="font-serif text-lg font-light text-stone-700 italic leading-relaxed mb-6"
-                >
-                  "Sophia was extraordinary. She found us our dream home in
-                  Mosman before it even hit the market. The experience felt
-                  effortless and deeply personal."
-                </p>
-              </blockquote>
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-10 h-10 rounded-full bg-stone-200 overflow-hidden"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80"
-                    alt=""
-                    role="presentation"
-                    class="w-full h-full object-cover"
-                  />
+              <!-- T1 -->
+              <div
+                class="testimonial-card bg-white p-8 border border-stone-100 rounded-sm shadow-sm hover:shadow-md transition-shadow"
+                role="listitem"
+              >
+                <div class="flex gap-0.5 mb-5" aria-label="5 out of 5 stars">
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
                 </div>
-                <div>
-                  <p class="text-sm font-medium text-stone-900">Catherine R.</p>
-                  <p class="text-xs text-stone-400 font-light">
-                    Purchased in Mosman, NSW
+                <blockquote>
+                  <p
+                    class="font-serif text-xl font-light text-stone-700 italic leading-relaxed mb-8"
+                  >
+                    "Sophia was extraordinary. She found us our dream home in
+                    Mosman before it even hit the market. The experience felt
+                    effortless and deeply personal."
                   </p>
+                </blockquote>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-stone-200 overflow-hidden border-2 border-white shadow-sm"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80"
+                      alt=""
+                      role="presentation"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-stone-900">
+                      Catherine R.
+                    </p>
+                    <p class="text-xs text-stone-400 font-light">
+                      Purchased in Mosman, NSW
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- T2 -->
+              <div
+                class="testimonial-card bg-white p-8 border border-stone-100 rounded-sm shadow-sm hover:shadow-md transition-shadow"
+                role="listitem"
+              >
+                <div class="flex gap-0.5 mb-5" aria-label="5 out of 5 stars">
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <blockquote>
+                  <p
+                    class="font-serif text-xl font-light text-stone-700 italic leading-relaxed mb-8"
+                  >
+                    "James's market knowledge is unparalleled. We sold $600K
+                    above our reserve at auction. His strategy and presentation
+                    were faultless from start to finish."
+                  </p>
+                </blockquote>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-stone-200 overflow-hidden border-2 border-white shadow-sm"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80"
+                      alt=""
+                      role="presentation"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-stone-900">
+                      David & Karen M.
+                    </p>
+                    <p class="text-xs text-stone-400 font-light">
+                      Sold in Toorak, VIC
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- T3 -->
+              <div
+                class="testimonial-card bg-white p-8 border border-stone-100 rounded-sm shadow-sm hover:shadow-md transition-shadow"
+                role="listitem"
+              >
+                <div class="flex gap-0.5 mb-5" aria-label="5 out of 5 stars">
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <blockquote>
+                  <p
+                    class="font-serif text-xl font-light text-stone-700 italic leading-relaxed mb-8"
+                  >
+                    "As an overseas investor I was nervous about buying
+                    remotely. HAVEN's team guided us through every step with
+                    complete transparency."
+                  </p>
+                </blockquote>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-stone-200 overflow-hidden border-2 border-white shadow-sm"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80"
+                      alt=""
+                      role="presentation"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-stone-900">
+                      Thomas K.
+                    </p>
+                    <p class="text-xs text-stone-400 font-light">
+                      Investment Property, Brisbane QLD
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- T4 -->
+              <div
+                class="testimonial-card bg-white p-8 border border-stone-100 rounded-sm shadow-sm hover:shadow-md transition-shadow"
+                role="listitem"
+              >
+                <div class="flex gap-0.5 mb-5" aria-label="5 out of 5 stars">
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    data-lucide="star"
+                    class="w-4 h-4 text-gold-400 fill-current"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <blockquote>
+                  <p
+                    class="font-serif text-xl font-light text-stone-700 italic leading-relaxed mb-8"
+                  >
+                    "The property styling advice from HAVEN's team transformed
+                    our home before sale. They have a true eye for detail that
+                    really resonated with buyers."
+                  </p>
+                </blockquote>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-stone-200 overflow-hidden border-2 border-white shadow-sm"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&q=80"
+                      alt=""
+                      role="presentation"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-stone-900">
+                      Nicole H.
+                    </p>
+                    <p class="text-xs text-stone-400 font-light">
+                      Sold in Noosa Heads, QLD
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- T2 -->
-            <div
-              class="testimonial-card bg-white p-7 border border-stone-100 rounded-sm"
-              role="listitem"
-            >
-              <div class="flex gap-0.5 mb-5" aria-label="5 out of 5 stars">
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-              </div>
-              <blockquote>
-                <p
-                  class="font-serif text-lg font-light text-stone-700 italic leading-relaxed mb-6"
-                >
-                  "James's market knowledge is unparalleled. We sold $600K above
-                  our reserve at auction. His strategy and presentation were
-                  faultless from start to finish."
-                </p>
-              </blockquote>
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-10 h-10 rounded-full bg-stone-200 overflow-hidden"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80"
-                    alt=""
-                    role="presentation"
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <p class="text-sm font-medium text-stone-900">
-                    David &amp; Karen M.
-                  </p>
-                  <p class="text-xs text-stone-400 font-light">
-                    Sold in Toorak, VIC
-                  </p>
-                </div>
-              </div>
+            <!-- Navigation Buttons -->
+            <div class="hidden lg:flex justify-center gap-4 mt-12">
+              <button
+                id="prev-testimonial"
+                class="slider-nav-btn"
+                aria-label="Previous testimonial"
+                disabled
+              >
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+              </button>
+              <button
+                id="next-testimonial"
+                class="slider-nav-btn"
+                aria-label="Next testimonial"
+              >
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+              </button>
             </div>
 
-            <!-- T3 -->
-            <div
-              class="testimonial-card bg-white p-7 border border-stone-100 rounded-sm"
-              role="listitem"
-            >
-              <div class="flex gap-0.5 mb-5" aria-label="5 out of 5 stars">
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-              </div>
-              <blockquote>
-                <p
-                  class="font-serif text-lg font-light text-stone-700 italic leading-relaxed mb-6"
-                >
-                  "As an overseas investor I was nervous about buying remotely.
-                  HAVEN's team guided us through every step with complete
-                  transparency. Couldn't recommend more highly."
-                </p>
-              </blockquote>
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-10 h-10 rounded-full bg-stone-200 overflow-hidden"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80"
-                    alt=""
-                    role="presentation"
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <p class="text-sm font-medium text-stone-900">Thomas K.</p>
-                  <p class="text-xs text-stone-400 font-light">
-                    Investment Property, Brisbane QLD
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- T4 -->
-            <div
-              class="testimonial-card bg-white p-7 border border-stone-100 rounded-sm"
-              role="listitem"
-            >
-              <div class="flex gap-0.5 mb-5" aria-label="5 out of 5 stars">
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-4 h-4 text-gold-400 fill-current"
-                  aria-hidden="true"
-                ></i>
-              </div>
-              <blockquote>
-                <p
-                  class="font-serif text-lg font-light text-stone-700 italic leading-relaxed mb-6"
-                >
-                  "The property styling advice from HAVEN's team transformed our
-                  home before sale. They have a true eye for detail that really
-                  resonated with buyers."
-                </p>
-              </blockquote>
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-10 h-10 rounded-full bg-stone-200 overflow-hidden"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&q=80"
-                    alt=""
-                    role="presentation"
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <p class="text-sm font-medium text-stone-900">Nicole H.</p>
-                  <p class="text-xs text-stone-400 font-light">
-                    Sold in Noosa Heads, QLD
-                  </p>
-                </div>
-              </div>
+            <!-- Progress Bar -->
+            <div class="mt-8 testimonial-progress-container">
+              <div
+                id="testimonial-progress"
+                class="testimonial-progress-bar"
+              ></div>
             </div>
           </div>
         </div>
@@ -4391,6 +4479,95 @@
           }
         });
       });
+
+      // ─── Testimonial Slider Logic ───
+      const track = document.getElementById("testimonial-track");
+      const prevBtn = document.getElementById("prev-testimonial");
+      const nextBtn = document.getElementById("next-testimonial");
+      const progressBar = document.getElementById("testimonial-progress");
+
+      if (track && prevBtn && nextBtn && progressBar) {
+        const updateSliderState = () => {
+          const maxScroll = track.scrollWidth - track.clientWidth;
+          const scrollPercentage =
+            maxScroll > 0 ? (track.scrollLeft / maxScroll) * 100 : 0;
+          progressBar.style.width = `${scrollPercentage}%`;
+
+          if (prevBtn) prevBtn.disabled = track.scrollLeft <= 10;
+          if (nextBtn)
+            nextBtn.disabled = track.scrollLeft >= maxScroll - 10;
+        };
+
+        // Click to scroll
+        nextBtn?.addEventListener("click", () => {
+          const card = track.querySelector(".testimonial-card");
+          const step = card ? card.offsetWidth + 24 : track.offsetWidth * 0.8;
+          track.scrollBy({ left: step, behavior: "smooth" });
+        });
+
+        prevBtn?.addEventListener("click", () => {
+          const card = track.querySelector(".testimonial-card");
+          const step = card ? card.offsetWidth + 24 : track.offsetWidth * 0.8;
+          track.scrollBy({ left: -step, behavior: "smooth" });
+        });
+
+        // Wheel to scroll (convert vertical to horizontal)
+        track.addEventListener(
+          "wheel",
+          (e) => {
+            // If user is scrolling vertically, move the track horizontally
+            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+              e.preventDefault();
+              track.scrollLeft += e.deltaY;
+            }
+          },
+          { passive: false },
+        );
+
+        // Drag to scroll
+        let isDown = false;
+        let startX;
+        let scrollLeftPos;
+
+        track.addEventListener("mousedown", (e) => {
+          isDown = true;
+          track.style.scrollSnapType = "none";
+          track.style.scrollBehavior = "auto";
+          startX = e.pageX - track.offsetLeft;
+          scrollLeftPos = track.scrollLeft;
+        });
+
+        track.addEventListener("mouseleave", () => {
+          if (!isDown) return;
+          isDown = false;
+          track.style.scrollSnapType = "x mandatory";
+          track.style.scrollBehavior = "smooth";
+        });
+
+        track.addEventListener("mouseup", () => {
+          if (!isDown) return;
+          isDown = false;
+          track.style.scrollSnapType = "x mandatory";
+          track.style.scrollBehavior = "smooth";
+        });
+
+        track.addEventListener("mousemove", (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - track.offsetLeft;
+          const walk = (x - startX) * 2;
+          track.scrollLeft = scrollLeftPos - walk;
+        });
+
+        // Update progress and buttons on scroll
+        track.addEventListener("scroll", updateSliderState);
+
+        // Initial state
+        window.addEventListener("load", updateSliderState);
+        window.addEventListener("resize", updateSliderState);
+        // Also run once immediately
+        setTimeout(updateSliderState, 100);
+      }
     </script>
   </body>
 </html>
